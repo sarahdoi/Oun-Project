@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="logo.png" href="images/logo.png" >
+<!--import google fonts & stars-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css" >
+<link rel="stylesheet" href="footer.css" >
+<title>Anny's profile </title>
+<style>
+body{
+  
+  text-align: center;
+
+}
+
+.card{
+  background-color:aliceblue;
+  border-radius: 6px;
+  display:inline-block;
+  
+  height:470px;
+  width:375px;
+
+  margin-top:100px;
+  box-shadow:0 12px 13px rgba(0,0,0,0.16), 0 12px 13px rgba(0,0,0,0.16);
+
+}
+
+.card img {
+  border-radius:100%;
+  margin-top:60px;
+  width:132px;
+  height:128px;
+}
+
+.name{
+  color:#404040; 
+}
+
+.reviews , .title{
+  font-size:16px;
+  color: #afafaf
+}
+
+.desc{
+  font-size:14px;
+  margin-left:65px;
+  margin-right:65px;
+  margin-top:16px;
+
+
+   color:#404040; 
+}
+
+.desc .btn{
+  outline:none;
+  background :rgb(41,33,78);
+  /* 20px */
+  margin-top:5px;
+  border:none;
+  height:40px;
+  width:35%;
+  color:aliceblue;
+  font-size:16px;
+   /* 30px */
+  border-radius:12px;
+
+}
+.desc ul li{
+text-align: left;
+}
+
+.btn:hover{
+background-color: rgb(72, 56, 133);
+border-color: rgb(72, 56, 133);
+fill: rgb(72, 56, 133); 
+ transition: all 400ms linear;
+ /* when cursor pass change the button's color*/
+ cursor:pointer;
+}
+.btn :focus {
+    color: #ffffff;
+  }
+.stars .checked {
+  color: #fd4;
+  
+}
+
+a{
+  text-decoration:none;
+  /* origin color */
+  color:inherit;
+}
+</style>
+</head>
+<body>
+   <!--header -->
+
+<header>
+       
+  <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
+  
+   <nav class="navbar">
+      <ul> 
+        <li><a href="#"> OfferList </a></li>
+      <li> <a href="#"> Settings </a>
+          <ul>
+          <li><a href="viewprofile.html"> view profile </a></li>
+           <li><a href="#"> delete account </a></li>
+          </ul>
+      </li>
+     <li> <a href="#"> Sign out </a></li>
+  </ul>
+   </nav>
+</header>
+
+<!--profile card -->
+  <div class="card"> 
+    <img src="images/anny.jpeg" alt="Baby SItter's profile picture">
+   
+    <h1 class="name" > Anny </h1>
+    <p class="title">Riyadh , Saudi Arabia</p>
+ <!--stars -->
+    <div class="stars">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    
+    </div>
+    
+    <div class="desc">
+      <p>
+        <ul >
+        <li>35 years old , Ugandan </li>
+        <li>2 yeas of paid experiance</li>
+        <li>a mother (has 2 kids)</li>
+      </ul>
+      High patience and i love to take care of kids like my own
+     </p>
+     
+   
+     <button class="btn"><a href="mailto:anny212@gmail.com">Contact</a></button>
+<br><br> <hr>
+   
+     <p class="reviews" style="font-size:15px ;"><a href="#">see reviews</a></p>
+    </div>
+  </div>
+
+  <!--footer -->
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+        <img class="logo" src="images\logo.png" alt="Ouun">
+
+        <p class="footer-links">
+            <a href="#" class="link-1">Home</a>
+            <a href="#">About</a>
+            <a href="mailto:support@Ouun.com">Contact</a>
+        </p>
+
+        <p class="footer-company-name">Oun © 2022</p>
+    </div>
+
+    <div class="footer-center">
+
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>12534 AlOlaya st.</span> Riyadh , Saudi Arabia</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+9669200000834</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@Ouun.com">support@Oun.com</a></p>
+        </div>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>About us</span>
+           Oun is an online platform that helps mothers find babysitters anytime and anywhere.
+</p>
+
+    </div>
+
+</footer>
+
+</body>
+</html> 
