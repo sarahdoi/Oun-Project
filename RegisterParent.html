@@ -23,26 +23,26 @@
         
         <fieldset>
           <legend><span class="number">1</span>Personal Info</legend>
-          <label for="name" aria-required="true">Child FullName</label >
+          <label for="name" aria-required="true">Child FullName *</label >
           <input type="text" id="name" name="child_name" >
-          <label for="name" aria-required="true">Parent FullName</label>
+          <label for="name" aria-required="true">Parent FullName *</label>
           <input type="text" id="name" name="Parent_name" >
-          <label for="phone" aria-required="true">Phone number</label>
+          <label for="phone" aria-required="true">Phone number *</label>
           <input type="tel" id="phone" name="phone" >
           
-          <label for="mail" aria-required="true">Email:</label>
+          <label for="mail" aria-required="true">Email *</label>
           <input type="email" id="mail" name="user_email" >
           
-          <label for="password" aria-required="true">Password:</label>
+          <label for="password" aria-required="true">Password *</label>
           <input type="password" id="password" name="user_password" >
           
-          <label>Child Gender</label>
+          <label>Child Gender *</label>
           <input type="radio" id="male" value="male" name="user_gender" aria-required="true"><label for="male" class="light" required>Male</label><br>
           <input type="radio" id="female" value="female" name="user_gender"><label for="female" class="light">Female</label>
-          <label for="job">Child Age</label>
+          <label for="job">Child Age *</label>
         <div class="custom-select">
   <select required aria-required="true">
-    <option value="0">Select Age by year</option>
+    <option value="0">Select Age by year </option>
     <option value="1">Less than 1</option>
     <option value="2">1</option>
     <option value="3">2</option>
@@ -55,15 +55,15 @@
     <option value="11">9</option>
     <option value="12">10</option>
   </select>
-  <label for="image">Profile image:</label>
+  <label for="image" optional >Profile image </label>
             <input type="image" name="image" id="image" />
         </fieldset>
         
         <fieldset>
           <legend><span class="number">2</span>Address Info</legend>
-          <label for="City" aria-required="true">City</label>
+          <label for="City" aria-required="true">City *</label>
           <input type="City" id="phone" name="City" >
-          <label for="loc" aria-required="true">Specify your location</label>
+          <label for="loc" aria-required="true">Specify your location *</label>
           <img class="location" src="images/locationsymbol.png" alt="location">
 
 
