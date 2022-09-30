@@ -101,10 +101,16 @@ form .btn {
     width:100%;
     margin: 15px 0; }
 
-    button:hover{
-        background-color: rgb(72, 56, 133);
-            border-color: rgb(72, 56, 133);
-          fill: rgb(72, 56, 133); } 
+ form .btn  button:hover{
+            background-color: rgb(72, 56, 133);
+                border-color: rgb(72, 56, 133);
+              fill: rgb(72, 56, 133); 
+              transition: all 400ms linear;
+              /* when cursor pass change the button's color*/
+              cursor:pointer;
+            } 
+        
+        
        
 form .btn button {
     height:100%;
@@ -140,15 +146,6 @@ form .btn button {
     color: #ffffff;
   }
 
-form .btn button:hover {
 
-    background-color: rgb(72, 56, 133);
-    border-color: rgb(72, 56, 133);
-     fill: rgb(72, 56, 133); 
-
-transition: all 400ms linear;
-/* when cursor pass change the button's color*/
-cursor:pointer;
-}
 
 
