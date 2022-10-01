@@ -106,7 +106,7 @@ position: absolute;
 top: 32%;
 left:35% ;
 transform: translateY(-30%);
-color: rgb(154, 184, 188)100%;
+color: rgb(154, 184, 188);
 margin: 20px 0px 20px;
 }
 .viewList
@@ -115,7 +115,7 @@ position: absolute;
 top: 32%;
 left:35% ;
 transform: translateY(-30%);
-color: rgb(154, 184, 188)100%;
+color: rgb(154, 184, 188);
 margin: 20px 0px 20px;
 font-size: 33px; 
 }
