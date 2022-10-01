@@ -3,6 +3,10 @@ body{
     font-family: monospace;
     margin-top: -50px;
 }
+
+.footer-distributed{top: 800px;}
+.footer-distributed .footer-icons a{ margin-bottom: 2px;}
+
 .mytitle{
     margin-top: 0;
     text-align: center;

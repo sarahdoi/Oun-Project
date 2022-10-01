@@ -1,8 +1,7 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
 .footer-distributed{top: 800px;}
-    .footer-distributed .footer-icons a{ margin-bottom: 2px;}
-    
+.footer-distributed .footer-icons a{ margin-bottom: 2px;}
 /* stars rating css */
 .stars {
     font-size: 36px;
@@ -15,6 +14,11 @@
   }
 
   /* my reviews css */
+
+  .body{
+    place-items: center;
+    margin-top: -70px;
+  }
 
 
   .mytitle{
