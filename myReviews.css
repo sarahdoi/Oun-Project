@@ -4,7 +4,6 @@
 .stars {
     font-size: 36px;
     color: gray;
-    margin-top: -100px;
     margin-bottom: 10px;
 }
 
@@ -13,6 +12,14 @@
   }
 
   /* my reviews css */
+
+
+  .mytitle{
+    margin-top: -60px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(41, 33, 78);
+     }
 
 figure.review {
   position: relative;
