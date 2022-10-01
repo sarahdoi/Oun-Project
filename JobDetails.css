@@ -3,6 +3,8 @@ body{
     font-family: monospace;
     margin-top: -50px;
 }
+.footer-distributed{top: 800px;}
+.footer-distributed .footer-icons a{ margin-bottom: 2px;}
 
 
 .mytitle{
@@ -53,7 +55,12 @@ body{
   margin-left: -90px;
 }
 
-
+.det{
+    width: 200px
+}
+.mylabel{
+    font-weight: bold;
+}
 
 .btn {
     color: #fff;
