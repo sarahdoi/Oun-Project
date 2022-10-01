@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="footer.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styleB.css">
 <link rel="stylesheet" href="stylePages.css">
 <meta name="viewport" content="width=device-width , initial-scale=1">
 <link rel="icon" type="logo.png"  href="#">
@@ -138,7 +138,7 @@ details > p {
   margin: 0;
   box-shadow: 1px 1px 2px #bbbbbb;
   border-radius: 12px;
- font-size: 17px;
+ font-size: 15px;
  
 }
 .card .desc .info  {
@@ -182,14 +182,21 @@ font-weight: normal;
 margin-left: 40px;
 }
 .lin{
-                color:#404040;
-                font-size:20px;
-                margin-top: 15px;
-               padding-bottom: 10px;
-               text-decoration: underline;
-               margin-left: 50px;
+color:#404040;
+font-size:20px;
+margin-top: 15px;
+padding-bottom: 10px;
+text-decoration: underline;
+margin-left: 50px;
                 
-              }
+}
+.mytitle
+{
+    margin-top: 13%;
+    text-align: center;
+    color: rgb(41, 33, 78);
+ 
+}
 
 
 </style>
@@ -198,26 +205,30 @@ margin-left: 40px;
 <header>
        
     <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
-    
-     <nav class="navbar">
-        <ul> 
-            <li><a href="index.html"> Home </a></li>
-         <li><a href="#"> OfferList </a></li>
-        <li> <a href="#"> Settings </a>
-            <ul>
-            <li><a href="parentprofile.html"> view profile</a></li>
-             <li><a href="profiledelet.html"> delete account </a></li>
-            </ul>
-            <li><a href="index.html"> Sign out </a></li>
-        </li>
+    <nav class="navbar">
+    <ul> 
+    <li><a href="mprofile.html"> Home </a></li>
 
+    <li> <a href="viewoffer.html"> Offers </a>
+
+    <li> <a href="#"> Settings </a>
+    <ul class="inner">
+        <div class="first">
+    <li><a href="parentprofile.html"> view profile</a></li>
+        </div>
+    <li><a href="index.html"> Sign out </a></li>
+        
     </ul>
-     </nav>
+    
+    </li>
+    
+    </ul>
+    </nav>
 </header>
 
 <body>
 
-    <h1 class="viewList"> My offers </h1>
+    <h1 class="mytitle"> My Offers </h1>
 
     <div class="card"> 
           <img src="images/anny.jpg" alt="Baby SItter's profile picture">   
@@ -307,8 +318,8 @@ margin-left: 40px;
         </div>
 
         <p class="footer-links">
-            <a href="#" class="link-1">Home</a>
-            <a href="#">About</a>
+            <a href="mprofile.html" class="link-1">Home</a>
+           <!--  <a href="#">About</a> -->
             <a href="mailto:support@Ouun.com">Contact</a>
         </p>
 
