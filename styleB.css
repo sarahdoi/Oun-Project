@@ -87,7 +87,7 @@ a {text-decoration: none; }
     display:none;
     } 
     
-    header .navbar ul li ul .first li  {
+    header .navbar ul li ul .first  {
         width:100%;
         border-top: 0;
         }
