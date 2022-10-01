@@ -159,25 +159,25 @@ form {
     
     <fieldset>
       <legend><span class="number">1</span>Personal Info</legend>
-      <label for="name" aria-required="true">Child FullName</label >
-      <input type="text" id="name" name="child_name" value="Yara Abdulaziz" >
-      <label for="name" aria-required="true">Parent FullName</label>
-      <input type="text" id="name" name="Parent_name" value="Abdulaziz Alzaid" >
-      <label for="phone" aria-required="true">Phone number</label>
-      <input type="tel" id="phone" name="phone" value="+966547389000" >
+      <label for="name" >Child FullName</label >
+      <input type="text" id="name" name="child_name" value="Yara Abdulaziz" required >
+      <label for="name" >Parent FullName</label>
+      <input type="text" id="name" name="Parent_name" value="Abdulaziz Alzaid" required>
+      <label for="phone" >Phone number</label>
+      <input type="tel" id="phone" name="phone" value="+966547389000" required >
       
-      <label for="mail" aria-required="true">Email:</label>
-      <input type="email" id="mail" name="user_email"value="Abdulaziz@gmail.com" >
+      <label for="mail" >Email</label>
+      <input type="email" id="mail" name="user_email"value="Abdulaziz@gmail.com" required >
       
-      <label for="password" aria-required="true">Password:</label>
-      <input type="password" id="password" name="user_password" value="●●●●●●●●" >
+      <label for="password" >Password</label>
+      <input type="password" id="password" name="user_password" value="●●●●●●●●"  required>
       
       <label>Child Gender</label>
-      <input type="radio" id="male" value="male" name="user_gender" aria-required="true"><label for="male" class="light" required>Male</label><br>
+      <input type="radio" id="male" value="male" name="user_gender" required><label for="male" class="light" required>Male</label><br>
       <input type="radio" id="female" value="female" name="user_gender" checked><label for="female" class="light">Female</label>
       <label for="job">Child Age</label>
     <div class="custom-select">
-<select required aria-required="true">
+<select required >
 <option value="0">Select Age by year</option>
 <option value="1">Less than 1</option>
 <option value="2">1</option>
@@ -197,8 +197,8 @@ form {
     
     <fieldset>
       <legend><span class="number">2</span>Address</legend>
-      <label for="Address" aria-required="true">Enter your Full Address</label>
-      <textarea id="Address" name="user_address" placeholder="Riyadh , Exit 5 , Alghadeer distict , Rashed St , Door no. 5"></textarea>
+      <label for="Address">Enter your Full Address</label>
+      <textarea id="Address" name="user_address" placeholder="Riyadh , Exit 5 , Alghadeer distict , Rashed St , Door no. 5" required></textarea>
     </fieldset>
     <button type="submit">Save Changes</button>
     <div class="danger">
