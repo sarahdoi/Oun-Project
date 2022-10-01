@@ -1,5 +1,5 @@
     /* footer  */
-
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
     .footer-distributed{
         background: Linear-gradient(60deg , rgb(196 , 183, 247) 0% , rgb(97 , 219 , 235) 100%);
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
