@@ -4,8 +4,9 @@
 <link rel="icon" type="logo.png" href="images/logo.png" >
 <!--import google fonts & stars-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="style.css" >
+<link rel="stylesheet" href="styleB.css" >
 <link rel="stylesheet" href="footer.css" >
+<link rel="stylesheet" href="headerp.html" >
 <title>Talia's profile </title>
 <style>
 body{
@@ -36,11 +37,12 @@ body{
 
 }
 
-.name{
+
+.name ,.review{
   color:#404040; 
 }
 
-.reviews , .title{
+.title {
   font-size:16px;
   color: #afafaf
 }
@@ -102,22 +104,27 @@ a{
    <!--header -->
 
 <header>
-       
-  <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
-  
-   <nav class="navbar">
-      <ul> 
-        <li><a href="index.html"> Home </a></li>
-       <li><a href="#"> OfferList </a></li>
-      <li> <a href="#"> Settings </a>
-          <ul>
-          <li><a href="parentprofile.html"> view profile </a></li>
-           <li><a href="#"> delete account </a></li>
-          </ul>
-      </li>
-      <li> <a href="#"> Sign out </a></li>
-  </ul>
-   </nav>
+   
+    <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
+    <nav class="navbar">
+    <ul> 
+    <li><a href="mprofile.html"> Home </a></li>
+
+    <li> <a href="ViewOffers.html"> Offers </a>
+
+    <li> <a href="#"> Settings </a>
+    <ul class="inner">
+        <div class="first">
+     <li><a href="parentprofile.html"> view profile</a></li>
+        </div>
+    <li><a href="index.html"> Sign out </a></li>
+        
+    </ul>
+    
+    </li>
+    
+    </ul>
+    </nav>
 </header>
 
 <!--profile card -->
@@ -150,7 +157,7 @@ a{
      <button class="btn"><a href="mailto:talia@gmail.com">Contact</a></button>
 <br><br> <hr>
    
-     <p class="reviews" style="font-size:15px ;"><a href="#">see reviews</a></p>
+     <p class="reviews" style="font-size:15px ;"><a href="pTaliaReview.html">Talia's Reviews</a></p>
     </div>
   </div>
 
