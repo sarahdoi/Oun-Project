@@ -6,7 +6,7 @@
     <link rel="icon" type="logo.png" href="images/logo.png" >
     <!--import google fonts & stars-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="styleB.css" >
     <link rel="stylesheet" href="footer.css" >
     <link rel="stylesheet" href="JobRequest.css">
     <title>Job requests </title>
@@ -18,25 +18,36 @@
 
 <!-- HEADER CODE -->
 
-<header>
-       
-    <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
-    
-     <nav class="navbar">
-        <ul> 
-            <li><a href="index.html"> Home </a></li>
-         <li><a href="#"> OfferList </a></li>
-        <li> <a href="#"> Settings </a>
-            <ul>
-            <li><a href="#"> view profile</a></li>
-             <li><a href="#"> delete account </a></li>
-            </ul>
-            <li><a href="#"> Sign out </a></li>
-        </li>
 
+<header>
+    <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
+    <nav class="navbar">
+    <ul> 
+    <li><a href="currentBaby.html"> Home </a></li>
+
+    <li> <a href="#"> Menu </a>
+        <ul class="inner"> <!-- your menu here\\\\\\-->
+            <div class="first">
+     <li><a href="JobRequest.html"> Job Requests </a></li>
+            </div>
+     <li><a href="OfferList.html"> Offers </a></li>
+     <li><a href="myReviews.html"> rate & reviews </a></li>
+</ul>
+
+    <li> <a href="#"> Settings </a>
+    <ul class="inner">
+        <div class="first">
+    <li><a href="BabysitterProfile.html"> view profile</a></li>
+        </div>
+    <li><a href="index.html"> Sign out </a></li>
+        
     </ul>
-     </nav>
-</header>
+    
+    </li>
+    
+    </ul>
+    </nav>
+    </header>
 
  <!-- FOOTER CODE -->
 
@@ -47,8 +58,8 @@
         <img class="logo" src="images/logo.png" alt="Oun">
 
         <p class="footer-links">
-            <a href="#" class="link-1">Home</a>
-            <a href="#">About</a>
+            <a href="currentBaby.html" class="link-1">Home</a>
+            <!--<a href="#">About</a>-->
             <a href="mailto:support@Ouun.com">Contact</a>
         </p>
 
@@ -87,9 +98,13 @@
 
 <!-- JOB REQUEST CODE-->
 
+
 <body>
+
+    <h1 class="mytitle"> Job Requests </h1> 
+
   <div class= "card">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS30JTpvdB_GGY5U0TQeKZx8l1J_4yAogTV2QSNXRg3sP1FFpgrzSHRaQJq50GRV9dL7UA&usqp=CAU" alt="sq-sample1" class =img>
+    <img src="https://media.istockphoto.com/photos/cutest-smile-picture-id172918554?k=20&m=172918554&s=612x612&w=0&h=PXo0dX-djRUZ8iOJbw1UTJhrD5CUnAJYSWXm3C3cFXc=" alt="sq-sample1" class =img>
     <p class ="name" > Latifah B.</p>
 
     <div class="desc">
@@ -100,12 +115,13 @@
       <p class="service">Type of service: Babysitting</p>
     </div>
 
-    <a href="#"><center> <button class= "btn">  View job details </button> </a></center>
+    <a href="LatifahJobDtls.html"><center> <button class= "btn">  View job details </button> </a></center>
  
 </div>
 
+
     <div class= "card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS30JTpvdB_GGY5U0TQeKZx8l1J_4yAogTV2QSNXRg3sP1FFpgrzSHRaQJq50GRV9dL7UA&usqp=CAU" alt="sq-sample1" class =img>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWJvovL44qWTG-46CxBAszg7OvkGeUCrv2Sw&usqp=CAU" alt="sq-sample1" class =img>
       <p class ="name" > Abdullah M.</p>
   
       <div class="desc">
@@ -116,12 +132,13 @@
         <p class="service"> Type of service: Babysitting</p>
   
       </div>
-      <a href="#"><center> <button class= "btn">  View job details </button> </a></center>
+      <a href="AbdullahJobDtls.html"><center> <button class= "btn">  View job details </button> </a></center>
    
   </div>
 
+ 
     <div class= "card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS30JTpvdB_GGY5U0TQeKZx8l1J_4yAogTV2QSNXRg3sP1FFpgrzSHRaQJq50GRV9dL7UA&usqp=CAU" alt="sq-sample1" class =img>
+      <img src="https://i.pinimg.com/736x/1a/8a/ad/1a8aad754c891f002fed826be83970bb--adopted-children-childrens-books.jpg" alt="sq-sample1" class =img>
       <p class ="name" > Arwa T. </p>
   
       <div class="desc">
@@ -132,7 +149,7 @@
         <p class="service"> Type of service: Tutoring</p>
       </div>
   
-      <a href="#"><center> <button class= "btn">  View job details </button> </a></center>
+      <a href="ArwaJobDtls.html"><center> <button class= "btn">  View job details </button> </a></center>
    
   </div>
 
