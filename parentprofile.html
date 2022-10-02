@@ -1,200 +1,83 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="logo.png" href="images/logo.png" >
-<style>
-form {
-    max-width: 300px;
-    margin: 10px auto;
-    margin-top: 15%;
-    padding: 10px 40px;
-    background: #ffff;
-    border-radius: 12px;
-  }
-  
-  h1 {
-    margin: 0 0 30px 0;
-    text-align: center;
-    color: rgb(41, 33, 78); ;
-  }
-  
-  input[type="text"],
-  input[type="password"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="email"],
-  input[type="number"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="time"],
-  input[type="url"],
-  textarea,
-  select {
-    background: rgba(255,255,255,0.1);
-    border: none;
-    font-size: 16px;
-    height: auto;
-    margin: 0;
-    outline: 0;
-    padding: 15px;
-    width: 100%;
-    background-color: #e8eeef;
-    color: #8a97a0;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    padding-right: 5px;
-  }
-  
-  input[type="radio"],
-  input[type="checkbox"] {
-    margin: 0 4px 8px 0;
-  }
-  
-  select {
-    padding: 6px;
-    height: 32px;
-    border-radius: 2px;
-  }
-  
-  button {
-    padding: 19px 39px 18px 39px;
-    font-family: 'Optima', sans-serif;
-    color: #FFF;
-    background-color: rgb(41, 33, 78);
-    font-size: 18px;
-    text-align: center;
-    border-radius: 12px;
-    width: 100%;
-    border: 1px solid rgb(41, 33, 78);
-    border-width: 1px 1px 3px;
-    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-    margin-bottom: 10px;
-  }
-  button:hover{
-  background-color: rgb(72, 56, 133);
-      border-color: rgb(72, 56, 133);
-    fill: rgb(72, 56, 133); } 
-  button:focus {
-      color: #ffffff;
-    }
-  
-  fieldset {
-    margin-bottom: 30px;
-    border: none;
-  }
-  
-  legend {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  label.light {
-    font-weight: 300;
-    display: inline;
-  }
-  
-  .number {
-    background-color: rgb(41, 33, 78);
-    color: #fff;
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    font-size: 0.8em;
-    margin-right: 4px;
-    line-height: 30px;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-    border-radius: 100%;
-  }
-  
-  @media screen and (min-width: 480px) {
-  
-    form {
-      max-width: 480px;
-    }
+<link rel="icon" type="images/png" href="images/logo.png" >
+<link rel="stylesheet" href="Registerforms.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="styleB.css">
 
-    .danger button {
-    padding: 19px 39px 18px 39px;
-    font-family: 'Optima', sans-serif;
-    color: #FFF;
-    background-color: rgb(152, 33, 33);
-    font-size: 18px;
-    text-align: center;
-    border-radius: 12px;
-    width: 100%;
-    border: 1px solid rgb(152, 33, 33);
-    border-width: 1px 1px 3px;
-    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-    margin-bottom: 10px;
-  }
-  
-  }
-  .danger button:hover {
-    background-color: rgb(133, 56, 56);
-    border-color: rgb(133, 56, 56);
-    fill: rgb(72, 56, 133); } 
-
-
-
-
-</style>
 
 <title>My Profile</title>
 <!--import google fonts -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="style.css" >
 </head>
 <body> 
+  <header>
+    <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
+    <nav class="navbar">
+    <ul> 
+    <li><a href="mprofile.html"> Home </a></li>
 
+    <li> <a href="ViewOffer.html"> Offers </a>
+
+    <li> <a href="#"> Settings </a>
+    <ul class="inner">
+        
+    <li class="first"><a href="parentprofile.html"> view profile</a></li>
+        
+    <li><a href="index.html"> Sign out </a></li>
+        
+    </ul>
+    
+    </li>
+    
+    </ul>
+    </nav>
+
+</header>
 <form action="#" method="post">
-    <form action="next.php" method="post" enctype="multipart/form-data">
     <h1>My Profile </h1>
     
     <fieldset>
       <legend><span class="number">1</span>Personal Info</legend>
-      <label for="name" >Child FullName</label >
-      <input type="text" id="name" name="child_name" value="Yara Abdulaziz" required >
-      <label for="name" >Parent FullName</label>
-      <input type="text" id="name" name="Parent_name" value="Abdulaziz Alzaid" required>
+      <label for="cname" >Child FullName</label >
+      <input type="text" id="cname" name="child_name" value="Yara Abdulaziz" required >
+      <label for="pname" >Parent FullName</label>
+      <input type="text" id="pname" name="Parent_name" value="Abdulaziz Alzaid" required>
       <label for="phone" >Phone number</label>
       <input type="tel" id="phone" name="phone" value="+966547389000" required >
       
       <label for="mail" >Email</label>
-      <input type="email" id="mail" name="user_email"value="Abdulaziz@gmail.com" required >
+      <input type="email" id="mail" name="user_email" value="Abdulaziz@gmail.com" required >
       
       <label for="password" >Password</label>
       <input type="password" id="password" name="user_password" value="●●●●●●●●"  required>
       
       <label>Child Gender</label>
-      <input type="radio" id="male" value="male" name="user_gender" required><label for="male" class="light" required>Male</label><br>
+      <input type="radio" id="male" value="male" name="user_gender" required><label for="male" class="light">Male</label><br>
       <input type="radio" id="female" value="female" name="user_gender" checked><label for="female" class="light">Female</label>
-      <label for="job">Child Age</label>
-    <div class="custom-select">
-<select required >
-<option value="0">Select Age by year</option>
-<option value="1">Less than 1</option>
-<option value="2">1</option>
-<option value="3">2</option>
-<option value="4" selected>3</option>
-<option value="5">4</option>
-<option value="7">5</option>
-<option value="8">6</option>
-<option value="9">7</option>
-<option value="10">8</option>
-<option value="11">9</option>
-<option value="12">10</option>
-</select>
-<label for="image">Profile image:</label>
-        <input type="image" name="image" id="image" />
-    </fieldset>
-    
+     </fieldset>
+     <fieldset><div class="custom-select">
+         <label for="age">Child Age</label> 
+        <select id="age" required size="13">
+          <option value="0" selected disabled hidden >Select Age by year </option>
+          <option value="1">Less than 1</option>
+          <option value="2">1</option>
+          <option value="3">2</option>
+          <option value="4">3</option>
+          <option value="5">4</option>
+          <option value="7">5</option>
+          <option value="8">6</option>
+          <option value="9">7</option>
+          <option value="10">8</option>
+          <option value="11">9</option>
+          <option value="12">10</option>
+        </select> </div><label for="image">Profile image:</label>
+        <input type="image" name="image" id="image" alt="profileimg">
+</fieldset>
+      
     <fieldset>
       <legend><span class="number">2</span>Address</legend>
       <label for="Address">Enter your Full Address</label>
@@ -202,10 +85,51 @@ form {
     </fieldset>
     <button type="submit">Save Changes</button>
     <div class="danger">
-        <button  type="remove">Delete Account</button>
-    </div>
+        <button  type="reset">Delete Account</button></div>
+ </form>
 
+ <footer class="footer-distributed">
 
+  <div class="footer-left">
 
+      <img class="logo" src="images/logo.png" alt="Ouun">
+
+      <p class="footer-links">
+          <a href="#" class="link-1">Home</a>
+          <a href="mailto:support@Ouun.com">Contact</a>
+      </p>
+
+      <p class="footer-company-name">Oun © 2022</p>
+  </div>
+
+  <div class="footer-center">
+
+      <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>12534 AlOlaya st.</span> Riyadh , Saudi Arabia</p>
+      </div>
+
+      <div>
+          <i class="fa fa-phone"></i>
+          <p>+9669200000834</p>
+      </div>
+
+      <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@Ouun.com">support@Oun.com</a></p>
+      </div>
+
+  </div>
+
+  <div class="footer-right">
+
+      <p class="footer-company-about">
+          <span>About us</span>
+         Oun is an online platform that helps mothers find babysitters anytime and anywhere.
+</p>
+
+  </div>
+
+</footer>
 </body>
 </html>
