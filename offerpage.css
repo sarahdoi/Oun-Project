@@ -67,7 +67,7 @@ body{
   
   .desc .btn2{
     outline:none;
-    background :red;
+    background : rgb(152, 33, 33);
     /* 20px */
     margin-top:5px;
     border:none;
@@ -98,7 +98,7 @@ body{
   /* button hover*/
   .card .desc .btn2 a:hover
   {
-      color: rgb(151, 20, 20);
+      color: rgb(133, 56, 56);
   }
   .card .desc  .btn1 a:hover
   {
