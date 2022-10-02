@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,6 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
       <form action="#" method="post">
-        <form action="next.php" method="post" enctype="multipart/form-data">
         <h1>Register</h1>
         
         <fieldset>
@@ -30,7 +29,7 @@
             <input type="text" id="ID" name="ID" >
           <label for="phone" >Phone number *</label>
           <input type="tel" id="phone" name="phone" required >
-          <label for="qualification" >City *</label>
+          <label for="City" >City *</label>
           <input type="text" id="City" name="City" required>
           
           <label for="mail" >Email *</label>
@@ -44,16 +43,16 @@
           <input type="radio" id="female" value="female" name="user_gender"><label for="female" class="light">Female</label>
           <label for="age">BabySitter age *</label>
         <input type="text" id="age" name="age" required>
-        <label for="image" optional >Profile image</label>
-            <input type="image" name="image" id="image" />
+        <label for="image" >Profile image</label>
+            <input type="image" name="image" id="image" alt="profileimg" >
         
         </fieldset>
         
         <fieldset>
           <legend><span class="number">2</span>Bio</legend>
-          <label for="qualification" >Academic Qualification *</label>
+          <label for="qual" >Academic Qualification *</label>
           <input type="text" id="qual" name="qualification" required >
-          <label for="qualification" >Major *</label>
+          <label for="major" >Major *</label>
           <input type="text" id="major" name="major" required >
           <label for="exp" >Years of experience *</label>
           <input type="text" id="exp" name="exp" required >
@@ -61,7 +60,7 @@
           <input type="text" id="skills" name="skills" required >
           <label for="lang" >Languages spoken *</label>
           <input type="text" id="lang" name="lang" required >
-          <label for="addinfo" optional>Any additional Info you want to add?</label>
+          <label for="addinfo" >Any additional Info you want to add?</label>
           <textarea id="addinfo" name="addinfo"></textarea>
         </fieldset>
         <button type="submit">Register</button>
