@@ -1,3 +1,4 @@
+@import url(//fonts.googleapis.com/css?family=Optima:300:400);
 body {
     background-color : white;
 }  
@@ -10,12 +11,17 @@ body {
 }
     footer{
         text-align: center;
-
+        padding-bottom: 3.5em;
     }
-    @import url(//fonts.googleapis.com/css?family=Optima:300:400);
 
 body {
   margin:0;
+}
+form{
+    display: inline-block ;
+    margin: 5px;
+    position: relative;
+
 }
 
 .ounhead {
@@ -27,7 +33,7 @@ body {
 h1 {
     color: white;
     text-align: left;
-    margin: 12%;
+    margin: 8%;
 }
 h1 span {
     color: white;
@@ -68,7 +74,7 @@ line-height: 2;
     line-height: 24px;
     min-width: 90px;
     outline: 0;
-    padding: 5 17px;
+    padding: 5px 17px;
     text-align: left;
     text-decoration: none;
     transition: all .3s;
@@ -197,6 +203,8 @@ line-height: 2;
     color: rgb(41, 33, 78);
     font-size: 55px;
     line-height: 0;
+    margin: 60px;
+    padding-top: 50px ;
 
 }
 .aboutus span{

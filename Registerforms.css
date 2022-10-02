@@ -73,6 +73,27 @@ form {
   button:focus {
       color: #ffffff;
     }
+
+    .danger button {
+        padding: 19px 39px 18px 39px;
+        font-family: 'Optima', sans-serif;
+        color: #FFF;
+        background-color: rgb(152, 33, 33);
+        font-size: 18px;
+        text-align: center;
+        border-radius: 12px;
+        width: 100%;
+        border: 1px solid rgb(152, 33, 33);
+        border-width: 1px 1px 3px;
+        box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+        margin-bottom: 10px;
+      }
+      
+      .danger button:hover {
+        background-color: rgb(133, 56, 56);
+        border-color: rgb(133, 56, 56);
+        fill: rgb(72, 56, 133); } 
+    
   
   fieldset {
     margin-bottom: 30px;

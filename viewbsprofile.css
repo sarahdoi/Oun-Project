@@ -5,7 +5,7 @@ body{
   }
   
   .card{
-    background-color:aliceblue;
+    background-color:rgb(255, 255, 255);
     border-radius: 6px;
     display:inline-block;
     
@@ -54,7 +54,7 @@ body{
     border:none;
     height:40px;
     width:35%;
-    color:aliceblue;
+    color:rgb(255, 255, 255);
     font-size:16px;
      /* 30px */
     border-radius:12px;
