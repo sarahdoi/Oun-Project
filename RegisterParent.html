@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,15 +22,14 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
       <form action="#" method="post">
-        <form action="next.php" method="post" enctype="multipart/form-data">
         <h1>Register</h1>
         
         <fieldset>
           <legend><span class="number">1</span>Personal Info</legend>
-          <label for="name" >Child FullName *</label >
-          <input type="text" id="name" name="child_name" required >
-          <label for="name">Parent FullName *</label>
-          <input type="text" id="name" name="Parent_name"  required>
+          <label for="cname" >Child FullName *</label >
+          <input type="text" id="cname" name="child_name" required >
+          <label for="pname">Parent FullName *</label>
+          <input type="text" id="pname" name="Parent_name"  required>
           <label for="phone" >Phone number *</label>
           <input type="tel" id="phone" name="phone" required >
           
@@ -41,11 +40,11 @@
           <input type="password" id="password" name="user_password" required >
           
           <label>Child Gender *</label>
-          <input type="radio" id="male" value="male" name="user_gender" required><label for="male" class="light" required>Male</label><br>
+          <input type="radio" id="male" value="male" name="user_gender" required><label for="male" class="light">Male</label><br>
           <input type="radio" id="female" value="female" name="user_gender"><label for="female" class="light">Female</label>
-          <label for="job">Child Age *</label>
+          <label>Child Age *</label>
         <div class="custom-select">
-  <select required >
+  <select required size="13">
     <option value="0">Select Age by year </option>
     <option value="1">Less than 1</option>
     <option value="2">1</option>
@@ -58,17 +57,17 @@
     <option value="10">8</option>
     <option value="11">9</option>
     <option value="12">10</option>
-  </select>
-  <label for="image" optional >Profile image </label>
-            <input type="image" name="image" id="image" optional />
+  </select> </div>
+  <label for="image" >Profile image </label>
+            <input type="image" name="image" id="image" alt="profiling" >
         </fieldset>
         
         <fieldset>
           <legend><span class="number">2</span>Address Info</legend>
-          <label for="City" >City *</label>
-          <input type="City" id="phone" name="City" required >
-          <label for="loc" >Specify your location *</label>
-         <a href="https://maps.google.com"> <img class="location" src="images/locationsymbol.png" alt="location" required></a>
+          <label for="city" >City *</label>
+          <input type="text" id="city" name="City" required >
+          <label>Specify your location *</label>
+         <a href="https://maps.google.com"> <img class="location" src="images/locationsymbol.png" alt="location"></a>
 
 
         </fieldset>
