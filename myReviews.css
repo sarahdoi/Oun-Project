@@ -20,7 +20,10 @@
     margin-top: -70px;
   }
 
-
+div{
+  justify-content: center;
+  align-items: center;
+}
   .mytitle{
     margin-top: -60px;
     margin-bottom: 20px;
@@ -37,7 +40,7 @@
 
 figure.review {
   position: relative;
-  overflow: hidden;
+  overflow:hidden;
   margin: 30px 33px 0 33px;
   height: 220px;
   min-width: 200px;
