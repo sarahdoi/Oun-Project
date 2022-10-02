@@ -15,7 +15,7 @@ body{
     position: relative;
     overflow: hidden;
     text-align: center;
-    height:580px;
+    height:650px;
     width:320px;
     margin-top:150px  ;
     box-shadow:0 12px 13px rgba(0,0,0,0.16), 0 12px 13px rgba(0,0,0,0.16);
@@ -51,18 +51,18 @@ body{
   }
   /*  button    */
   
-  .desc .btn1{
+  .desc .btn1 {
     outline:none;
     background :rgb(25, 148, 74);
     /* 20px */
     margin-top:5px;
     border:none;
     height:40px;
-    width:35%;
+    width:60%;
     font-size:16px;
      /* 30px */
     border-radius:12px;
-    margin-left: 30px;
+    margin-left: 70px;
     }
   
   .desc .btn2{
@@ -72,13 +72,14 @@ body{
     margin-top:5px;
     border:none;
     height:40px;
-    width:35%;
+    width:60%;
     color:white;
     font-size:16px;
      /* 30px */
     border-radius:12px; 
     left: 40px;
-    margin-right: -25px;
+    margin-left: 70px;
+    
   
   
    
