@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2022 at 01:27 PM
+-- Generation Time: Nov 04, 2022 at 12:12 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -124,13 +124,18 @@ ALTER TABLE `babysitter`
 -- Indexes for table `bookings`
 --
 ALTER TABLE `bookings`
-  ADD PRIMARY KEY (`booking_id`);
+  ADD PRIMARY KEY (`booking_id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `kid_id` (`kid_id`),
+  ADD KEY `babysitter_id` (`babysitter_id`),
+  ADD KEY `parent_id` (`parent_id`);
 
 --
 -- Indexes for table `children`
 --
 ALTER TABLE `children`
-  ADD PRIMARY KEY (`kid_id`);
+  ADD PRIMARY KEY (`kid_id`),
+  ADD KEY `parent_id` (`parent_id`);
 
 --
 -- Indexes for table `orders`
@@ -142,7 +147,8 @@ ALTER TABLE `orders`
 -- Indexes for table `parent`
 --
 ALTER TABLE `parent`
-  ADD PRIMARY KEY (`parent_id`);
+  ADD PRIMARY KEY (`parent_id`),
+  ADD KEY `kid_id` (`kid_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -176,7 +182,32 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `parent`
 --
 ALTER TABLE `parent`
-  MODIFY `parent_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `parent_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
+  ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`kid_id`) REFERENCES `children` (`kid_id`),
+  ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`babysitter_id`) REFERENCES `babysitter` (`national_ID`),
+  ADD CONSTRAINT `bookings_ibfk_4` FOREIGN KEY (`parent_id`) REFERENCES `parent` (`parent_id`);
+
+--
+-- Constraints for table `children`
+--
+ALTER TABLE `children`
+  ADD CONSTRAINT `children_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `parent` (`parent_id`);
+
+--
+-- Constraints for table `parent`
+--
+ALTER TABLE `parent`
+  ADD CONSTRAINT `parent_ibfk_1` FOREIGN KEY (`kid_id`) REFERENCES `children` (`kid_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
