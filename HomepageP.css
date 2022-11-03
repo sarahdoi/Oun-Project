@@ -1,3 +1,4 @@
+html
 body{
   
     text-align: center;
@@ -18,7 +19,7 @@ body{
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 400px;
+      min-height: 480px;
       
       
     background-color:white;
@@ -115,3 +116,47 @@ body{
   font-size: 0.95rem;
   font-weight: normal;
   }
+  .btn1 
+  {
+    outline:none;
+    background : rgb(152, 33, 33);
+    /* 20px */
+    margin-top:5px;
+    border:none;
+    height:40px;
+    width:60%;
+    color:white;
+    font-size:16px;
+     /* 30px */
+    border-radius:12px; 
+    left: 40px;
+    margin-left: 0px;
+  }
+  .btn2
+  {
+  outline:none;
+  background :rgb(25, 148, 74);
+  /* 20px */
+  margin-top:5px;
+  border:none;
+  height:40px;
+  width:60%;
+  font-size:16px;
+  color:white;
+   /* 30px */
+  border-radius:12px;
+  margin-left: 0px;
+     
+    
+  }
+  .btn1:hover
+  {
+    color: rgb(133, 56, 56);
+  }
+  .btn2:hover
+  {
+    color:#3ca349; 
+  }
+
+
+
