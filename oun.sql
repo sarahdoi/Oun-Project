@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2022 at 12:52 PM
+-- Generation Time: Nov 04, 2022 at 05:57 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -44,6 +44,14 @@ CREATE TABLE `babysitter` (
   `extra_info` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `babysitter`
+--
+
+INSERT INTO `babysitter` (`name`, `national_ID`, `phoneNo`, `password`, `gender`, `age`, `email`, `city`, `major`, `academic_qual`, `experience_years`, `skills`, `languages`, `extra_info`) VALUES
+('renad', 11186852, 565690033, '5678', 'Female', 20, 'renad@gmail.com', 'riyadh', 'education', 'bachelors', 5, 'tutoring', 'arabic -english', 'idk'),
+('deema', 111863522, 5642333, '1234', 'Female', 20, 'deema@gmail.com', 'riyadh', 'swe', 'bachelors', 3, 'cooking', 'arabic -english', 'idk');
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +84,15 @@ CREATE TABLE `children` (
   `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `children`
+--
+
+INSERT INTO `children` (`kid_id`, `name`, `gender`, `age`, `email`) VALUES
+(1, 'lulu', 'Female', 3, 'nesreen@gmail.com'),
+(2, 'fahad', 'Male', 6, 'sara@gmail.com'),
+(3, 'ahmad', 'Male', 4, 'taif@gmail.com');
+
 -- --------------------------------------------------------
 
 --
@@ -100,7 +117,7 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `parent` (
   `parent_image` blob NOT NULL,
-  `name` int(30) NOT NULL,
+  `name` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
   `city` varchar(20) NOT NULL,
@@ -109,6 +126,15 @@ CREATE TABLE `parent` (
   `buildingNo` varchar(20) NOT NULL,
   `phoneNo` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `parent`
+--
+
+INSERT INTO `parent` (`parent_image`, `name`, `email`, `password`, `city`, `district`, `street`, `buildingNo`, `phoneNo`) VALUES
+('', 'nesreen', 'nesreen@gmail.com', '1234', 'riyadh', 'alyasmeen', 'turki', '19A', 568585559),
+('', 'sara', 'sara@gmail.com', '5678', 'riyadh', 'alnafel', 'street3', '12', 56783737),
+('', 'taif', 'taif@gmail.com', '91011', 'riyadh', 'alhamra', 'mdri', '6', 5649304);
 
 --
 -- Indexes for dumped tables
@@ -154,12 +180,6 @@ ALTER TABLE `parent`
 --
 
 --
--- AUTO_INCREMENT for table `babysitter`
---
-ALTER TABLE `babysitter`
-  MODIFY `national_ID` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
@@ -169,7 +189,7 @@ ALTER TABLE `bookings`
 -- AUTO_INCREMENT for table `children`
 --
 ALTER TABLE `children`
-  MODIFY `kid_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `kid_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `orders`
