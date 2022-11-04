@@ -46,7 +46,7 @@ if (mysqli_num_rows($result) > 0) {
 // Start Registering
 if (count($errors) == 0) {
     $password = md5($password1); //encrypting password by using md5()
-    $query = "INSERT INTO parent (`name`,`password`,`email`) VALUES ('$username', '$password', '$email')";
+    $query = "INSERT INTO parent (`name`,`password`,`email`,`city`,`district`,`street`,`buildingNo`,`phoneNo`) VALUES ('$username', '$password', '$email', '$city', '$district', '$street', '$buildingNo', '$phone')";
     $result = mysqli_query($con, $query);
     $affected = mysqli_affected_rows($con);
 
