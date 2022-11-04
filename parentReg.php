@@ -41,20 +41,20 @@ $result = mysqli_query($con, $emailcheck_query);
 if (mysqli_num_rows($result) > 0) {
     array_push($errors , "Email already exists");
 }
-*/
+
 
 //Start Registering 
 $password = md5($password1);
 
  //encrypting password by using md5()
-$query = "INSERT INTO parent (`name`,`password`,`email`) VALUES ('$name', '$password', '$email') ";
+$query = "INSERT INTO parent (`name`,`password`,`email`) VALUES ('$username', '$password', '$email') ";
 
 if (mysqli_query($con, $query)) 
 {
     echo "New record created successfully !";
     $_SESSION['email'] = $email;
     header("Location: mprofile.php");
-    mysqli_close();
+    mysqli_close($con);
     exit;
 } 
 else {
