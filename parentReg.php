@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-(isset($_POST['register-submit']))
-require_once("CONFIG-DB.php");
+//(isset($_POST['register-submit']))
+///equire_once("CONFIG-DB.php");
   
 //initiaising 
 $email ="";
 
 //database connection
-//$con = mysqli_connect("localhost","root","","oun");
-
-$con = mysqli_connect( DBHOST , DBUSER , DBPWD , DBNAME );
+$con = mysqli_connect('localhost','root','','oun');
+//$db = mysqli_selectdb($con , 'oun')
+//$con = mysqli_connect( DBHOST , DBUSER , DBPWD , DBNAME );
 if (!$con )
 die("Fail to connect to database :" . mysqli_connect_error());
 else
@@ -19,12 +19,13 @@ echo('connection to db is successful');
 if(mysqli_connect_errno($con))
     die("Fail to connect to database :" . mysqli_connect_error());
 
-//$username = mysqli_real_escape_string($con , $_POST['Parent_name']);
-$username = ($con , $_POST['Parent_name']);
-$email = ($con , $_POST['user_email']);
 
-$password1 = ($con , $_POST['user_password']);
-$password2 = ($con ,$_POST['re_password'] );
+//$username = mysqli_real_escape_string($con , $_POST['Parent_name']);
+$username =$_POST['Parent_name'];
+$email =  $_POST['user_email'];
+
+$password1 = $_POST['user_password'];
+$password2 = $_POST['re_password'] ;
 
 $phone = $_POST['phone'];
 $city = $_POST['City'];
@@ -33,7 +34,7 @@ $street = $_POST['street'];
 $buildingNo = $_POST['buildingNo'];
 $parentImage = $_POST['image'];
 
-if ($password !== $password2) {
+if ($password1 !== $password2) {
 header("Location: RegisterParent.php?error=password doesn't match");
 exit;
 //array_push($errors , "Passwords do not match")
@@ -50,6 +51,10 @@ if (mysqli_num_rows($result)>0)
     header("Location: RegisterParent.php?error=EMAIL exists");
     mysqli_close();
     exit;
+}
+else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+header("Location: signup.php?error=EMAIL syntax is wrong");
+exit; 
 }
 /*
    //else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
