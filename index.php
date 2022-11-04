@@ -15,14 +15,14 @@
             <!--Content before waves-->
             <!--Just the logo.. Don't mind this-->
            <div class="divlog">
-                <br><form  action="Login.html"><input  class="Login" type="submit" value="Login"></form>
+                <br><form  action="Login.php"><input  class="Login" type="submit" value="Login"></form>
             </div>
             <img class="headlogo" src="images/logo.png" alt="Oun" > 
             <div><p class="ounhead">OUN</p></div>
 
            <div> <h1>Welcome to OUN, A new Approach to Babysitting! <span><br>Join us and register now <br> </span></h1>
-           <form  action="RegisterBabysitter.html"><input  class="but-babysit" type="submit" value="As a BabySitter"></form> <br>
-            <form  action="RegisterParent.html"><input  class="but-parent" type="submit" value="As a Parent"></form>
+           <form  action="RegisterBabysitter.php"><input  class="but-babysit" type="submit" value="As a BabySitter"></form> <br>
+            <form  action="RegisterParent.php"><input  class="but-parent" type="submit" value="As a Parent"></form>
         </div>
             
             <!--Waves Container-->

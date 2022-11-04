@@ -63,7 +63,7 @@
 
 
         </fieldset>
-        <input type="submit" value="Register" name="register-submit">
+        <button type="submit"  name="register-submit">Register</button>
       </form>
 
          <footer class="footer-distributed">
