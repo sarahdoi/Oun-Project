@@ -16,12 +16,12 @@
 
     if(mysqli_num_rows($result) > 0){
         $_SESSION['email'] = $email;
-        mysqli_close();
+        mysqli_close($con);
         //do not forger change the location 
         header("Location: ParentReg.php");
     }
     else {
-        mysqli_close();
+        mysqli_close($con);
         header("Location:login.php?error=Wrong Email/Password");
     }
 ?>

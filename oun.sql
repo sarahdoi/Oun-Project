@@ -21,6 +21,10 @@ SET time_zone = "+00:00";
 -- Database: `oun`
 --
 
+-- DROP and re-CREATE database
+DROP DATABASE oun; 
+CREATE DATABASE oun; 
+
 -- --------------------------------------------------------
 
 --
@@ -59,7 +63,7 @@ CREATE TABLE `bookings` (
   `end_time` time NOT NULL,
   `date` date NOT NULL,
   `babysitter_id` int(10) NOT NULL,
-  `parent_email` varchar(50) NOT NULL
+  `parent_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -73,7 +77,7 @@ CREATE TABLE `children` (
   `name` varchar(30) NOT NULL,
   `gender` enum('Female','Male') NOT NULL,
   `age` int(2) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `parent_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -99,15 +103,16 @@ CREATE TABLE `orders` (
 --
 
 CREATE TABLE `parent` (
-  `parent_image` blob NOT NULL,
-  `name` int(30) NOT NULL,
+  `parent_id` int(10) NOT NULL,
+  `parent_image` blob NULL,
+  `name` int(30) NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `city` varchar(20) NOT NULL,
-  `district` varchar(20) NOT NULL,
-  `street` varchar(20) NOT NULL,
-  `buildingNo` varchar(20) NOT NULL,
-  `phoneNo` int(10) NOT NULL
+  `city` varchar(20) NULL,
+  `district` varchar(20) NULL,
+  `street` varchar(20) NULL,
+  `buildingNo` varchar(20) NULL,
+  `phoneNo` int(10) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -128,14 +133,14 @@ ALTER TABLE `bookings`
   ADD KEY `order_id` (`order_id`),
   ADD KEY `kid_id` (`kid_id`),
   ADD KEY `babysitter_id` (`babysitter_id`),
-  ADD KEY `parent_email` (`parent_email`);
+  ADD KEY `parent_id` (`parent_id`);
 
 --
 -- Indexes for table `children`
 --
 ALTER TABLE `children`
   ADD PRIMARY KEY (`kid_id`),
-  ADD KEY `email` (`email`);
+  ADD KEY `parent_id` (`parent_id`);
 
 --
 -- Indexes for table `orders`
@@ -147,7 +152,7 @@ ALTER TABLE `orders`
 -- Indexes for table `parent`
 --
 ALTER TABLE `parent`
-  ADD PRIMARY KEY (`email`);
+  ADD PRIMARY KEY (`parent_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -178,6 +183,12 @@ ALTER TABLE `orders`
   MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `parent`
+--
+ALTER TABLE `parent`
+  MODIFY `parent_id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -188,13 +199,13 @@ ALTER TABLE `bookings`
   ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
   ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`kid_id`) REFERENCES `children` (`kid_id`),
   ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`babysitter_id`) REFERENCES `babysitter` (`national_ID`),
-  ADD CONSTRAINT `bookings_ibfk_4` FOREIGN KEY (`parent_email`) REFERENCES `parent` (`email`);
+  ADD CONSTRAINT `bookings_ibfk_4` FOREIGN KEY (`parent_id`) REFERENCES `parent` (`parent_id`);
 
 --
 -- Constraints for table `children`
 --
 ALTER TABLE `children`
-  ADD CONSTRAINT `children_ibfk_1` FOREIGN KEY (`email`) REFERENCES `parent` (`email`);
+  ADD CONSTRAINT `children_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `parent` (`parent_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
