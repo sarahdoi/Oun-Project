@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2022 at 12:12 AM
+-- Generation Time: Nov 04, 2022 at 12:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -58,7 +58,7 @@ CREATE TABLE `bookings` (
   `duration` int(11) NOT NULL,
   `date` date NOT NULL,
   `babysitter_id` int(10) NOT NULL,
-  `parent_id` int(10) NOT NULL
+  `parent_email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -69,10 +69,10 @@ CREATE TABLE `bookings` (
 
 CREATE TABLE `children` (
   `kid_id` int(10) NOT NULL,
-  `parent_id` int(10) NOT NULL,
   `name` varchar(30) NOT NULL,
   `gender` enum('Female','Male') NOT NULL,
-  `age` int(2) NOT NULL
+  `age` int(2) NOT NULL,
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -98,9 +98,7 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `parent` (
   `parent_image` blob NOT NULL,
-  `parent_id` int(10) NOT NULL,
   `name` int(30) NOT NULL,
-  `kid_id` int(10) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
   `city` varchar(20) NOT NULL,
@@ -128,14 +126,14 @@ ALTER TABLE `bookings`
   ADD KEY `order_id` (`order_id`),
   ADD KEY `kid_id` (`kid_id`),
   ADD KEY `babysitter_id` (`babysitter_id`),
-  ADD KEY `parent_id` (`parent_id`);
+  ADD KEY `parent_email` (`parent_email`);
 
 --
 -- Indexes for table `children`
 --
 ALTER TABLE `children`
   ADD PRIMARY KEY (`kid_id`),
-  ADD KEY `parent_id` (`parent_id`);
+  ADD KEY `email` (`email`);
 
 --
 -- Indexes for table `orders`
@@ -147,8 +145,7 @@ ALTER TABLE `orders`
 -- Indexes for table `parent`
 --
 ALTER TABLE `parent`
-  ADD PRIMARY KEY (`parent_id`),
-  ADD KEY `kid_id` (`kid_id`);
+  ADD PRIMARY KEY (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -179,12 +176,6 @@ ALTER TABLE `orders`
   MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `parent`
---
-ALTER TABLE `parent`
-  MODIFY `parent_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- Constraints for dumped tables
 --
 
@@ -195,19 +186,13 @@ ALTER TABLE `bookings`
   ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
   ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`kid_id`) REFERENCES `children` (`kid_id`),
   ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`babysitter_id`) REFERENCES `babysitter` (`national_ID`),
-  ADD CONSTRAINT `bookings_ibfk_4` FOREIGN KEY (`parent_id`) REFERENCES `parent` (`parent_id`);
+  ADD CONSTRAINT `bookings_ibfk_4` FOREIGN KEY (`parent_email`) REFERENCES `parent` (`email`);
 
 --
 -- Constraints for table `children`
 --
 ALTER TABLE `children`
-  ADD CONSTRAINT `children_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `parent` (`parent_id`);
-
---
--- Constraints for table `parent`
---
-ALTER TABLE `parent`
-  ADD CONSTRAINT `parent_ibfk_1` FOREIGN KEY (`kid_id`) REFERENCES `children` (`kid_id`);
+  ADD CONSTRAINT `children_ibfk_1` FOREIGN KEY (`email`) REFERENCES `parent` (`email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
