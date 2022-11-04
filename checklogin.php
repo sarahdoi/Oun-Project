@@ -1,27 +1,23 @@
-<?php 
-    session_start();
-    // require_once() function can be used to include a PHP file in another one, when you may need to include the called file more than once. If it is found that the file has already been included, calling script is going to ignore further inclusions.
-    require_once("CONFIG-DB.php");
+<?php
+session_start();
+// require_once() function can be used to include a PHP file in another one, when you may need to include the called file more than once. If it is found that the file has already been included, calling script is going to ignore further inclusions.
+$con = mysqli_connect("127.0.0.1","root","","oun");
 
-
-    echo "im in checklogin page";
 //intialising variables
 
-    $email = $_POST['user_email'];
-    $password = $_POST['user_password'];
+$email = $_POST['user_email'];
+$password = $_POST['user_password'];
 
-    $query = "SELECT * FROM parent WHERE email='$email' AND password='$password'";
+$query = "SELECT * FROM parent WHERE email='$email' AND password='$password'";
 
-    $result = mysqli_query($con,$query);
+$result = mysqli_query($con, $query);
 
-    if(mysqli_num_rows($result) > 0){
-        $_SESSION['email'] = $email;
-        mysqli_close($con);
-        //do not forger change the location 
-        header("Location: RegisterParent.php");
-    }
-    else {
-        mysqli_close($con);
-        header("Location:login.php?error=Wrong Email/Password");
-    }
-?>
+if (mysqli_num_rows($result) > 0) {
+    $_SESSION['email'] = $email;
+    mysqli_close($con);
+    //do not forger change the location 
+    header("Location: RegisterParent.php");
+} else {
+    mysqli_close($con);
+    header("Location:login.php?error=Wrong Email/Password$email?$password");
+}

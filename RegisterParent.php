@@ -31,19 +31,19 @@
           
 
           <label for="pname">Parent FullName *</label>
-          <input type="text" id="pname" name="Parent_name" value="rendad" required>
+          <input type="text" id="pname" name="Parent_name" required>
           <label for="phone" >Phone number *</label>
-          <input type="tel" id="phone" name="phone" value="9664444" required >
+          <input type="tel" id="phone" name="phone" required >
           
           <label for="mail" >Email *</label>
-          <input type="email" id="mail" name="user_email" value="w@w.w" required>
+          <input type="email" id="mail" name="user_email" required>
           
           <label for="password" >Password *</label>
-          <input type="password" id="password" name="user_password" value="12345" required >
+          <input type="password" id="password" name="user_password" required >
           
 
           <label for="re_password" >Confirm Password *</label>
-          <input type="password" id="re_password" name="re_password" value="12345" required >
+          <input type="password" id="re_password" name="re_password" required >
        
          
             <label for="image" >Profile image </label>
@@ -53,13 +53,13 @@
         <fieldset>
           <legend><span class="number">2</span>Address Info</legend>
           <label for="city" >City *</label>
-          <input type="text" id="city" name="City" value="riyadh" required >
+          <input type="text" id="city" name="City" required >
           <label>district*</label>
-          <input type="text" id="district" name="district" value="riyadh" required >
+          <input type="text" id="district" name="district" required >
           <label>street*</label>
-          <input type="text" id="street" name="street" value="riyadh" required >
+          <input type="text" id="street" name="street" required >
           <label>buildingNo*</label>
-          <input type="text" id="buildingNo" name="buildingNo" value="2134" required >
+          <input type="text" id="buildingNo" name="buildingNo" required >
 
 
         </fieldset>
