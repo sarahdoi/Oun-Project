@@ -2,7 +2,7 @@
 session_start();
 
 //initiaising 
-$email = "";
+// $email = "";
 $errors = array();
 
 //database connection
@@ -11,7 +11,7 @@ $con = mysqli_connect("127.0.0.1","root","","oun");
 if(mysqli_connect_errno())
     die("Fail to connect to database: " . mysqli_connect_error());
     
-$username = $_POST['parentName'];
+$username = $_POST['parentname'];
 $email = $_POST['userEmail'];
 
 $password1 = mysqli_real_escape_string($con , $_POST['userPassword']);

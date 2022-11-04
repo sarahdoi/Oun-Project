@@ -31,7 +31,7 @@
           
 
           <label for="pname">Parent FullName *</label>
-          <input type="text" id="pname" name="parentName" required>
+          <input type="text" id="pname" name="parentname" required>
           <label for="phone" >Phone number *</label>
           <input type="tel" id="phone" name="phone" required >
           
@@ -63,7 +63,7 @@
 
 
         </fieldset>
-        <button type="submit"  name="register-submit">Register</button>
+        <input type="submit"  name="register-submit" value="Register" />
       </form>
 
          <footer class="footer-distributed">
