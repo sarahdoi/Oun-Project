@@ -54,6 +54,7 @@ if (count($errors) == 0) {
         header("location: login.php?error=Wrong Email/Password$username?$password");
         exit();
     } else {
+        $_SESSION['parentname'] = $username;
         $_SESSION['email'] = $email;
         $_SESSION['success'] = "YOU REGISTERED IN SUCCESSFULLY";
 

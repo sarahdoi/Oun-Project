@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+
+    if(!isset($_SESSION['email']))
+	   header("Location: index.php?error=Please Sign In again!");
+
+    else
+    {
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +36,7 @@
             
         <li class="first"><a href="parentprofile.html"> view profile</a></li>
             
-        <li><a href="index.html"> Sign out </a></li>
+        <li><a href="signout.php"> Sign out </a></li>
             
         </ul>
         
@@ -39,7 +49,7 @@
    
 
     <div class="welcome glow">
-        <h1  class= mytitlew>Welcome Back, Abdulaziz! </h1>
+        <h1  class= mytitlew>Welcome Back </h1>
     </div>
 
     <h1 class="mytitlew"> Your upcoming requests</h1> <!-- styl Pages.css-->
@@ -179,3 +189,6 @@
  <!-- Fotter-->
 
 </html>
+<?php
+    }
+?> 
