@@ -31,19 +31,19 @@
           
 
           <label for="pname">Parent FullName *</label>
-          <input type="text" id="pname" name="Parent_name" required>
+          <input type="text" id="pname" name="parentName" required>
           <label for="phone" >Phone number *</label>
           <input type="tel" id="phone" name="phone" required >
           
           <label for="mail" >Email *</label>
-          <input type="email" id="mail" name="user_email" required>
+          <input type="email" id="mail" name="userEmail" required>
           
           <label for="password" >Password *</label>
-          <input type="password" id="password" name="user_password" required >
+          <input type="password" id="password" name="userPassword" required >
           
 
           <label for="re_password" >Confirm Password *</label>
-          <input type="password" id="re_password" name="re_password" required >
+          <input type="password" id="re_password" name="repeatedPassword" required >
        
          
             <label for="image" >Profile image </label>
@@ -53,7 +53,7 @@
         <fieldset>
           <legend><span class="number">2</span>Address Info</legend>
           <label for="city" >City *</label>
-          <input type="text" id="city" name="City" required >
+          <input type="text" id="city" name="city" required >
           <label>district*</label>
           <input type="text" id="district" name="district" required >
           <label>street*</label>
