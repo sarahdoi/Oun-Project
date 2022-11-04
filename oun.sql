@@ -52,9 +52,9 @@ CREATE TABLE `babysitter` (
 -- Dumping data for table `babysitter`
 --
 
-INSERT INTO `babysitter` (`name`, `national_ID`, `phoneNo`, `password`, `gender`, `age`, `email`, `city`, `major`, `academic_qual`, `experience_years`, `skills`, `languages`, `extra_info`) VALUES
-('renad', 11186852, 565690033, '5678', 'Female', 20, 'renad@gmail.com', 'riyadh', 'education', 'bachelors', 5, 'tutoring', 'arabic -english', 'idk'),
-('deema', 111863522, 5642333, '1234', 'Female', 20, 'deema@gmail.com', 'riyadh', 'swe', 'bachelors', 3, 'cooking', 'arabic -english', 'idk');
+-- INSERT INTO `babysitter` (`name`, `national_ID`, `phoneNo`, `password`, `gender`, `age`, `email`, `city`, `major`, `academic_qual`, `experience_years`, `skills`, `languages`, `extra_info`) VALUES
+-- ('renad', 11186852, 565690033, '5678', 'Female', 20, 'renad@gmail.com', 'riyadh', 'education', 'bachelors', 5, 'tutoring', 'arabic -english', 'idk'),
+-- ('deema', 111863522, 5642333, '1234', 'Female', 20, 'deema@gmail.com', 'riyadh', 'swe', 'bachelors', 3, 'cooking', 'arabic -english', 'idk');
 
 -- --------------------------------------------------------
 
@@ -92,10 +92,10 @@ CREATE TABLE `children` (
 -- Dumping data for table `children`
 --
 
-INSERT INTO `children` (`kid_id`, `name`, `gender`, `age`, `email`) VALUES
-(1, 'lulu', 'Female', 3, 'nesreen@gmail.com'),
-(2, 'fahad', 'Male', 6, 'sara@gmail.com'),
-(3, 'ahmad', 'Male', 4, 'taif@gmail.com');
+-- INSERT INTO `children` (`kid_id`, `name`, `gender`, `age`, `email`) VALUES
+-- (1, 'lulu', 'Female', 3, 'nesreen@gmail.com'),
+-- (2, 'fahad', 'Male', 6, 'sara@gmail.com'),
+-- (3, 'ahmad', 'Male', 4, 'taif@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -136,10 +136,10 @@ CREATE TABLE `parent` (
 -- Dumping data for table `parent`
 --
 
-INSERT INTO `parent` (`parent_image`, `name`, `email`, `password`, `city`, `district`, `street`, `buildingNo`, `phoneNo`) VALUES
-('', 'nesreen', 'nesreen@gmail.com', '1234', 'riyadh', 'alyasmeen', 'turki', '19A', 568585559),
-('', 'sara', 'sara@gmail.com', '5678', 'riyadh', 'alnafel', 'street3', '12', 56783737),
-('', 'taif', 'taif@gmail.com', '91011', 'riyadh', 'alhamra', 'mdri', '6', 5649304);
+-- INSERT INTO `parent` (`parent_image`, `name`, `email`, `password`, `city`, `district`, `street`, `buildingNo`, `phoneNo`) VALUES
+-- ('', 'nesreen', 'nesreen@gmail.com', '1234', 'riyadh', 'alyasmeen', 'turki', '19A', 568585559),
+-- ('', 'sara', 'sara@gmail.com', '5678', 'riyadh', 'alnafel', 'street3', '12', 56783737),
+-- ('', 'taif', 'taif@gmail.com', '91011', 'riyadh', 'alhamra', 'mdri', '6', 5649304);
 
 --
 -- Indexes for dumped tables
