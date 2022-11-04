@@ -5,7 +5,7 @@ if (isset($_POST['register-submit']))
     require_once("CONFIG-DB.php");
   
 //database connection
-$con = mysqli_connect(DBHOST,DBUSER,DBPWD,DBNAME);
+$con = mysqli_connect("localhost","root","","oun");
 
 if(mysqli_connect_errno($con))
     die("Fail to connect to database :" . mysqli_connect_error());
