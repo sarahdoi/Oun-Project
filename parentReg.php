@@ -8,9 +8,11 @@ $errors = array();
 //database connection
 $con = mysqli_connect("127.0.0.1","root","","oun");
 
-if(mysqli_connect_errno($con))
+if(mysqli_connect_errno())
     die("Fail to connect to database: " . mysqli_connect_error());
-
+    
+$username = $_POST['Parent_name'];
+$email = $_POST['user_email'];
 
 $password1 = mysqli_real_escape_string($con , $_POST['user_password']);
 $password2 = mysqli_real_escape_string($con ,$_POST['re_password']);
