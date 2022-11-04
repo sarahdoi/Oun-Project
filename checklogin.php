@@ -7,10 +7,10 @@
     echo "im in checklogin page";
 //intialising variables
 
-    $email =$ $_POST['user_email'];
+    $email = $_POST['user_email'];
     $password = $_POST['user_password'];
 
-    $query = "SELECT * FROM 'parent' WHERE email='$email' AND password='$password'";
+    $query = "SELECT * FROM parent WHERE email='$email' AND password='$password'";
 
     $result = mysqli_query($con,$query);
 
@@ -18,7 +18,7 @@
         $_SESSION['email'] = $email;
         mysqli_close($con);
         //do not forger change the location 
-        header("Location: ParentReg.php");
+        header("Location: RegisterParent.php");
     }
     else {
         mysqli_close($con);

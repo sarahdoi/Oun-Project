@@ -31,35 +31,35 @@
           
 
           <label for="pname">Parent FullName *</label>
-          <input type="text" id="pname" name="Parent_name"  required>
+          <input type="text" id="pname" name="Parent_name" value="rendad" required>
           <label for="phone" >Phone number *</label>
-          <input type="tel" id="phone" name="phone" required >
+          <input type="tel" id="phone" name="phone" value="9664444" required >
           
           <label for="mail" >Email *</label>
-          <input type="email" id="mail" name="user_email" required>
+          <input type="email" id="mail" name="user_email" value="w@w.w" required>
           
           <label for="password" >Password *</label>
-          <input type="password" id="password" name="user_password" required >
+          <input type="password" id="password" name="user_password" value="12345" required >
           
 
           <label for="re_password" >Confirm Password *</label>
-          <input type="password" id="re_password" name="re_password" required >
+          <input type="password" id="re_password" name="re_password" value="12345" required >
        
          
-  <label for="image" >Profile image </label>
+            <label for="image" >Profile image </label>
             <input type="image" name="image" id="image" alt="profiling" >
         </fieldset>
         
         <fieldset>
           <legend><span class="number">2</span>Address Info</legend>
           <label for="city" >City *</label>
-          <input type="text" id="city" name="City" required >
+          <input type="text" id="city" name="City" value="riyadh" required >
           <label>district*</label>
-          <input type="text" id="district" name="district" required >
+          <input type="text" id="district" name="district" value="riyadh" required >
           <label>street*</label>
-          <input type="text" id="street" name="street" required >
+          <input type="text" id="street" name="street" value="riyadh" required >
           <label>buildingNo*</label>
-          <input type="text" id="buildingNo" name="buildingNo" required >
+          <input type="text" id="buildingNo" name="buildingNo" value="2134" required >
 
 
         </fieldset>
