@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2022 at 12:18 PM
+-- Generation Time: Nov 04, 2022 at 12:52 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -55,7 +55,8 @@ CREATE TABLE `bookings` (
   `order_id` int(10) NOT NULL,
   `kid_id` int(10) NOT NULL,
   `review` varchar(500) NOT NULL,
-  `duration` int(11) NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
   `date` date NOT NULL,
   `babysitter_id` int(10) NOT NULL,
   `parent_email` varchar(50) NOT NULL
@@ -86,7 +87,8 @@ CREATE TABLE `orders` (
   `price` float NOT NULL,
   `service_type` varchar(20) NOT NULL,
   `status` varchar(10) NOT NULL,
-  `duration` decimal(10,0) NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
