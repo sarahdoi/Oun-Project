@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2022 at 05:57 PM
+-- Generation Time: Nov 05, 2022 at 01:05 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -21,10 +21,6 @@ SET time_zone = "+00:00";
 -- Database: `oun`
 --
 
--- DROP and re-CREATE database
-DROP DATABASE oun; 
-CREATE DATABASE oun; 
-
 -- --------------------------------------------------------
 
 --
@@ -40,21 +36,13 @@ CREATE TABLE `babysitter` (
   `age` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `city` varchar(20) NOT NULL,
-  `major` varchar(30) NOT NULL,
-  `academic_qual` enum('bachelors','masters','phd') NOT NULL,
-  `experience_years` int(11) NOT NULL,
-  `skills` varchar(100) NOT NULL,
+  `academic_qual` varchar(100) NOT NULL,
+  `major` varchar(100) NOT NULL,
+  `experience_yrs` int(11) NOT NULL,
+  `skills` varchar(200) NOT NULL,
   `languages` varchar(100) NOT NULL,
   `extra_info` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `babysitter`
---
-
--- INSERT INTO `babysitter` (`name`, `national_ID`, `phoneNo`, `password`, `gender`, `age`, `email`, `city`, `major`, `academic_qual`, `experience_years`, `skills`, `languages`, `extra_info`) VALUES
--- ('renad', 11186852, 565690033, '5678', 'Female', 20, 'renad@gmail.com', 'riyadh', 'education', 'bachelors', 5, 'tutoring', 'arabic -english', 'idk'),
--- ('deema', 111863522, 5642333, '1234', 'Female', 20, 'deema@gmail.com', 'riyadh', 'swe', 'bachelors', 3, 'cooking', 'arabic -english', 'idk');
 
 -- --------------------------------------------------------
 
@@ -64,53 +52,28 @@ CREATE TABLE `babysitter` (
 
 CREATE TABLE `bookings` (
   `booking_id` int(10) NOT NULL,
-  `order_id` int(10) NOT NULL,
-  `kid_id` int(10) NOT NULL,
-  `review` varchar(500) NOT NULL,
-  `start_time` time NOT NULL,
-  `end_time` time NOT NULL,
-  `date` date NOT NULL,
+  `request_id` int(10) NOT NULL,
   `babysitter_id` int(10) NOT NULL,
-  `parent_id` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `children`
---
-
-CREATE TABLE `children` (
-  `kid_id` int(10) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `gender` enum('Female','Male') NOT NULL,
-  `age` int(2) NOT NULL,
-  `parent_id` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `children`
---
-
--- INSERT INTO `children` (`kid_id`, `name`, `gender`, `age`, `email`) VALUES
--- (1, 'lulu', 'Female', 3, 'nesreen@gmail.com'),
--- (2, 'fahad', 'Male', 6, 'sara@gmail.com'),
--- (3, 'ahmad', 'Male', 4, 'taif@gmail.com');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
---
-
-CREATE TABLE `orders` (
-  `order_id` int(10) NOT NULL,
+  `parent_id` int(10) NOT NULL,
   `price` float NOT NULL,
-  `service_type` varchar(20) NOT NULL,
-  `status` varchar(10) NOT NULL,
+  `date` date NOT NULL,
   `start_time` time NOT NULL,
   `end_time` time NOT NULL,
-  `date` date NOT NULL
+  `review` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `offer`
+--
+
+CREATE TABLE `offer` (
+  `offer_id` int(10) NOT NULL,
+  `babysitter_id` int(10) NOT NULL,
+  `request_id` int(10) NOT NULL,
+  `price` float NOT NULL,
+  `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -121,25 +84,34 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `parent` (
   `parent_id` int(10) NOT NULL,
-  `parent_image` blob NULL,
-  `name` varchar(30) NULL,
+  `parent_image` blob DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(128) NOT NULL,
-  `city` varchar(20) NULL,
-  `district` varchar(20) NULL,
-  `street` varchar(20) NULL,
-  `buildingNo` varchar(20) NULL,
-  `phoneNo` int(10) NULL
+  `city` varchar(20) DEFAULT NULL,
+  `district` varchar(20) DEFAULT NULL,
+  `street` varchar(20) DEFAULT NULL,
+  `buildingNo` varchar(20) DEFAULT NULL,
+  `phoneNo` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `parent`
+-- Table structure for table `request`
 --
 
--- INSERT INTO `parent` (`parent_image`, `name`, `email`, `password`, `city`, `district`, `street`, `buildingNo`, `phoneNo`) VALUES
--- ('', 'nesreen', 'nesreen@gmail.com', '1234', 'riyadh', 'alyasmeen', 'turki', '19A', 568585559),
--- ('', 'sara', 'sara@gmail.com', '5678', 'riyadh', 'alnafel', 'street3', '12', 56783737),
--- ('', 'taif', 'taif@gmail.com', '91011', 'riyadh', 'alhamra', 'mdri', '6', 5649304);
+CREATE TABLE `request` (
+  `request_id` int(10) NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  `numOfKids` int(11) NOT NULL,
+  `kid_name` varchar(100) NOT NULL,
+  `kid_age` int(11) NOT NULL,
+  `service_type` varchar(20) NOT NULL,
+  `date` date NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -156,29 +128,29 @@ ALTER TABLE `babysitter`
 --
 ALTER TABLE `bookings`
   ADD PRIMARY KEY (`booking_id`),
-  ADD KEY `order_id` (`order_id`),
-  ADD KEY `kid_id` (`kid_id`),
+  ADD KEY `order_id` (`request_id`),
   ADD KEY `babysitter_id` (`babysitter_id`),
   ADD KEY `parent_id` (`parent_id`);
 
 --
--- Indexes for table `children`
+-- Indexes for table `offer`
 --
-ALTER TABLE `children`
-  ADD PRIMARY KEY (`kid_id`),
-  ADD KEY `parent_id` (`parent_id`);
-
---
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_id`);
+ALTER TABLE `offer`
+  ADD PRIMARY KEY (`offer_id`),
+  ADD KEY `babysitter_id` (`babysitter_id`),
+  ADD KEY `request_id` (`request_id`);
 
 --
 -- Indexes for table `parent`
 --
 ALTER TABLE `parent`
   ADD PRIMARY KEY (`parent_id`);
+
+--
+-- Indexes for table `request`
+--
+ALTER TABLE `request`
+  ADD PRIMARY KEY (`request_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -191,22 +163,22 @@ ALTER TABLE `bookings`
   MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `children`
+-- AUTO_INCREMENT for table `offer`
 --
-ALTER TABLE `children`
-  MODIFY `kid_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `offer`
+  MODIFY `offer_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `parent`
 --
 ALTER TABLE `parent`
   MODIFY `parent_id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `request`
+--
+ALTER TABLE `request`
+  MODIFY `request_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -216,16 +188,16 @@ ALTER TABLE `parent`
 -- Constraints for table `bookings`
 --
 ALTER TABLE `bookings`
-  ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
-  ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`kid_id`) REFERENCES `children` (`kid_id`),
+  ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`request_id`) REFERENCES `request` (`request_id`),
   ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`babysitter_id`) REFERENCES `babysitter` (`national_ID`),
   ADD CONSTRAINT `bookings_ibfk_4` FOREIGN KEY (`parent_id`) REFERENCES `parent` (`parent_id`);
 
 --
--- Constraints for table `children`
+-- Constraints for table `offer`
 --
-ALTER TABLE `children`
-  ADD CONSTRAINT `children_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `parent` (`parent_id`);
+ALTER TABLE `offer`
+  ADD CONSTRAINT `offer_ibfk_1` FOREIGN KEY (`babysitter_id`) REFERENCES `babysitter` (`national_ID`),
+  ADD CONSTRAINT `offer_ibfk_2` FOREIGN KEY (`request_id`) REFERENCES `request` (`request_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
