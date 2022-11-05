@@ -6,7 +6,7 @@ $con = mysqli_connect("127.0.0.1","root","","oun");
 //intialising variables
 
 $email = $_POST['user_email'];
-$password = $_POST['user_password'];
+$password = md5( $_POST['user_password']);
 
 $query = "SELECT * FROM parent WHERE email='$email' AND password='$password'";
 
@@ -16,8 +16,9 @@ if (mysqli_num_rows($result) > 0) {
     $_SESSION['email'] = $email;
     mysqli_close($con);
     //do not forger change the location 
-    header("Location: RegisterParent.php");
+    header("Location: mprofile.php");
 } else {
     mysqli_close($con);
-    header("Location:login.php?error=Wrong Email/Password$email?$password");
+    header("Location:login.php?error= Email and Password do not match");
 }
+?>
