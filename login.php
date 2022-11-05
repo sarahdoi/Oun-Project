@@ -8,6 +8,15 @@
         <link rel="stylesheet" href="Registerforms.css">
         <link rel="stylesheet" href="footer.css">
         <title>Login</title>
+        <style>
+          .error {
+            background : #F2DEDE;
+            color : #A94442;
+            padding:10px;
+            width : 95%;
+            border-radius:5px;
+                  }
+        </style>
     </head>
     <body>
         <header>
@@ -19,6 +28,8 @@
         <link rel="stylesheet" href="css/main.css">
       <form action="checklogin.php" method="post">
         <h1>Login</h1>
+        <?php if (isset($_GET['error'])) { ?>
+        <p class="error"><?php echo $_GET['error']; ?></p> <?php } ?> 
         
         <fieldset>
           
@@ -27,8 +38,9 @@
           
           <label for="password" >Password *</label>
           <input type="password" id="password" name="user_password" required>
+    
         </fieldset>
-        
+    
         <input type="submit" value="Login">
       </form>
       <footer class="footer-distributed">

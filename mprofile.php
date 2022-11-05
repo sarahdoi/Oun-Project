@@ -138,7 +138,7 @@
         </div>
 
         <p class="footer-links">
-            <a href="mprofile.html" class="link-1">Home</a>
+            <a href="mprofile.php" class="link-1">Home</a>
            <!-- <a href="#">About</a>  -->
             <a href="mailto:support@Ouun.com">Contact</a>
         </p>
