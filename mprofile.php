@@ -1,11 +1,19 @@
 <?php 
     session_start();
 
-    if(!isset($_SESSION['email']))
-	   header("Location: index.php?error=Please Sign In again!");
+    include("connection.php");
+    include("functions.php");
 
+    /*if(!isset($_SESSION['email']))
+	   header("Location: index.php?error=Please Sign In again!");
     else
-    {
+    <?php 
+        echo "<img src='images/".$parentpic."' alt='Baby Sitter's profile picture'>"
+        ?> //getting imgs! works fine
+    {*/
+        $user_data = check_loginParent($con);
+$parentId= $user_data['Paren_id'];
+$parentName= $user_data['name'];
 
 ?>
 <!DOCTYPE html>
@@ -49,7 +57,9 @@
    
 
     <div class="welcome glow">
-        <h1  class= mytitlew>Welcome Back </h1>
+       <?php 
+       echo "<h1  class= mytitlew>Welcome Back, ".$parentName." </h1>"
+       ?>
     </div>
 
     <h1 class="mytitlew"> Your upcoming requests</h1> <!-- styl Pages.css-->
@@ -103,8 +113,9 @@
                         <h2><a href="#"><span>Time</span><small>4:00pm-11:00pm</small></a></h2> <!--change-->
                     </div>
                 </div> <!-- dec card-->
-                <form action="#"><input class="btn1" type="submit" value="Delete"></form>
-                <form action="#"><input class="btn2" type="submit" value="Edit"></form>
+                <?php 
+                echo "<a class='btn1' href='./jobreqform.php?id= ".$parentId."' >Edit<\a>"; 
+                echo "<a class='btn1' href='#' >Delete<\a>"; ?>
                 </div> <!-- end third card-->
                 
    
@@ -190,5 +201,5 @@
 
 </html>
 <?php
-    }
+
 ?> 

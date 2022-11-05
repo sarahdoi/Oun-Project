@@ -134,15 +134,13 @@ body{
   }
   .btn2
   {
-  outline:none;
-  background :rgb(25, 148, 74);
   /* 20px */
   margin-top:5px;
-  border:none;
   height:40px;
   width:60%;
   font-size:16px;
-  color:white;
+  text-decoration: underline;
+  color:rgb(41,33,78);
    /* 30px */
   border-radius:12px;
   margin-left: 0px;
@@ -151,11 +149,11 @@ body{
   }
   .btn1:hover
   {
-    color: rgb(133, 56, 56);
+    background: rgb(133, 56, 56);
   }
   .btn2:hover
   {
-    color:#3ca349; 
+    color: rgb(47, 46, 53); 
   }
 
 
