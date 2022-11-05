@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 12:05 PM
+-- Generation Time: Nov 05, 2022 at 06:29 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -36,8 +36,25 @@ CREATE TABLE `babysitter` (
   `age` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `city` varchar(20) NOT NULL,
-  `bio` varchar(500) NOT NULL
+  `bio` varchar(500) NOT NULL,
+  `sitter_image` varchar(500) NOT NULL DEFAULT 'images\\prpic.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `babysitter`
+--
+
+INSERT INTO `babysitter` (`name`, `national_ID`, `phoneNo`, `password`, `gender`, `age`, `email`, `city`, `bio`, `sitter_image`) VALUES
+('www1', 11, 11, 'c4ca4238a0b923820dcc509a6f75849b', 'Female', 11, 'df11sa@gmail.com', '1', '11', '1667667998flowchart11.png'),
+('fff', 6666, 66, '1679091c5a880faf6fb5e6087eb1b2dc', 'Female', 66, '666dfsa@gmail.com', 'vv', '66', 'prpic.png'),
+('aaa', 111111, 111, 'c4ca4238a0b923820dcc509a6f75849b', 'Female', 111, 'dfs111a@gmail.com', '1', '11', '1667669099flowchart11.png'),
+('sss', 444444, 4, 'a87ff679a2f3e71d9181a67b7542122c', 'Female', 44, '4ca@gmail.com', 'vfv', 'fffff', 'prpic.png'),
+('55555555555', 5555555, 5555555, 'e4da3b7fbbce2345d7772b0674a318d5', 'Female', 55, '55ca@gmail.com', 'v', '555', 'prpic.png'),
+('aaa', 11113311, 1131, 'eccbc87e4b5ce2fe28308fd9f2a7baf3', 'Female', 111, 'dfs3111a@gmail.com', '1', '11', 'prpic.png'),
+('sss', 12323213, 3223, 'c81e728d9d4c2f636f067f89cc14862c', 'Female', 32, 'dfsfsa@gmail.com', 'f', 'ded', 'images\\prpic.png'),
+('444444', 44444444, 444444, 'c81e728d9d4c2f636f067f89cc14862c', 'Female', 44, 'dfsfsa4444@gmail.com', '4', '44', 'prpic.png'),
+('www', 123232133, 32233, '0cc175b9c0f1b6a831c399e269772661', 'Male', 22, 'dfsfsdsca@gmail.com', 'v', 'dd', 'prpic.png'),
+('test2', 2147483647, 322332, '0cc175b9c0f1b6a831c399e269772661', 'Male', 22, 'ca@gmail.com', 'v', 'dd', 'prpic.png');
 
 -- --------------------------------------------------------
 

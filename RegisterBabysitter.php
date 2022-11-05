@@ -26,7 +26,7 @@
         </header>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-      <form action="babysitterReg.php" method="post">
+      <form action="babysitterReg.php" method="post" enctype="multipart/form-data">
         <h1>Register</h1>
         <?php if (isset($_GET['error'])) { ?>
         <p class="error"><?php echo $_GET['error']; ?></p> <?php } ?> 
@@ -55,8 +55,8 @@
           <input type="radio" id="female" value="female" name="user_gender"><label for="female" class="light">Female</label>
           <label for="age">BabySitter age *</label>
         <input type="text" id="age" name="age" required>
-        <label for="image" >Profile image</label>
-            <input type="image" name="image" id="image" alt="profileimg" >
+        <label for="image" >Profile image </label>
+            <input type="file" name="image" id="image"  >
         
         </fieldset>
         
