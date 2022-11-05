@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 06:29 PM
+-- Generation Time: Nov 05, 2022 at 09:22 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -97,7 +97,7 @@ CREATE TABLE `offer` (
 
 CREATE TABLE `parent` (
   `parent_id` int(10) NOT NULL,
-  `parent_image` blob DEFAULT NULL,
+  `parent_image` varchar(500) DEFAULT 'prpic.png',
   `name` varchar(30) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(128) NOT NULL,
@@ -132,7 +132,8 @@ CREATE TABLE `request` (
 
 INSERT INTO `request` (`request_id`, `parent_id`, `numOfKids`, `kid_name`, `kid_age`, `service_type`, `date`, `start_time`, `end_time`) VALUES
 (1, 0, 2, 'aziz', 7, 'babysitting', '2022-11-05', '16:00:00', '00:00:00'),
-(2, 0, 2, 'aziz', 7, 'babysitting', '2022-11-05', '16:00:00', '19:00:00');
+(2, 0, 2, 'aziz', 7, 'babysitting', '2022-11-05', '16:00:00', '19:00:00'),
+(3, 1, 2, 'do', 3, 'babysitting', '2022-11-09', '23:06:00', '23:10:00');
 
 --
 -- Indexes for dumped tables
@@ -193,13 +194,13 @@ ALTER TABLE `offer`
 -- AUTO_INCREMENT for table `parent`
 --
 ALTER TABLE `parent`
-  MODIFY `parent_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `parent_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `request_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `request_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
