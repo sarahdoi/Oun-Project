@@ -37,6 +37,8 @@
           
           <label for="password" >Password *</label>
           <input type="password" id="password" name="user_password" required>
+          <label for="re_password" >Confirm Password *</label>
+          <input type="password" id="re_password" name="repeatedPassword" required >
           
           <label>BabySitter Gender *</label>
           <input type="radio" id="male" value="male" name="user_gender" required><label for="male" class="light" >Male</label><br>

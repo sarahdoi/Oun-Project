@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+
+    if(!isset($_SESSION['email']))
+	   header("Location: index.php?error=Please Sign In again!");
+
+    else
+    {}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
