@@ -133,7 +133,7 @@ form {
 </head>
 <body> 
 
-<form action="#" method="post">
+<form action="jobform.php" method="post">
     <form action="next.php" method="post" enctype="multipart/form-data">
     <h1>  Fill in the required information </h1>
     
@@ -141,7 +141,7 @@ form {
       
         <label for="job">Number of kids :</label>
         <div class="custom-select">
-        <select required >
+        <select name = "numOfKids" required >
             <option value="1" selected>1 </option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -149,9 +149,9 @@ form {
             </select><div>
 
       <label for="name" >Kid/s FullName :</label >
-      <input type="text" id="name" name="child_name"  required>
+      <input type="text" id="name" name="kid_name"  required>
       <label for="name" >Kid/s Age :</label>
-      <input type="text" id="name" name="child_age" required >
+      <input type="text" id="name" name="kid_age" required >
       
       <label>Type of service :</label>
       <input type="radio" id="babysitting" value="babysitting" name="service" checked><label for="babysitting" class="light">Babysitting</label>
@@ -159,8 +159,14 @@ form {
       <input type="radio" id="cooking" value="cooking" name="service" ><label for="cooking" class="light">Cooking</label>
      <br>
      <br>
-      <label for="name" >Duration :</label>
-      <input type="text" id="duration" name="duration"  required >
+      <label for="name" >Date :</label>
+      <input type="date" id="date" name="date"  required >
+Duration:
+      <label for="name" >from</label>
+      <input type="time" id="duration" name="duration1"  required >
+
+      <label for="name" >to</label>
+      <input type="time" id="duration" name="duration2"  required >
     
     <fieldset>
       
