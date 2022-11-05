@@ -41,7 +41,7 @@ if(move_uploaded_file($imgTmpName, $upload_directory.$TargetPath)){
 
 
 if ($password1 !== $password2) {
-    header("Location: RegisterParent.php?error=password doesn't match");
+    header("Location: RegisterParent.php?error=password doesn't match, please try again!");
     exit;
     array_push($errors , "Passwords do not match");
 }
@@ -52,7 +52,16 @@ $result = mysqli_query($con, $emailcheck_query);
 
 if (mysqli_num_rows($result) > 0) {
     array_push($errors , "Email already exists");
-    header("location: RegisterParent.php?error=Email already existed");
+    header("location: RegisterParent.php?error=Email already existed, please try again!");
+}
+
+//check db for existing parent with the same phone 
+$phonecheck_query = "SELECT * FROM parent WHERE phoneNo = '$phone'";
+$result = mysqli_query($con, $phonecheck_query);
+
+if (mysqli_num_rows($result) > 0) {
+    array_push($errors , "Phone number already exists");
+    header("location: RegisterParent.php?error=The phone number already existed, please try again!");
 }
 
 if( ! isset($_FILES['image']['name']) || empty($_FILES['image']['name']) ){ 
