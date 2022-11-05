@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-    if(!isset($_SESSION['email']))
+    if(!isset($_SESSION['ID']))
 	   header("Location: index.php?error=Please Sign In again!");
 
     else
@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="currentBabycss.css">
 <link rel="stylesheet" href="preCards.css">
 <link rel="stylesheet" href="mytitles.css">
+
 
 <title>Home</title>
 
@@ -48,7 +49,7 @@
             
         <li class="first"><a href="BabysitterProfile.html"> view profile</a></li>
             
-        <li><a href="index.html"> Sign out </a></li>
+        <li><a href="signout.php"> Sign out </a></li>
             
         </ul>
         
@@ -216,6 +217,7 @@ Oun is an online platform that helps mothers find babysitters anytime and anywhe
 </body>
 
 </html>
+
 <?php
     }
 ?> 

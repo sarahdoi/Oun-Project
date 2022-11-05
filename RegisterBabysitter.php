@@ -8,7 +8,15 @@
         <link rel="stylesheet" href="Registerforms.css">
         <link rel="stylesheet" href="footer.css">
         <title> Register</title>
-
+        <style>
+          .error {
+            background : #F2DEDE;
+            color : #A94442;
+            padding:10px;
+            width : 95%;
+            border-radius:5px;
+                  }
+        </style>
     </head>
     <body>
         <header>
@@ -18,8 +26,10 @@
         </header>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-      <form action="#" method="post">
+      <form action="babysitterReg.php" method="post">
         <h1>Register</h1>
+        <?php if (isset($_GET['error'])) { ?>
+        <p class="error"><?php echo $_GET['error']; ?></p> <?php } ?> 
         
         <fieldset>
           <legend><span class="number">1</span>Personal Info</legend>
