@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 //if(isset($_POST['submit'])) must add i think?
@@ -42,8 +44,8 @@ if(move_uploaded_file($imgTmpName, $upload_directory.$TargetPath)){
 
 
 if ($password1 !== $password2) {
-    //header("Location: RegisterParent.php?error=password doesn't match");
-    //exit;
+    header("Location: RegisterParent.php?error=Passwords do not match");
+    exit();
     array_push($errors , "Passwords do not match");
 }
 
@@ -53,7 +55,8 @@ $result = mysqli_query($con, $emailcheck_query);
 
 if (mysqli_num_rows($result) > 0) {
     array_push($errors , "Email already exists");
-}
+    header("location: RegisterParent.php?error=Email already existed");
+} 
 
 // Start Registering
 if (count($errors) == 0) {
@@ -63,7 +66,7 @@ if (count($errors) == 0) {
     $affected = mysqli_affected_rows($con);
 
     if ($affected == -1) {
-        header("location: login.php?error=Wrong Email/Password$username?$password");
+        header("location: RegisterParent.php?error=There was a problem in your regesteration , please try again");
         exit();
     } else {
         $_SESSION['parentname'] = $username;
