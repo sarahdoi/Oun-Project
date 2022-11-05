@@ -52,18 +52,8 @@
         
         <fieldset>
           <legend><span class="number">2</span>Bio</legend>
-          <label for="qual" >Academic Qualification *</label>
-          <input type="text" id="qual" name="qualification" required >
-          <label for="major" >Major *</label>
-          <input type="text" id="major" name="major" required >
-          <label for="exp" >Years of experience *</label>
-          <input type="text" id="exp" name="exp" required >
-          <label for="skills">Skills *</label>
-          <input type="text" id="skills" name="skills" required >
-          <label for="lang" >Languages spoken *</label>
-          <input type="text" id="lang" name="lang" required >
-          <label for="addinfo" >Any additional Info you want to add?</label>
-          <textarea id="addinfo" name="addinfo"></textarea>
+          <label for="bio" >Any additional Info you want to add?</label>
+          <textarea id="bio" name="bio" placeholder=" Enter your major , skills , languages spoken , years of experience and skills"></textarea> 
         </fieldset>
         <button type="submit">Register</button>
       </form>

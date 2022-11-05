@@ -24,13 +24,7 @@ $password2 = mysqli_real_escape_string($con ,$_POST['repeatedPassword']);
 $gender = $_POST['user_gender'];
 $age = $_POST['age'];
 $BabySitterimage = $_POST['image'];
-$academicqual = $_POST['qualification'];
-$major = $_POST['major'];
-$skills = $_POST['skills'];
-$languages = $_POST['lang'];
-$exp = $_POST['exp'];
-
-$add_info = $_POST['addinfo'];
+$bio = $_POST['bio'];
 
 if (isset($_POST['image'])) {
     $parentImage = $_POST['image'];
@@ -55,7 +49,7 @@ if (mysqli_num_rows($result) > 0) {
 // Start Registering
 if (count($errors) == 0) {
     $password = md5($password1); //encrypting password by using md5()
-    $query = "INSERT INTO babysitter (`name`, `national_ID`,`password`,`email`,`city`,`major`,`academic_qual`,`gender`,`phoneNo`,`experience_years`, `age` , `skills` , `languages` , `extra_info` ) VALUES ('$username', '$nationalid', '$password', '$email', '$city', '$major', '$academicqual', '$gender', '$phone' , '$exp' , '$age' , '$skills' , '$languages' , '$add_info')";
+    $query = "INSERT INTO babysitter (`name`, `national_ID`,`password`,`email`,`city`,`bio`,`gender`,`phoneNo`, `age` ) VALUES ('$username', '$nationalid', '$password', '$email', '$city', '$bio', '$gender', '$phone' , '$age' )";
     $result = mysqli_query($con, $query);
     $affected = mysqli_affected_rows($con);
 

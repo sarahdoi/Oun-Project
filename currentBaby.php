@@ -5,7 +5,7 @@
 	   header("Location: index.php?error=Please Sign In again!");
 
     else
-    {}
+    {
 
 ?>
 <!DOCTYPE html>
@@ -216,3 +216,6 @@ Oun is an online platform that helps mothers find babysitters anytime and anywhe
 </body>
 
 </html>
+<?php
+    }
+?> 
