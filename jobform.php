@@ -1,18 +1,15 @@
 <?php
+
 session_start();
 
+include("connection.php");
+include("functions.php");
+
+$user_data = check_loginParent($con);
 //initiaising 
 $errors = array();
 
-//database connection
-$con = mysqli_connect("127.0.0.1","root","","oun");
-
-if(mysqli_connect_errno())
-    die("Fail to connect to database: " . mysqli_connect_error());
-    
-$parentID = $_SESSION['parent_id'];
-//$USER->id;
-//$parentID = mysqli_query($con,"SELECT SUSER_ID()");
+$parentID = $user_data['parent_id'] ;
 
 
 $numOfKids = $_POST['numOfKids'];

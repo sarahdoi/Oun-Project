@@ -1,3 +1,8 @@
+<?php
+session_start();
+include("connection.php");
+include("functions.php");
+ ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,7 +45,7 @@
           <legend><span class="number">1</span>Personal Info</legend>
           
 
-          <label for="pname">Parent FullName *</label>
+          <label for="pname">Parent Full Name *</label>
           <input type="text" id="pname" name="parentname" required>
           <label for="phone" >Phone number *</label>
           <input type="tel" id="phone" name="phone" required >
@@ -75,7 +80,7 @@
         </fieldset>
         <input type="submit"  name="register-submit" value="Register" />
       </form>
-
+<!-------------------------------------------------------------->
          <footer class="footer-distributed">
 
         <div class="footer-left">

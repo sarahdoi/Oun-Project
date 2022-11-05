@@ -3,13 +3,10 @@ session_start();
 //if(isset($_POST['submit'])) must add i think?
 //initiaising 
 
+include("connection.php");
+include("functions.php");
 $errors = array();
 
-//database connection
-$con = mysqli_connect("127.0.0.1","root","","oun");
-
-if(mysqli_connect_errno())
-    die("Fail to connect to database: " . mysqli_connect_error());
    
 //retriving info from the form
 $username = $_POST['parentname'];

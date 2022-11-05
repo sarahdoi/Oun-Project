@@ -10,6 +10,7 @@ $password = md5( $_POST['user_password']);
 
 $query = "SELECT * FROM parent WHERE email='$email' AND password='$password'";
 
+
 $result = mysqli_query($con, $query);
 
 if (mysqli_num_rows($result) > 0) {
