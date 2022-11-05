@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="css/main.css">
 
         <!-- FORM -->
-      <form action="parentReg.php" method="post">
+      <form action="parentReg.php" method="post" enctype="multipart/form-data">
         <h1>Register</h1>
         
         <fieldset>
@@ -47,7 +47,7 @@
        
          
             <label for="image" >Profile image </label>
-            <input type="image" name="image" id="image" alt="profiling" >
+            <input type="file" name="image" id="image"  >
         </fieldset>
         
         <fieldset>
