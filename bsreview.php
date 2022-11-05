@@ -1,3 +1,16 @@
+<?php 
+    session_start();
+
+    if(!isset($_SESSION['email']))
+	   header("Location: index.php?error=Please Sign In again!");
+
+    else
+    {
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +30,12 @@
 
 <body>
 
-
 <!--review and rate card-->
-
-
-
-<div class="container">
+<form action="rate.php">
+<div class="container" >
     <div class="star-widget">
        <input type="radio" name="rate" id="rate-5">
         <label for="rate-5" class="fa fa-star checked"></label>
-
        <input type="radio" name="rate" id="rate-4">
         <label for="rate-4" class="fa fa-star checked"></label> 
        <input type="radio" name="rate" id="rate-3">
@@ -36,20 +45,29 @@
       <input type="radio" name="rate" id="rate-1">
         <label for="rate-1" class="fa fa-star"></label>
        
-        <form action="#"> 
+     
             <header> </header>
             <div class="textarea">
                 <textarea style="font-size:medium;" cols="30" placeholder="Describe your experiance.."></textarea>
             </div>
 
             <div class="btn">
+ 
                 <button type="submit"> Post</button>
           </div>
-        </form>
+       
     </div>
   
   </div>
-  
+</form>
 </body>
 
+
+
 </html>
+
+
+
+<?php
+    }
+?> 
