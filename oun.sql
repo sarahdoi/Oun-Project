@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 01:05 AM
+-- Generation Time: Nov 05, 2022 at 12:05 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -36,12 +36,7 @@ CREATE TABLE `babysitter` (
   `age` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `city` varchar(20) NOT NULL,
-  `academic_qual` varchar(100) NOT NULL,
-  `major` varchar(100) NOT NULL,
-  `experience_yrs` int(11) NOT NULL,
-  `skills` varchar(200) NOT NULL,
-  `languages` varchar(100) NOT NULL,
-  `extra_info` varchar(300) NOT NULL
+  `bio` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -59,7 +54,8 @@ CREATE TABLE `bookings` (
   `date` date NOT NULL,
   `start_time` time NOT NULL,
   `end_time` time NOT NULL,
-  `review` varchar(500) NOT NULL
+  `review` varchar(500) NOT NULL,
+  `rating` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -112,6 +108,14 @@ CREATE TABLE `request` (
   `start_time` time NOT NULL,
   `end_time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `request`
+--
+
+INSERT INTO `request` (`request_id`, `parent_id`, `numOfKids`, `kid_name`, `kid_age`, `service_type`, `date`, `start_time`, `end_time`) VALUES
+(1, 0, 2, 'aziz', 7, 'babysitting', '2022-11-05', '16:00:00', '00:00:00'),
+(2, 0, 2, 'aziz', 7, 'babysitting', '2022-11-05', '16:00:00', '19:00:00');
 
 --
 -- Indexes for dumped tables
@@ -178,7 +182,7 @@ ALTER TABLE `parent`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `request_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `request_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
