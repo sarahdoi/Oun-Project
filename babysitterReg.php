@@ -30,24 +30,7 @@ if (isset($_POST['image'])) {
 } else {
     $parentImage = "";
 }
-/*
-// all img info ------
-if( isset($_FILES['image'])){ 
-    $image=$_FILES['image'];
-    $imgName=$_FILES['image']['name'];
-    $imgTmpName=$_FILES['image']['tmp_name'];
-    $imgSize=$_FILES['image']['size'];
-    $imgType=$_FILES['image']['type'];
-    
-    $upload_directory="images/"; //to move ir to this file
-    $TargetPath=time().$imgName;
-    
-    if(move_uploaded_file($imgTmpName, $upload_directory.$TargetPath)){    
-     $QueryInsertFile="INSERT INTO parent (`parent_image`) VALUES ('$TargetPath')"; //but didnt sent.
-     $result = mysqli_query($con, $QueryInsertFile);  }
-    
-    }// is set
-    */
+
 
 if ($password1 !== $password2) {
     header("Location: RegisterBabysitter.php?error=Passwords do not match");
@@ -64,12 +47,28 @@ $result2 = mysqli_query($con, $emailcheck_query);
 
 if (mysqli_num_rows($result1) > 0) {
     array_push($errors , "National ID already existed");
-    header("location: RegisterParent.php?error=National ID already existed");
+    header("location: RegisterBabysitter.php?error=National ID already existed, please try again!");
 }
 if (mysqli_num_rows($result2) > 0) {
     array_push($errors , "Email already existed");
-    header("location: RegisterParent.php?error=Email already existed");
+    header("location: RegisterBabysitter.php?error=Email already existed, please try again!");
 }
+/*
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    header("RegisterBabysitter.php?error=EMAIL syntax is wrong");
+    exit();
+}
+*/
+
+//check db for existing parent with the same phone 
+$phonecheck_query = "SELECT * FROM babysitter WHERE phoneNo = '$phone'";
+$result = mysqli_query($con, $phonecheck_query);
+
+if (mysqli_num_rows($result) > 0) {
+    array_push($errors , "Phone number already existed");
+    header("location: RegisterBabysitter.php?error=Phone number already existed, please try again!");
+}
+
 // Start Registering
 if (count($errors) == 0) {
     $password = md5($password1); //encrypting password by using md5()
