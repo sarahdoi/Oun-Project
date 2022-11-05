@@ -1,5 +1,3 @@
-
-
 <?php
 session_start();
 //if(isset($_POST['submit'])) must add i think?
@@ -30,22 +28,21 @@ if( isset($_FILES['image'])){
 $image=$_FILES['image'];
 $imgName=$_FILES['image']['name'];
 $imgTmpName=$_FILES['image']['tmp_name'];
-$imgSize=$_FILES['image']['size'];
-$imgType=$_FILES['image']['type'];
 
 $upload_directory="images/"; //to move ir to this file
 $TargetPath=time().$imgName;
 
 if(move_uploaded_file($imgTmpName, $upload_directory.$TargetPath)){    
  $QueryInsertFile="INSERT INTO parent (`parent_image`) VALUES ('$TargetPath')"; //but didnt sent.
- $result = mysqli_query($con, $QueryInsertFile);  }
+ //$result = mysqli_query($con, $QueryInsertFile);
+  }
 
 }// is set
 
 
 if ($password1 !== $password2) {
-    header("Location: RegisterParent.php?error=Passwords do not match");
-    exit();
+    header("Location: RegisterParent.php?error=password doesn't match");
+    exit;
     array_push($errors , "Passwords do not match");
 }
 
@@ -56,12 +53,17 @@ $result = mysqli_query($con, $emailcheck_query);
 if (mysqli_num_rows($result) > 0) {
     array_push($errors , "Email already exists");
     header("location: RegisterParent.php?error=Email already existed");
-} 
+}
+
+if( ! isset($_FILES['image']['name']) || empty($_FILES['image']['name']) ){ 
+    $TargetPath="prpic.png";
+}
 
 // Start Registering
 if (count($errors) == 0) {
     $password = md5($password1); //encrypting password by using md5()
-    $query = "INSERT INTO parent (`name`,`password`,`email`,`city`,`district`,`street`,`buildingNo`,`phoneNo`) VALUES ('$username', '$password', '$email', '$city', '$district', '$street', '$buildingNo', '$phone')";
+    
+    $query = "INSERT INTO parent (`parent_image`,`name`,`password`,`email`,`city`,`district`,`street`,`buildingNo`,`phoneNo`) VALUES ('$TargetPath','$username', '$password', '$email', '$city', '$district', '$street', '$buildingNo', '$phone')";
     $result = mysqli_query($con, $query);
     $affected = mysqli_affected_rows($con);
 
