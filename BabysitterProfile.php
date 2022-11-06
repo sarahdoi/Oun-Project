@@ -1,3 +1,14 @@
+<?php
+session_start() ;
+include("connection.php");
+
+include("functions.php");
+$user_data = check_loginBabysitter($con);
+
+$errors = array() ;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -45,57 +56,48 @@
             </header>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <form action="next.php" method="post" enctype="multipart/form-data">
+        <form action="bhandleview.php?national_ID=<?php echo $user_data['national_ID']?>" method="post" enctype="multipart/form-data">
         <h1>My Profile</h1>
         
         <fieldset>
           <legend><span class="number">1</span>Personal Info</legend>
           <label for="name" >Baby sitter FullName</label >
-          <input type="text" id="name" name="sitter_name" value="Nouf Faisal" required>
+          <input type="text" id="name" name="sitter_name" value="<?php echo $user_data['name'] ?> " disabled>
           <label for="ID" >ID</label >
-            <input type="text" id="ID" name="ID" value="1110142548" required>
+            <input type="text" id="ID" name="ID" value="<?php echo $user_data['national_ID'] ?> " disabled>
           <label for="phone">Phone number</label>
-          <input type="tel" id="phone" name="phone" value="0533567171" required>
+          <input type="tel" id="phone" name="phone" value="<?php echo $user_data['phoneNo'] ?> " disabled>
           <label for="City" >City</label>
-          <input type="text" id="City" name="City" value="Riyadh" required>
+          <input type="text" id="City" name="City" value="<?php echo $user_data['city'] ?> " disabled>
           
           <label for="mail" >Email</label>
-          <input type="email" id="mail" name="user_email" value="Nouff@gmail.com"  required>
+          <input type="email" id="mail" name="user_email" value="<?php echo $user_data['email'] ?> "  disabled>
           
           <label for="password" >Password </label>
-          <input type="password" id="password" name="user_password" value="●●●●●●●●" required>
+          <input type="password" id="password" name="user_password" value="<?php echo $user_data['password'] ?> " disabled>
           
-          <label>BabySitter Gender</label>
-          <input type="radio" id="male" value="male" name="user_gender" ><label for="male" class="light" >Male</label><br>
-          <input type="radio" id="female" value="female" name="user_gender" required checked><label for="female" class="light">Female</label>
+          <label>BabySitter Gender:</label>
+          <label class="light" ><?php echo $user_data['gender'] ?> </label>
+          <br>
+          <!--<label type="radio" id="male" value="male" name="user_gender" disabled ><label for="male" class="light" >Male </label><br>
+          <input type="radio" id="female" value="female" name="user_gender" disabled ><label for="female" class="light">Female</label> -->
           <label for="age">BabySitter age</label>
-        <input type="text" id="age" name="age" value="26" required>
+        <input type="text" id="age" name="age" value="<?php echo $user_data['age'] ?>" disabled>
         <label for="image">Profile image </label>
-            <input type="image" name="image" id="image" alt="image" >
+        <?php
+         echo "<img src='images/".$user_data['image']."' alt='img'>" ;
+         ?>
+            <!--<input type="image" name="image" id="image" alt="image" >-->
         
         </fieldset>
         
         <fieldset>
           <legend><span class="number">2</span>Bio</legend>
-          <label for="qual" >Academic Qualification</label>
-          <input type="text" id="qual" name="qualification" value="Bachelor's Degree"  required>
-          <label for="major">Major</label>
-          <input type="text" id="major" name="major" value="Early Childhood Education" required>
-          <label for="exp" >Years of experience</label>
-          <input type="text" id="exp" name="exp" value="4" required>
-          <label for="skills" >Skills</label>
-          <input type="text" id="skills" name="skills" value="Excellent listener. Fun and engaging. Caring, and patient."  required>
-          <label for="lang" >Languages spoken</label>
-          <input type="text" id="lang" name="lang" value="Arabic" required>
-          <label for="addinfo">Any additional Info you want to add?</label>
-          <textarea id="addinfo" name="addinfo">consistently ensured children were fed, bathed, and put to bed before parents returned home.
-            Organized and cleaned the property as needed.
-            Assisted children with school homework, assigned reading, and other activities.</textarea>
+          <label for="bio" >Any additional Info you want to add?</label>
+          <textarea id="bio" name="bio" placeholder="<?php echo $user_data['bio'] ?> " disabled ></textarea> 
         </fieldset>
-        <button type="submit">Save Changes</button>
-        <div class="danger">
-        <button  type="reset">Delete Account</button>
-        </div>
+        <button name="edit" type="submit" >Edit Profile</button> 
+    <div class="danger"><button type="submit" name="delete">Delete Account</button></div>
       </form>
       <footer class="footer-distributed">
 

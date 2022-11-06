@@ -4,14 +4,14 @@ body{
     text-align: center;
   
   }
+
+  .footer-distributed{top: 800px; }
+.footer-distributed .footer-icons a{ margin-bottom: 2px;}
   
   .card{
-      
     background-color:white;
     border-radius: 12px;
-    display:inline-block;
     overflow: hidden;
-    /*display: inline-block; */
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -21,7 +21,7 @@ body{
     box-shadow:0 12px 13px rgba(0,0,0,0.16), 0 12px 13px rgba(0,0,0,0.16);
     margin-left: 5%;
     margin-right: 5%;
-   
+
   
   }
   

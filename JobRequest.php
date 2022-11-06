@@ -112,7 +112,7 @@ if( mysqli_num_rows($requests) > 0)
 {
     
     foreach( $requests as $element )
-{
+    {
 ?>  
 <div class="container" style = "display: inline-block;;">
   <div class= "card" >
