@@ -70,7 +70,17 @@ function getCurrentoffers(){ //
     $query = "SELECT offer.*, babysitter.* , request.* 
     FROM offer
      INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
-     INNER JOIN request ON offer.request_id = request.request_id && request.date > (CAST(CURRENT_TIMESTAMP AS DATE)) ;";
+     INNER JOIN request ON offer.request_id = request.request_id && request.date >= (CAST(CURRENT_TIMESTAMP AS DATE)) ;";
     return mysqli_query( $con  , $query);
 }
+
+function getPrevoffers(){ //
+    global $con;
+    $query = "SELECT offer.*, babysitter.* , request.* 
+    FROM offer
+     INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
+     INNER JOIN request ON offer.request_id = request.request_id && request.date < (CAST(CURRENT_TIMESTAMP AS DATE)) ;";
+    return mysqli_query( $con  , $query);
+}
+
 ?>

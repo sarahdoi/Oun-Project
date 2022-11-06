@@ -144,7 +144,7 @@ $con->close();
 
 <!--links-->
 <div class="link">
-<a href="previous.html">view previous jobs</a> <!-- styl.css-->
+<a href="previous.php">view previous jobs</a> <!-- styl.css-->
 </div>
 
 <!-- button <a class="button" href="#">Job Requests</a> -->
