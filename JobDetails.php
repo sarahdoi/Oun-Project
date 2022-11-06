@@ -145,8 +145,11 @@ include("functions.php");
         <p><?php echo $this_request['date']; ?></p>
     </div>
 </div>
-<form action="sendOffer.php" method="post">
+
+
+<form action="sendOffer.php" method='get'>
     <input type="text" class="text" name="price" placeholder="SR/hour">
+    <input type="hidden" name="id" value="<?php echo $reqId; ?>">
     <input name="sent" class= "btn" type="submit" value="Send Offer ">  
 </form>
 </div>

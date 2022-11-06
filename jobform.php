@@ -27,4 +27,9 @@ $endTime = $_POST['duration2'];
     VALUES ('$parentID', '$numOfKids', '$kid_name', '$kid_age', '$service', '$date', '$startTime', '$endTime')";
     $result = mysqli_query($con, $query);
 
+    mysqli_close($con);
+    Header( 'Location: mprofile.php' );
+ 
+
+
 ?>

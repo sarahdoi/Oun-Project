@@ -172,7 +172,5 @@ Duration:
       
     <button type="submit">Send Request</button>
 
-
-
 </body>
 </html>

@@ -3,7 +3,7 @@
 
     include("connection.php");
     include("functions.php");
-
+    
     /*if(!isset($_SESSION['email']))
 	   header("Location: index.php?error=Please Sign In again!");
     else
@@ -178,16 +178,8 @@ $parentName= $user_data['name'];
 
     </div>
 
-</footer>      
-
-
-
-
+</footer>     
    
-
-    
-
-
 
 </body>
  <!-- Fotter-->

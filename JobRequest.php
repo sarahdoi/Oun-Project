@@ -4,7 +4,7 @@ session_start();
 
 include("connection.php");
 include("functions.php");
-//$user_data = check_loginBabysitter($con);
+$user_data = check_loginBabysitter($con);
 
 //initiaising 
 $errors = array();
