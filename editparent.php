@@ -20,6 +20,15 @@ $errors = array() ;
 
 
 <title>My Profile</title>
+<style>
+          .error {
+            background : #F2DEDE;
+            color : #A94442;
+            padding:10px;
+            width : 95%;
+            border-radius:5px;
+                  }
+        </style>
 <!--import google fonts -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -47,48 +56,52 @@ $errors = array() ;
     </nav>
 
 </header>
-<form action="phandleview.php?parent_id=<?php echo $user_data['parent_id']?>" method="post"> <!-- handleview.php is not ready, did not push it yet -->
+<form action="phandleview.php" method="post"> <!-- handleview.php is not ready, did not push it yet -->
                 <h1>My Profile </h1>
+                <?php if (isset($_GET['error'])) { ?>
+        <p class="error"><?php echo $_GET['error']; ?></p> <?php } ?> 
         <fieldset>
           <legend><span class="number">1</span>Personal Info</legend>
           
 
           <label for="pname">Parent FullName *</label>
-          <input type="text" id="pname" name="parentname" value="<?php echo $user_data['name'] ?> " disabled>
+          <input type="text" id="pname" name="parentname" value="<?php echo $user_data['name'] ?> " required>
           <label for="phone" >Phone number *</label>
-          <input type="tel" id="phone" name="phone" value="<?php echo $user_data['phoneNo'] ?> "  disabled >
+          <input type="tel" id="phone" name="phone" value="<?php echo $user_data['phoneNo'] ?> "  required >
           
           <label for="mail" >Email *</label>
-          <input type="email" id="mail" name="userEmail" value="<?php echo $user_data['email'] ?> "  disabled>
+          <input type="email" id="mail" name="userEmail" value="<?php echo $user_data['email'] ?> "  required>
           
           <label for="password" >Password *</label>
-          <input type="password" id="password" name="userPassword" value="<?php echo md5($user_data['password']) ?> "  disabled >
-        
-            <label for="image" >Profile image </label> 
-         <?php
-         echo "<img src='images/".$user_data['parent_image']."' alt='img'>"
-         ?>
-          <!-- <input type="file" name="image" id="image" value="" disabled  > -->  
+          <input type="password" id="password" name="userPassword" value="<?php echo ($user_data['password']) ?> "  required >
+          <label for="password" >Confirm Password *</label>
+          <input type="password" id="password" name="RepeatedPassword"  required >
+
+            <label for="image" >Profile image </label>
+           <img src="<?php echo $user_data['parent_image'] ?> " >
+          <input type="file" name="image" id="image" value="<?php echo $user_data['parent_image'] ?> " required >
+
         </fieldset>
         
         <fieldset>
           <legend><span class="number">2</span>Address Info</legend>
           <label for="city" >City *</label>
-          <input type="text" id="city" name="city" value="<?php echo $user_data['city'] ?> " disabled >
+          <input type="text" id="city" name="city" value="<?php echo $user_data['city'] ?> " required >
           <label>district*</label>
-          <input type="text" id="district" name="district" value="<?php echo $user_data['district'] ?> " disabled >
+          <input type="text" id="district" name="district" value="<?php echo $user_data['district'] ?> " required >
           <label>street*</label>
-          <input type="text" id="street" name="street" value="<?php echo $user_data['street'] ?> " disabled >
+          <input type="text" id="street" name="street" value="<?php echo $user_data['street'] ?> " required >
           <label>buildingNo*</label>
-          <input type="text" id="buildingNo" name="BuildingNo" value="<?php echo $user_data['buildingNo'] ?> " disabled >
+          <input type="text" id="buildingNo" name="BuildingNo" value="<?php echo $user_data['buildingNo'] ?> " required >
 
 
         </fieldset>
-     <button name="edit" type="submit" >Edit Profile</button> 
-    <div class="danger"><button type="submit" name="delete">Delete Account</button></div>
+    <button type="submit" name="save">Save Changes</button>
+    <div class="danger">
+    <button type="submit" name="delete">Delete Account</button> </div>
  </form>
- 
-    <footer class="footer-distributed">
+
+ <footer class="footer-distributed">
 
   <div class="footer-left">
 
@@ -132,24 +145,4 @@ $errors = array() ;
 
 </footer>
 </body>
-
-<?php 
-include("connection.php") ;
-    if(isset($_POST['delete'])){
-        $useremail = $_POST['userEmail'] ;
-       $query = mysqli_query($con,"DELETE FROM `parent` WHERE `email` =$useremail;") or die(mysqli_error($con));
-        $result = mysqli_query($con, $query);
-    $affected = mysqli_affected_rows($con);
-
-    if ($affected == -1) {
-        header("location: parentprofile.php?error=There was a problem in your operation , please try again");
-        exit();
-    } else {
-        header("Location: index.php");
-        exit();
-    }
-    }
-    
-    
-    ?>
 </html>
