@@ -21,10 +21,10 @@ function check_loginParent($con){
 }
 
 function check_loginBabysitter($con){
-    if(isset($_SESSION['national_id']))
+    if(isset($_SESSION['email']))
     {
-        $nat_id = $_SESSION['national_id'];
-        $query = "select * from babysitter where national_id = '$nat_id' limit 1";
+        $nat_id = $_SESSION['email'];
+        $query = "select * from babysitter where email = '$nat_id' limit 1";
         $result = mysqli_query( $con , $query);
         if( $result && mysqli_num_rows($result) > 0)
         {

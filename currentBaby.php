@@ -1,11 +1,19 @@
 <?php 
     session_start();
 
-    if(!isset($_SESSION['ID']))
-	   header("Location: index.php?error=Please Sign In again!");
+  include("connection.php");
+    include("functions.php");
 
+    /*if(!isset($_SESSION['email']))
+	   header("Location: index.php?error=Please Sign In again!");
     else
-    {
+    <?php 
+        echo "<img src='images/".$parentpic."' alt='Baby Sitter's profile picture'>"
+        ?> //getting imgs! works fine
+    {*/
+       $user_data = check_loginBabysitter($con);
+$BabytId= $user_data['national_ID'];
+$BabyName= $user_data['name'];
 
 ?>
 <!DOCTYPE html>
@@ -60,9 +68,11 @@
         </header>
 <!--welocme page-->
 <div class="welcome glow" >
-    <h1 style="color: rgb(41, 33, 78);" >Welcome Back, Nouf!</h1>
+    <?php 
+    echo "<h1 style='color: rgb(41, 33, 78);'>Welcome Back, ".$BabyName." </h1>"
+    ?>
     </div>
-
+    
 <h1 class="mytitlew"> Your upcoming jobs </h1>
 
 
@@ -218,6 +228,3 @@ Oun is an online platform that helps mothers find babysitters anytime and anywhe
 
 </html>
 
-<?php
-    }
-?> 
