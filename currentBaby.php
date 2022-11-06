@@ -40,7 +40,7 @@
                 
          <li class="first"><a href="JobRequest.html"> Job Requests </a></li>
                 
-         <li><a href="OfferList.html"> Offers </a></li>
+         <li><a href="OfferList.php"> Offers </a></li>
          <li><a href="myReviews.html"> rate & reviews </a></li>
     </ul>
 

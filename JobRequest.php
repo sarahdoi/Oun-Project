@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+include("connection.php");
+include("functions.php");
+
+//$user_data = check_loginBabysitter($con);
+//initiaising 
+$errors = array();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,62 +102,43 @@
     </footer>
 
     <!-- JOB REQUEST CODE-->
+ 
+<h1 class="mytitle"> Job Requests </h1> 
 
-    <h1 class="mytitle"> Job Requests </h1> 
+<?php 
+$requests = getRequests();
 
-  <div class= "card">
-    <img src="https://media.istockphoto.com/photos/cutest-smile-picture-id172918554?k=20&m=172918554&s=612x612&w=0&h=PXo0dX-djRUZ8iOJbw1UTJhrD5CUnAJYSWXm3C3cFXc=" alt="sq-sample1" class =img>
-    <p class ="name" > Latifah B.</p>
+if( mysqli_num_rows($requests) > 0)
+{
+    
+    foreach( $requests as $element )
+{
+?>  
+<div class="container" style = "display: inline-block;;">
+  <div class= "card" >
+   <?php echo "<img src='images/".$element['parent_image']."' alt='parent profile picture' class =img>" ;?> 
+    <p class ="name" > <?php echo $element['name']; ?></p>
 
     <div class="desc">
-     <p class="num"> Number of kids: 1 </p>
+     <p class="num"> Number of kids: <?php echo $element['numOfKids']; ?> </p>
       <br>
-      <p class="age"> Age: 5 years old </p>
+      <p class="age"> Age: <?php echo $element['kid_age']; ?> </p>
       <br>
-      <p class="service">Type of service: Babysitting</p>
-    </div>
+      <p class="service">Type of service: <?php echo $element['service_type']; ?></p>
+    
 
-    <form action="LatifahJobDtls.html"><input class="btn" type="submit" value="View job details"></form>
-    <!--<a href="LatifahJobDtls.html"><center> <button class= "btn">  View job details </button> </a></center>-->
+    <form action="JobDetails.html"><input class="btn" type="submit" value="View job details"></form>
  
 </div>
-
-
-    <div class= "card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWJvovL44qWTG-46CxBAszg7OvkGeUCrv2Sw&usqp=CAU" alt="sq-sample1" class =img>
-      <p class ="name" > Abdullah M.</p>
-  
-      <div class="desc">
-        <p class="num"> Number of kids: 2 </p>
-        <br>
-        <p class="age"> Age: 4 , 7 years old</p>
-        <br>
-        <p class="service"> Type of service: Babysitting</p>
-  
-      </div>
-
-      <form action="AbdullahJobDtls.html"><input class="btn" type="submit" value="View job details"></form>
-      <!--<a href="AbdullahJobDtls.html"><center> <button class= "btn">  View job details </button> </a></center>-->
-   
-  </div>
-
- 
-    <div class= "card">
-      <img src="https://i.pinimg.com/736x/1a/8a/ad/1a8aad754c891f002fed826be83970bb--adopted-children-childrens-books.jpg" alt="sq-sample1" class =img>
-      <p class ="name" > Arwa T. </p>
-  
-      <div class="desc">
-        <p class="num"> Number of kids: 1 </p>
-        <br>
-        <p class="age"> Age: 9 years old </p>
-        <br>
-        <p class="service"> Type of service: Tutoring</p>
-      </div>
-      
-      <form action="ArwaJobDtls.html"><input class="btn" type="submit" value="View job details"></form>
-      <!--<a href="ArwaJobDtls.html"><center> <button class= "btn">  View job details </button> </a></center>-->
-   
-  </div>
+</div>
+<?php
+}
+//echo '';
+}
+else {
+    echo "<h2> There are no requests </h2>";
+}
+?>
 
 </body>
 
