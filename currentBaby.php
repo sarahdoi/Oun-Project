@@ -15,6 +15,8 @@
 $BabytId= $user_data['national_ID'];
 $BabyName= $user_data['name'];
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,93 +77,69 @@ $BabyName= $user_data['name'];
     
 <h1 class="mytitlew"> Your upcoming jobs </h1>
 
+    <!--  upcoming jobs CODE -->
+    <?php
+    /*$query = "SELECT *
+    FROM offer
+    WHERE babysitter_id = $BabytId && 'status'='a'";
+    $result = $con->query($query);
+    $element = $result->fetch_assoc();*/
+?>
+
+<?php
+// Check connection
+$offers= getCurrentoffers();
+
+if( mysqli_num_rows($offers) > 0)
+{
+    $no=1;
+    foreach( $offers as $element )
+    { 
+        if($element['status']=='a' ){
+            $no=2;
+echo " <!-- #########################################-->
+<div class='card'> 
+   <img src='images/".$element['sitter_image']."' alt='Baby Sitter's profile picture'>
+   <h1 class='name' > ".$element['name']."</h1>
+   <p class='title'>
+       <span>No. of Kids:</span>
+       <span>".$element['numOfKids']."</span><br>
+       <span>Kid's Name:</span>
+       <span>".$element['kid_name']."</span><br>
+       <span>Age:</span>
+       <span>".$element['kid_age']."</span><br>
+       <span>Type of service:</span> 
+       <span>".$element['service_type']."</span>
+     
+   </p>
+   <br>
+   <div class='desc'>
+   <div class='info'>
+   <h2><span>Date</span><small>".$element['date']."</small></h2>
+   <h2><span>".$element['price']."</span><small>SR/hour</small></h2>
+   <h2><!--<a href='#'> --><span>Time</span><small>".$element['start_time']."-".$element['end_time']."</small></h2>
+   </div>
+   </div> <!-- dec card-->
+   <!-- -->
+   </div> <!-- end card-->
+";}
+
+} 
+}else{ 
+    echo "<br><br><br>
+    <p style='font-size:20px;'>You don't have current jobs..</\p>
+     <br><br><br>"; 
+}
+if($no == 1){ 
+    echo "<br><br><br>
+    <p style='font-size:20px;'>You don't have current jobs..</\p>
+     <br><br><br>"; 
+}
+$con->close();
+?>
 
 
-<!--profile card -->
- <!-- #########################################-->
- <div class="card"> 
-    <img src="images/kid3girl.jpg" alt="Baby SItter's profile picture">
-    <h1 class="name" > Sara Omar </h1>
-    <p class="title">
-        <span>No. of Kids:</span>
-        <span>1</span><br>
-        <span>Kid's Name:</span>
-        <span>Deena</span><br>
-        <span>Age:</span>
-        <span>10 years old</span><br>
-        <span>Type of service:</span> 
-        <span>baby sitting</span>
-      
-    </p>
-    <br>
-    <div class="desc">
-    <div class="info">
-    <h2><span>Date</span><small>14-02-2022</small></h2>
-    <h2><span>50</span><small>SR/hour</small></h2>
-    <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-04:00pm</small></h2>
-    </div>
-    </div> <!-- dec card-->
-    <!-- -->
-    </div> <!-- end card-->
-    
-
-    <!--################################third card##################-->
-    
-    <div class="card"> 
-        <img src="images/kid1.jpg" alt="Baby SItter's profile picture">
-        <h1 class="name" > hamad bandar </h1>
-        <p class="title">
-            <span>No. of Kids:</span>
-        <span>1</span><br>
-            <span>Kid's Name:</span>
-            <span>Badr</span><br>
-            <span>Age:</span>
-            <span>10 years old</span><br>
-            <span>Type of service:</span> 
-            <span>baby sitting</span>
-          
-        </p>
-        <br>
-        <div class="desc">
-        <div class="info">
-        <h2><span>Date</span><small>14-02-2022</small></h2>
-        <h2><span>50</span><small>SR/hour</small></h2>
-        <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-04:00pm</small></h2>
-        </div>
-        </div> <!-- dec card-->
-        <!-- -->
-        </div> <!-- end card-->
-        <!--###############################4 CARD-->
-
-        <div class="card"> 
-            <img src="images/kid7girl.jpg" alt="Baby SItter's profile picture">
-            <h1 class="name" > Nora Majed </h1>
-            <p class="title">
-                <span>No. of Kids:</span>
-        <span>1</span><br>
-                <span>Kid's Name:</span>
-                <span>Tala</span><br>
-                <span>Age:</span>
-                <span>10 years old</span><br>
-                <span>Type of service:</span> 
-                <span>baby sitting</span>
-              
-            </p>
-            <br>
-            <div class="desc">
-            <div class="info">
-            <h2><span>Date</span><small>14-02-2022</small></h2>
-            <h2><span>50</span><small>SR/hour</small></h2>
-            <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-04:00pm</small></h2>
-            </div>
-            </div> <!-- dec card-->
-            <!-- -->
-            </div> <!-- end card-->
             
-<!-- <div class="nheader"><p>customer1 <br>
-Kid name:huda Age:8 y.o Type of service: babySitting duration:8-1 am</p></div>
-<div class="nheader"><p>customer2 <br>
-Kid name:huda Age:8 y.o Type of service: babySitting duration:8-1 am</p></div> -->
 
 
 <!--links-->
