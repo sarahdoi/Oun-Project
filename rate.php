@@ -1,8 +1,14 @@
 
 <?php
 include 'connection.php';
+include 'functions.php';
 session_start();
 
+$review=""; 
+
+if (! isset($_POST['rate']))
+$rate = 0;
+else {
 
 if($_POST['rate'] == "rate-5") {
     $rate =5;
@@ -15,17 +21,24 @@ if($_POST['rate'] == "rate-5") {
 } else if($_POST['rate'] == "rate-1") {
     $rate = 1;
 }
-
-
-$rate_query = "SELECT * FROM bookings WHERE request_id = '$_POST['']'";
-$result = mysqli_query($con, $emailcheck_query);
-
-if (mysqli_num_rows($result) > 0) {
-    array_push($errors , "Email already exists");
-    header("location: RegisterParent.php?error=Email already existed, please try again!");
 }
 
+if (isset($_POST['review']))
+$review = $_POST['review'];
 
+//booking_id = $_GET['booking_id'];
+
+$query = "INSERT INTO bookings ( 'review' , 'rating' ) VALUES ( '$review' , '$rate') where booking_id= '$booking_id' ";
+$result = mysqli_query($con, $query);
+
+if (mysqli_num_rows($result) > 0) {
+
+}
+
+header("location: mprofile.php");
+exit();
+
+mysqli_close($con);
 
 
 

@@ -81,6 +81,30 @@ if (mysqli_num_rows($result) > 0) {
     header("location: RegisterBabysitter.php?error=Phone number already existed, please try again!");
 }
 
+
+//phone number validation 
+if(!preg_match('/^[0-9]{10}+$/', $phone)) {
+    header("Location: RegisterBabysitter.php?error=Invalid phone number, please try again!");
+    exit;
+    array_push($errors , "Phone number is invalid");
+    }
+
+
+//National ID number validation 
+if(!preg_match('/^[0-9]{10}+$/', $nationalid)) {
+    header("Location: RegisterBabysitter.php?error=Invalid National ID number, please try again!");
+    exit;
+    array_push($errors , "National ID number is invalid");
+    }
+
+//email syntax validation 
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    header("Location: RegisterBabysitter.php?error=Invalid Email syntax, please try again!");
+    exit;
+    array_push($errors , "Phone number is invalid");
+}
+
+
 // Start Registering
 if (count($errors) == 0) {
     $password = md5($password1); //encrypting password by using md5()
