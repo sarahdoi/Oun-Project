@@ -132,24 +132,4 @@ $errors = array() ;
 
 </footer>
 </body>
-
-<?php 
-include("connection.php") ;
-    if(isset($_POST['delete'])){
-        $useremail = $_POST['userEmail'] ;
-       $query = mysqli_query($con,"DELETE FROM `parent` WHERE `email` =$useremail;") or die(mysqli_error($con));
-        $result = mysqli_query($con, $query);
-    $affected = mysqli_affected_rows($con);
-
-    if ($affected == -1) {
-        header("location: parentprofile.php?error=There was a problem in your operation , please try again");
-        exit();
-    } else {
-        header("Location: index.php");
-        exit();
-    }
-    }
-    
-    
-    ?>
 </html>
