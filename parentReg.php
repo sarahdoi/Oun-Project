@@ -38,7 +38,7 @@ if(move_uploaded_file($imgTmpName, $upload_directory.$TargetPath)){
 
 
 if ($password1 !== $password2) {
-    header("Location: RegisterParent.php?error=password doesn't match, please try again!");
+    header("Location: RegisterParent.php?error=Passwords do not match , please try again!");
     exit;
     array_push($errors , "Passwords do not match");
 }
@@ -51,6 +51,20 @@ if (mysqli_num_rows($result) > 0) {
     array_push($errors , "Email already exists");
     header("location: RegisterParent.php?error=Email already existed, please try again!");
 }
+//phone number validation 
+
+if(!preg_match('/^[0-9]{10}+$/', $phone)) {
+    header("Location: RegisterParent.php?error=Phone number is invalid, please try again!");
+    exit;
+    array_push($errors , "Phone number is invalid");
+    }
+//email syntax validation 
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    header("Location: RegisterParent.php?error=Invalid Email syntax, please try again!");
+    exit;
+    array_push($errors , "Phone number is invalid");
+}
+
 
 //check db for existing parent with the same phone 
 $phonecheck_query = "SELECT * FROM parent WHERE phoneNo = '$phone'";

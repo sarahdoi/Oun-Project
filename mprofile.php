@@ -62,7 +62,7 @@ $parentName= $user_data['name'];
        ?>
     </div>
 
-    <h1 class="mytitlew"> Your upcoming requests</h1> <!-- styl Pages.css-->
+    <h1 class="mytitlew"> Your upcoming Bookings</h1> <!-- styl Pages.css-->
 
     <!--profile card -->
   
@@ -77,8 +77,7 @@ $parentName= $user_data['name'];
                 <h2><a href="#"><span>Time</span><small>2:00pm-4:00pm</small></a></h2>
             </div>
         </div> <!-- dec card-->
-        <form action="#"><input class="btn1" type="submit" value="Delete"></form>
-        <form action="#"><input class="btn2" type="submit" value="Edit"></form>
+        
         </div> <!-- end first card-->
  
 
@@ -96,8 +95,7 @@ $parentName= $user_data['name'];
            <!-- put it as link to chage info in form
            <a class="edit" href="jobreqform.html">Edit</a>
            --> 
-            <form action="#"><input class="btn1" type="submit" value="Delete"></form>
-            <form action="#"><input class="btn2" type="submit" value="Edit"></form>
+           
              <!-- dec card-->
             <!--   -->
             </div> <!-- end second card-->
@@ -114,13 +112,6 @@ $parentName= $user_data['name'];
                     </div>
                 </div> <!-- dec card-->
 
-                <div class='btn1' style="display: inline-block;">
-                <?php 
-                echo "<a class='btn1' href='#' >Delete</\a>"; ?> </div>
-                <div class="btn2" style="display: inline-block;">
-                <?php
-                echo "<a class='btn2' href='./jobreqform.php?id= ".$parentId."' >Edit</\a>"; ?>
-                </div>
                 </div> <!-- end third card-->
                 
 
