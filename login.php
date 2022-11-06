@@ -42,7 +42,8 @@
     
         </fieldset>
     
-        <input type="submit" value="Login">
+        <button type="submit"> Login</button>
+       <!-- <input type="submit" value="Login">-->
       </form>
       <footer class="footer-distributed">
 

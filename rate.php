@@ -1,24 +1,28 @@
 
 <?php
 include 'connection.php';
-include 'functions.php';
+//include 'functions.php';
 session_start();
 
-$review=""; 
+//if( ! $con = mysqli_connect(DBHOST , DBUSER , DBPWD , DBNAME)){ die("failed to connect!");}
 
-if (! isset($_POST['rate']))
+
+//$booking_id =1;
+$booking_id = $_GET['booking_id'];
+
+if (!isset($_POST['rate']))
 $rate = 0;
 else {
 
-if($_POST['rate'] == "rate-5") {
+if($_POST['rate'] == "5") {
     $rate =5;
-}if($_POST['rate'] == "rate-4") {
+}if($_POST['rate'] == "4") {
     $rate =4;
-} else if($_POST['rate'] == "rate-3") {
+} else if($_POST['rate'] == "3") {
     $rate = 3;
-} else if($_POST['rate'] == "rate-2") {
+} else if($_POST['rate'] == "2") {
     $rate  = 2;
-} else if($_POST['rate'] == "rate-1") {
+} else if($_POST['rate'] == "1") {
     $rate = 1;
 }
 }
@@ -26,19 +30,21 @@ if($_POST['rate'] == "rate-5") {
 if (isset($_POST['review']))
 $review = $_POST['review'];
 
-//booking_id = $_GET['booking_id'];
+$query = "UPDATE `bookings` SET `review`='$review',`rating`='$rate' WHERE booking_id= '1'";
+$result = mysqli_query($con,$query );
 
-$query = "INSERT INTO bookings ( 'review' , 'rating' ) VALUES ( '$review' , '$rate') where booking_id= '$booking_id' ";
-$result = mysqli_query($con, $query);
+if ( !$result) 
+die("failed to query");
 
-if (mysqli_num_rows($result) > 0) {
-
-}
-
-header("location: mprofile.php");
+header("location: mprofile.php?");
 exit();
 
-mysqli_close($con);
+
+//}
+//if (mysqli_num_rows($result) > 0) {
+    //echo $_GET['booking_id'];
+
+    mysqli_close($con);
 
 
 

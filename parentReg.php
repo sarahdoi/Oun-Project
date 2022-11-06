@@ -52,7 +52,6 @@ if (mysqli_num_rows($result) > 0) {
     header("location: RegisterParent.php?error=Email already existed, please try again!");
 }
 //phone number validation 
-
 if(!preg_match('/^[0-9]{10}+$/', $phone)) {
     header("Location: RegisterParent.php?error=Phone number is invalid, please try again!");
     exit;
@@ -64,6 +63,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
     array_push($errors , "Phone number is invalid");
 }
+
 
 
 //check db for existing parent with the same phone 

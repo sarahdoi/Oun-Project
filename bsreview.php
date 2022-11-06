@@ -1,9 +1,10 @@
 <?php 
     session_start();
+    
 
     if(!isset($_SESSION['email']))
 	   header("Location: index.php?error=Please Sign In again!");
-
+       
     else
     {
 
@@ -34,28 +35,29 @@
 <form action="rate.php">
 <div class="container" >
     <div class="star-widget">
-       <input type="radio" name="rate" id="rate-5">
+       <input type="radio" name="rate" id="rate-5" value="5">
         <label for="rate-5" class="fa fa-star checked"></label>
-       <input type="radio" name="rate" id="rate-4">
+       <input type="radio" name="rate" id="rate-4" value="4">
         <label for="rate-4" class="fa fa-star checked"></label> 
-       <input type="radio" name="rate" id="rate-3">
+       <input type="radio" name="rate" id="rate-3" value="3">
         <label for="rate-3" class="fa fa-star"></label>
-       <input type="radio" name="rate" id="rate-2">
+       <input type="radio" name="rate" id="rate-2" value="2">
         <label for="rate-2" class="fa fa-star"></label>
-      <input type="radio" name="rate" id="rate-1">
+      <input type="radio" name="rate" id="rate-1" value="1">
         <label for="rate-1" class="fa fa-star"></label>
        
      
             <header> </header>
             <div class="textarea">
-                <textarea style="font-size:medium;" cols="30" placeholder="Describe your experiance.."></textarea>
+                <textarea name="review" style="font-size:medium;" cols="30" placeholder="Describe your experiance.."></textarea>
             </div>
-
+            <!-- CHECK IT       <a href="rate.php?booking_id=<?php // echo $_GET['booking_id']; ?>">   -->
+         
+            <a href="rate.php?booking_id=<?php echo$_GET['booking_id']; ?>">
             <div class="btn">
- 
                 <button type="submit"> Post</button>
           </div>
-       
+      </a>
     </div>
   
   </div>

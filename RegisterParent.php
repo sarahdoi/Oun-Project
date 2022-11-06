@@ -78,8 +78,9 @@ include("functions.php");
 
 
         </fieldset>
-        <input type="submit"  name="register-submit" value="Register" />
-      </form>
+       <!-- <input type="submit"  name="register-submit" value="Register" />-->
+       <button type="submit">Register</button>
+      </form> 
 <!-------------------------------------------------------------->
          <footer class="footer-distributed">
 

@@ -1,3 +1,27 @@
+
+<?php
+session_start();
+include 'connection.php';
+include 'functionts.php';
+function getBookings(){
+  global $con;
+  $query = "SELECT bookings.booking_id, bookings.review , bookings.rating , request.* , offer.offer_id , offer.babysitter_id , offer.price , offer.status
+  FROM bookings WHERE offer.babysitter_id = '111'
+   INNER JOIN request ON request.request_id = bookings.request_id
+   INNER JOIN offer ON request.request_id = offer.request_id";
+  return mysqli_query( $con  , $query);
+}
+
+function getRequests(){
+  global $con;
+  $query = "SELECT *
+  FROM request WHERE request.request_id = '4'
+  INNER JOIN parent ON request.parent_id=parent.parent_id;";
+  return mysqli_query( $con  , $query);
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -89,7 +113,7 @@
   
   </footer>
 
- <!-- STARS RATING CODE -->
+ <!-- STARS RATING CODE 
  <h1 class="mytitle"> My rating </h1> 
  <div class = "stars">
       <center>
@@ -102,10 +126,52 @@
     
     </div>  
 
-     <!-- MY REVIEWS PAGE CODE -->
+-->
 
-     <h1 class="mytitle2"> My Reviews </h1> 
+     <h1 class="mytitle2"> My Reviews </h1>  
+     <div> 
 
+<?php 
+$bookings = getBookings();
+/*$query = "SELECT parent.parent_id , parent_image , parent.name
+        FROM offer
+       INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
+       INNER JOIN request ON offer.request_id = request.request_id
+       INNER JOIN parent ON request.parent_id = parent.parent_id
+       WHERE    "
+
+       $parentInfo =  mysqli_query( $con  , $query); */
+
+if ( mysqli_num_rows($bookings) > 0 )  {
+
+  foreach( $bookings as $element ) { ?>
+  <div>
+  <figure class="review">
+    <blockquote>I was really satisfied Thank you very much Nouf!! </blockquote>
+    <div class="author">
+      <img src="images/kid7girl.jpg" alt="sq-sample1"/>
+      <br>
+      <h4>Manal H.</h4>
+    </div>
+  </figure>
+  </div>
+
+  <?php } 
+
+}
+
+else {
+  echo "<h2> There are no reviews yet </h2>";
+}
+
+?>
+</div>
+
+
+
+
+     <!-- MY REVIEWS PAGE CODE 
+     
      <div>
       <figure class="review">
     <blockquote>I was really satisfied Thank you very much Nouf!! </blockquote>
@@ -136,6 +202,8 @@
   
   
   </div>
-
+  -->
 </body>
 </html>
+
+
