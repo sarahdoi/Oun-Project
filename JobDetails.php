@@ -145,10 +145,10 @@ include("functions.php");
         <p><?php echo $this_request['date']; ?></p>
     </div>
 </div>
-
-    <input type="text" class="text" name="price" placeholder="Price/hour">
-    <button class= "btn" type="submit">  Send Offer </button>
- 
+<form action="sendOffer.php" method="post">
+    <input type="text" class="text" name="price" placeholder="SR/hour">
+    <input name="sent" class= "btn" type="submit" value="Send Offer ">  
+</form>
 </div>
 
 </body>
