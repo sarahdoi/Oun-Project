@@ -1,3 +1,23 @@
+<?php 
+    session_start();
+
+  include("connection.php");
+    include("functions.php");
+
+    /*if(!isset($_SESSION['email']))
+	   header("Location: index.php?error=Please Sign In again!");
+    else
+    <?php 
+        echo "<img src='images/".$parentpic."' alt='Baby Sitter's profile picture'>"
+        ?> //getting imgs! works fine
+    {*/
+       $user_data = check_loginBabysitter($con);
+$BabytId= $user_data['national_ID'];
+$BabyName= $user_data['name'];
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -53,163 +73,59 @@
             </header>
      <div class="mytitle"><h1>Previous Jobs</h1></div>
 
+     <?php
+// Check connection
+$offers= getPrevoffers();
+
+if( mysqli_num_rows($offers) > 0)
+{
+    $no=1;
+    foreach( $offers as $element )
+    { 
+        if($element['status']=='a' ){
+            $no=2;
+echo " <!-- #########################################-->
+<div class='card'> 
+   <img src='images/".$element['sitter_image']."' alt='Baby Sitter's profile picture'>
+   <h1 class='name' > ".$element['name']."</h1>
+   <p class='title'>
+       <span>No. of Kids:</span>
+       <span>".$element['numOfKids']."</span><br>
+       <span>Kid's Name:</span>
+       <span>".$element['kid_name']."</span><br>
+       <span>Age:</span>
+       <span>".$element['kid_age']."</span><br>
+       <span>Type of service:</span> 
+       <span>".$element['service_type']."</span>
      
+   </p>
+   <br>
+   <div class='desc'>
+   <div class='info'>
+   <h2><span>Date</span><small>".$element['date']."</small></h2>
+   <h2><span>".$element['price']."</span><small>SR/hour</small></h2>
+   <h2><!--<a href='#'> --><span>Time</span><small>".$element['start_time']."-".$element['end_time']."</small></h2>
+   </div>
+   </div> <!-- dec card-->
+   <!-- -->
+   </div> <!-- end card-->
+";}
+
+} 
+}else{ 
+    echo "<br><br><br>
+    <p style='font-size:20px;'>You don't have previous jobs..</\p>
+     <br><br><br>"; 
+}
+if($no == 1){ 
+    echo "<br><br><br>
+    <p style='font-size:20px;'>You don't have previous jobs..</\p>
+     <br><br><br>"; 
+}
+$con->close();
+?>
         
-        <!-- #########################################-->
-        <div class="card"> 
-            <img src="images/kid3girl.jpg" alt="Baby SItter's profile picture">
-            <h1 class="name" > Sara Omar </h1>
-            <p class="title">
-                <span>No. of kids:</span>
-                <span>1</span><br>
-                <span>Kid's Name:</span>
-                <span>Tala</span><br>
-                <span>Age:</span>
-                <span>10 years old</span><br>
-                <span>Type of service:</span> 
-                <span>baby sitting</span>
-              
-            </p>
-            <br>
-            <div class="desc">
-            <div class="info">
-            <h2><span>Date</span><small>14-02-2022</small></h2>
-            <h2><span>50</span><small>SR/hour</small></h2>
-            <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-04:00pm</small></h2>
-            </div>
-            </div> <!-- dec card-->
-            <!-- -->
-            </div> <!-- end card-->
-            
         
-            <!--################################third card##################-->
-            
-            <div class="card"> 
-                <img src="images/kid5kiss.jpg" alt="Baby SItter's profile picture">
-                <h1 class="name" > Malk Nasir </h1>
-                <p class="title">
-                    <span>No. of kids:</span>
-                <span>2</span><br>
-                    <span>Kid's Name:</span>
-                    <span>Mona-Badr</span><br>
-                    <span>Age:</span>
-                    <span>6 years old</span><br>
-                    <span>Type of service:</span> 
-                    <span>baby sitting</span>
-                  
-                </p>
-                <br>
-                <div class="desc">
-                <div class="info">
-                <h2><span>Date</span><small>14-02-2022</small></h2>
-                <h2><span>50</span><small>SR/hour</small></h2>
-                <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-04:00pm</small></h2>
-                </div>
-                </div> <!-- dec card-->
-                <!-- -->
-                </div> <!-- end card-->
-                <!--###############################4 CARD-->
-     
-                <div class="card"> 
-                    <img src="images/kid4.jpg" alt="Baby SItter's profile picture">
-                    <h1 class="name" > Saad Omar </h1>
-                    <p class="title">
-                        <span>No. of kids:</span>
-                <span>1</span><br>
-                        <span>Kid's Name:</span>
-                        <span>Mohammed</span><br>
-                        <span>Age:</span>
-                        <span>11 years old</span><br>
-                        <span>Type of service:</span> 
-                        <span>baby sitting</span>
-                      
-                    </p>
-                    <br>
-                    <div class="desc">
-                    <div class="info">
-                    <h2><span>Date</span><small>14-02-2022</small></h2>
-                    <h2><span>50</span><small>SR/hour</small></h2>
-                    <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-04:00pm</small></h2>
-                    </div>
-                    </div> <!-- dec card-->
-                    <!-- -->
-                    </div> <!-- end card-->
-                    <div class="card"> 
-                        <img src="images/kid1.jpg" alt="Baby SItter's profile picture">
-                        <h1 class="name" > Omar Majed </h1>
-                        <p class="title">
-                            <span>No. of kids:</span>
-                <span>1</span><br>
-                            <span>Kid's Name:</span>
-                            <span>Jameel</span><br>
-                            <span>Age:</span>
-                            <span>8 years old</span><br>
-                            <span>Type of service:</span> 
-                            <span>Tutoring</span>
-                          
-                        </p>
-                        <br>
-                        <div class="desc">
-                        <div class="info">
-                        <h2><span>Date</span><small>14-02-2022</small></h2>
-                        <h2><span>50</span><small>SR/hour</small></h2>
-                        <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-04:00pm</small></h2>
-                        </div>
-                        </div> <!-- dec card-->
-                        <!-- -->
-                        </div> <!-- end card-->
-                        <div class="card"> 
-                            <img src="images/baby1.png" alt="Baby SItter's profile picture">
-                            <h1 class="name" > Lena Fahad </h1>
-                            <p class="title">
-                                <span>No. of kids:</span>
-                <span>1</span><br>
-                                <span>Kid's Name:</span>
-                                <span>Hazem</span><br>
-                                <span class="left">Age:</span>
-                                <span>1 year old</span><br>
-                                <span class="left">Type of service:</span> 
-                                <span>baby sitting</span>
-                              
-                            </p>
-                            <br>
-                            <div class="desc">
-                            <div class="info">
-                            <h2><span>Date</span><small>14-02-2022</small></h2>
-                            <h2><span>50</span><small>SR/hour</small></h2>
-                            <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-04:00pm</small></h2>
-                            </div>
-                            </div> <!-- dec card-->
-                            <!-- -->
-                            </div> <!-- end card-->
-                            <div class="card"> 
-                                <img src="images/kid6girl.jpg" alt="Baby SItter's profile picture">
-                                <h1 class="name" > Nora Salah </h1>
-                                <p class="title">
-                                    <span>No. of kids:</span>
-                <span>1</span><br>
-                                    <span>Kid's Name:</span>
-                                    <span>Rand</span><br>
-                                    <span>Age:</span>
-                                    <span>6 years old</span><br>
-                                    <span>Type of service:</span> 
-                                    <span>Medical Care</span>
-                                  
-                                </p>
-                                <br>
-                                <div class="desc">
-                                <div class="info">
-                                <h2><span>Date</span><small>14-02-2022</small></h2>
-                                <h2><span>50</span><small>SR/hour</small></h2>
-                                <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-04:00pm</small></h2>
-                                </div>
-                                </div> <!-- dec card-->
-                                <!-- -->
-                                </div> <!-- end card-->
-     <!-- <div class="nheader"><p>customer1 <br>
-    Kid name:huda Age:8 y.o Type of service: babySitting duration:8-1 am</p></div>
-     <div class="nheader"><p>customer2 <br>
-        Kid name:huda Age:8 y.o Type of service: babySitting duration:8-1 am</p></div> -->
 
    <footer class="footer-distributed">
 
