@@ -8,18 +8,41 @@ $con = mysqli_connect("127.0.0.1","root","","oun");
 $email = $_POST['user_email'];
 $password = md5( $_POST['user_password']);
 
-$query = "SELECT * FROM parent WHERE email='$email' AND password='$password'";
+//account exists query
+$emQueryp = "SELECT * FROM parent WHERE email='$email'";
+$emQuerybs = "SELECT * FROM babysitter WHERE email='$email'";
+
+$emResultp = mysqli_query($con, $emQueryp);
+$emResultbs = mysqli_query($con, $emQuerybs);
+
+//check account existence 
+if (mysqli_num_rows($emResultp)== 0 && mysqli_num_rows($emResultbs) == 0)
+   {  
+     mysqli_close($con);
+     header("Location:login.php?error= There is no account registered with this email");
+    }
+
+//matching query
+$queryp = "SELECT * FROM parent WHERE email='$email' AND password='$password'";
+$querybs = "SELECT * FROM babysitter WHERE email='$email' AND password='$password'";
+
+$resultp = mysqli_query($con, $queryp);
+$resultbs = mysqli_query($con, $querybs);
 
 
-$result = mysqli_query($con, $query);
-
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($resultp) > 0) {
     $_SESSION['email'] = $email;
     mysqli_close($con);
-    //do not forger change the location 
     header("Location: mprofile.php");
-} else {
-    mysqli_close($con);
-    header("Location:login.php?error= Email and Password do not match");
-}
+}elseif(mysqli_num_rows($resultbs) > 0)
+     {
+        $_SESSION['email'] = $email;
+         mysqli_close($con);        
+        header("Location: currentBaby.php");
+    }
+  else 
+  {
+  mysqli_close($con);
+  header("Location:login.php?error= Email and Password do not match");
+    }
 ?>

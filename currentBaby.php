@@ -38,7 +38,7 @@
         <li> <a href="#"> Menu </a>
             <ul class="inner"> <!-- your menu here\\\\\\-->
                 
-         <li class="first"><a href="JobRequest.html"> Job Requests </a></li>
+         <li class="first"><a href="JobRequest.php"> Job Requests </a></li>
                 
          <li><a href="OfferList.php"> Offers </a></li>
          <li><a href="myReviews.html"> rate & reviews </a></li>

@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+include("connection.php");
+include("functions.php");
+//$user_data = check_loginBabysitter($con);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,41 +100,49 @@
     </footer>
 
     <!-- JOB DETAILS CODE -->
-
+<?php
+    $reqId = $_GET['request_id'];
+    $query = "SELECT *
+    FROM request
+    INNER JOIN parent ON request.parent_id=parent.parent_id
+    WHERE request_id = $reqId;";
+    $result = $con->query($query);
+    $this_request = $result->fetch_assoc();
+?>
 <h1 class="mytitle"> Job Request Details</h1>
   <div class= "card">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS30JTpvdB_GGY5U0TQeKZx8l1J_4yAogTV2QSNXRg3sP1FFpgrzSHRaQJq50GRV9dL7UA&usqp=CAU" alt="sq-sample1" class =img>
-    <p class ="name" > OUN Parent </p>
+  <?php echo "<img src='images/".$this_request['parent_image']."' alt='parent profile picture' class =img>" ;?> 
+    <p class ="name" > <?php echo $this_request['name']; ?> </p>
  
 <div class="container">
     <div class="det"> 
         <p class="mylabel">Number of kids </p> 
-        <p>1</p>
+        <p><?php echo $this_request['numOfKids']; ?></p>
     </div>
 
     <div class="det"> 
         <p class="mylabel">Kid's full name</p> 
-        <p>Sara Ahmad</p> 
+        <p><?php echo $this_request['kid_name']; ?></p> 
     </div>
 
     <div class="det"> 
         <p class="mylabel">Age</p> 
-        <p>5 years old</p>
+        <p><?php echo $this_request['kid_age']; ?></p>
     </div>
 
     <div class="det">
          <p class="mylabel">Type of service</p> 
-        <p>babysitting</p>
+        <p><?php echo $this_request['service_type']; ?></p>
     </div>
 
     <div class="det">
          <p class="mylabel">Duration</p> 
-         <p>07:00pm - 10:00 pm</p>
+         <p><?php echo $this_request['start_time']; ?> - <?php echo $this_request['end_time']; ?></p>
         </div>
 
     <div class="det"> 
         <p class="mylabel">Date</p> 
-        <p>29-09-2022</p>
+        <p><?php echo $this_request['date']; ?></p>
     </div>
 </div>
 

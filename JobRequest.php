@@ -4,8 +4,8 @@ session_start();
 
 include("connection.php");
 include("functions.php");
-
 //$user_data = check_loginBabysitter($con);
+
 //initiaising 
 $errors = array();
 ?>
@@ -126,14 +126,13 @@ if( mysqli_num_rows($requests) > 0)
       <br>
       <p class="service">Type of service: <?php echo $element['service_type']; ?></p>
     
-
-    <form action="JobDetails.html"><input class="btn" type="submit" value="View job details"></form>
+      <?php $_GET['request_id'] = $element['request_id']; ?>
+    <a href="JobDetails.php?request_id=<?php echo $_GET['request_id']; ?>"><input class="btn" type="get" value="View job details" style = "text-align:center;"></a>
  
 </div>
 </div>
 <?php
 }
-//echo '';
 }
 else {
     echo "<h2> There are no requests </h2>";

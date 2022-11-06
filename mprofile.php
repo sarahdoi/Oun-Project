@@ -11,8 +11,8 @@
         echo "<img src='images/".$parentpic."' alt='Baby Sitter's profile picture'>"
         ?> //getting imgs! works fine
     {*/
-        $user_data = check_loginParent($con);
-$parentId= $user_data['Paren_id'];
+$user_data = check_loginParent($con);
+$parentId= $user_data['parent_id'];
 $parentName= $user_data['name'];
 
 ?>

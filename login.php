@@ -39,9 +39,6 @@
           <label for="password" >Password *</label>
           <input type="password" id="password" name="user_password" required>
 
-          <label>As: *</label>
-          <input type="radio" id="parent" value="parent" name="user_log" required><label for="parent" class="light" >Parent</label><br>
-          <input type="radio" id="babysitter" value="parent" name="user_log"><label for="babysitter" class="light">BabySitter</label>
     
         </fieldset>
     
