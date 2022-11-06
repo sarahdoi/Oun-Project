@@ -113,14 +113,16 @@ $parentName= $user_data['name'];
                         <h2><a href="#"><span>Time</span><small>4:00pm-11:00pm</small></a></h2> <!--change-->
                     </div>
                 </div> <!-- dec card-->
+
+                <div class='btn1' style="display: inline-block;">
                 <?php 
-                echo "<a class='btn1' href='./jobreqform.php?id= ".$parentId."' >Edit<\a>"; 
-                echo "<a class='btn1' href='#' >Delete<\a>"; ?>
+                echo "<a class='btn1' href='#' >Delete</\a>"; ?> </div>
+                <div class="btn2" style="display: inline-block;">
+                <?php
+                echo "<a class='btn2' href='./jobreqform.php?id= ".$parentId."' >Edit</\a>"; ?>
+                </div>
                 </div> <!-- end third card-->
                 
-   
-       
-       
 
            
 
