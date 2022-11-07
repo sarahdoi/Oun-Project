@@ -25,6 +25,7 @@ $parentName= $user_data['name'];
 <link rel="stylesheet" href="styleB.css">
 <link rel="stylesheet" href="stylePages.css">
 <link rel="stylesheet" href="HomepageP.css">
+<link rel="stylesheet" href="preCards.css">
 <link rel="stylesheet" href="mytitels.css">
 <meta name="viewport" content="width=device-width , initial-scale=1">
 <link rel="icon" type="images/png"  href="images/logo.png">
@@ -37,7 +38,7 @@ $parentName= $user_data['name'];
         <ul> 
         <li><a href="mprofile.html"> Home </a></li>
 
-        <li> <a href="ViewOffer.html"> Offers </a>
+        <li> <a href="ViewOffer.html"> Bookings </a>
 
         <li> <a href="#"> Settings </a>
         <ul class="inner">
@@ -64,56 +65,58 @@ $parentName= $user_data['name'];
 
     <h1 class="mytitlew"> Your upcoming Bookings</h1> <!-- styl Pages.css-->
 
-    <!--profile card -->
-  
-    <div class="card"> 
-        
-        <img src="images/cBabysitter.jpg" alt="Baby SItter's profile picture">
-        <h1 class="name" > mona </h1>
-        <p class="title">Riyadh , Saudi Arabia</p>
-        <div class="desc">
-            <div class="info">
-                <h2><a href="#"><span>50</span><small>SR per hour</small></a></h2>
-                <h2><a href="#"><span>Time</span><small>2:00pm-4:00pm</small></a></h2>
-            </div>
-        </div> <!-- dec card-->
-        
-        </div> <!-- end first card-->
- 
 
-        <div class="card"> 
-        
-            <img src="images/cBabysitter2.jpg" alt="Baby SItter's profile picture">
-            <h1 class="name" > Layla </h1>
-            <p class="title">Riyadh , Saudi Arabia</p>
-            <div class="desc">
-                <div class="info">
-                    <h2><a href="#"><span>80</span><small>SR per hour</small></a></h2>
-                    <h2><a href="#"><span>Time</span><small>5:00pm-7:00pm</small></a></h2>
-                </div>
-            </div>
-           <!-- put it as link to chage info in form
-           <a class="edit" href="jobreqform.html">Edit</a>
-           --> 
-           
-             <!-- dec card-->
-            <!--   -->
-            </div> <!-- end second card-->
+    <?php
+// Check connection
+$Bookings= getCurrentBookings();
 
-            <div class="card"> 
-        
-                <img src="images/cBabysitter3.jpg" alt="Baby SItter's profile picture">
-                <h1 class="name" > Madison </h1>
-                <p class="title">Riyadh , Saudi Arabia</p>
-                <div class="desc">
-                    <div class="info">
-                        <h2><a href="#"><span>100</span><small>SR per hour</small></a></h2>
-                        <h2><a href="#"><span>Time</span><small>4:00pm-11:00pm</small></a></h2> <!--change-->
-                    </div>
-                </div> <!-- dec card-->
+if( mysqli_num_rows($Bookings) > 0)
+{
+    $no=1;
+    foreach( $Bookings as $element )
+    { 
+        if($element['status']=='a' ){
+            $no=2;
+echo " <!-- #########################################-->
+<div class='card'> 
+   <img src='images/".$element['sitter_image']."' alt='Baby Sitter's profile picture'>
+   <h1 class='name' > ".$element['name']."</h1>
+   <p class='title'>
+       <span>No. of Kids:</span>
+       <span>".$element['numOfKids']."</span><br>
+       <span>Kid's Name:</span>
+       <span>".$element['kid_name']."</span><br>
+       <span>Age:</span>
+       <span>".$element['kid_age']."</span><br>
+       <span>Type of service:</span> 
+       <span>".$element['service_type']."</span>
+     
+   </p>
+   <br>
+   <div class='desc'>
+   <div class='info'>
+   <h2><span>Date</span><small>".$element['date']."</small></h2>
+   <h2><span>".$element['price']."</span><small>SR/hour</small></h2>
+   <h2><!--<a href='#'> --><span>Time</span><small>".$element['start_time']."-".$element['end_time']."</small></h2>
+   </div>
+   </div> <!-- dec card-->
+   <!-- -->
+   </div> <!-- end card-->
+";}
 
-                </div> <!-- end third card-->
-                
+} 
+}else{ 
+    echo "<br><br><br>
+    <p style='font-size:20px;'>You don't have current bookings..</\p>
+     <br><br><br>"; 
+}
+if($no == 1){ 
+    echo "<br><br><br>
+    <p style='font-size:20px;'>You don't have current bookings..</\p>
+     <br><br><br>"; 
+}
+$con->close();
+?>
 
            
 
