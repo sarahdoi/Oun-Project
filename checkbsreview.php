@@ -4,9 +4,10 @@ session_start();
 include("connection.php");
 include("functions.php");
 
-$user_data = check_loginBabysitter($con);
-$BabytId= $user_data['national_ID'];
-$BabyName= $user_data['name'];
+
+$user_data = check_loginParent($con);
+$parentId= $user_data['parent_id'];
+$parentName= $user_data['name'];
 
 
 /*function getBookings(){
@@ -17,15 +18,16 @@ $BabyName= $user_data['name'];
    INNER JOIN offer ON request.request_id = offer.request_id";
   return mysqli_query( $con  , $query);
 } */
-
-
+//change it to PrevgetPrevBookings
+$booking = getBookings();
+babysitter_id
 
 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title> My Reviews </title>
+        <title> <?php  ?> Reviews </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="imaages/png" href="images/logo.png" >
@@ -195,39 +197,6 @@ else {
 
 
 
-     <!-- MY REVIEWS PAGE CODE 
-     
-     <div>
-      <figure class="review">
-    <blockquote>I was really satisfied Thank you very much Nouf!! </blockquote>
-    <div class="author">
-      <img src="images/kid7girl.jpg" alt="sq-sample1"/>
-      <br>
-      <h4>Manal H.</h4>
-    </div>
-  </figure>
-  
-  <figure class="review">
-      <blockquote>She was sweet, on time. I highly recommend her.</blockquote>
-      <div class="author">
-        <img src="images/kid1.jpg" alt="sq-sample1"/>
-        <br>
-        <h4>rawan A.</h4>
-      </div>
-    </figure>
-  
-    <figure class="review">
-      <blockquote> We felt totally comfortable leaving our son with her. </blockquote>
-      <div class="author">
-        <img src="images/kid3girl.jpg" alt="sq-sample1"/>
-        <br>
-        <h4>Samar M.</h4>
-      </div>
-    </figure>
-  
-  
-  </div>
-  -->
 </body>
 </html>
 
