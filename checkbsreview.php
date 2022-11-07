@@ -9,6 +9,7 @@ $user_data = check_loginParent($con);
 $parentId= $user_data['parent_id'];
 $parentName= $user_data['name'];
 
+$BabytId=$_GET['booking_id'];
 
 /*function getBookings(){
   global $con;
@@ -18,9 +19,11 @@ $parentName= $user_data['name'];
    INNER JOIN offer ON request.request_id = offer.request_id";
   return mysqli_query( $con  , $query);
 } */
-//change it to PrevgetPrevBookings
+
+
+//change it to PrevgetPrevBookings()
 $booking = getBookings();
-babysitter_id
+//babysitter_id
 
 
 ?>
@@ -42,32 +45,30 @@ babysitter_id
 <body>
 
   <!-- HEADER CODE -->
-
   <header>
-    <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
-    <nav class="navbar">
-    <ul> 
-    <li><a href="currentBaby.html"> Home </a></li>
+        <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
+        <nav class="navbar">
+        <ul> 
+        <li><a href="mprofile.html"> Home </a></li>
 
-    <li> <a href="#"> Menu </a>
-        <ul class="inner"> <!-- your menu here\\\\\\-->
-     <li  class="first"><a href="JobRequest.html"> Job Requests </a></li>
-     <li><a href="OfferList.html"> Offers </a></li>
-     <li><a href="myReviews.html"> rate & reviews </a></li>
-</ul>
+        <li> <a href="ViewOffer.html"> Bookings </a>
 
-    <li> <a href="#"> Settings </a>
-    <ul class="inner">
-    <li  class="first"><a href="BabysitterProfile.html"> view profile</a></li>
-    <li><a href="index.html"> Sign out </a></li>
+        <li> <a href="#"> Settings </a>
+        <ul class="inner">
+            
+        <li class="first"><a href="parentprofile.html"> view profile</a></li>
+            
+        <li><a href="signout.php"> Sign out </a></li>
+            
+        </ul>
         
-    </ul>
-    
-    </li>
-    
-    </ul>
-    </nav>
+        </li>
+        
+        </ul>
+        </nav>
+
     </header>
+   
 
 <!-- FOOTER CODE -->
   <footer class="footer-distributed">
@@ -129,7 +130,7 @@ babysitter_id
     </div>  
 
 -->
-<?php $bookings = getBookings();
+<?php $bookings = getPrevBookingsforID($BabytId);
 /*$query = "SELECT parent.parent_id , parent_image , parent.name
         FROM offer
        INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
@@ -138,6 +139,7 @@ babysitter_id
        WHERE    "
 
       $parentInfo =  mysqli_query( $con  , $query); */
+      if ( mysqli_num_rows($bookings) > 0 )  {
      $count=0;
      $tot_rating=0;
      $ave_rating=0;
@@ -149,15 +151,17 @@ babysitter_id
          $count++; 
         }}
 
-        $ave_rating = $tot_rating / $num;   ?>
-<h1 class="mytitle"> My Rating <br> <?php echo $ave_rating; ?>/5  </h1> 
-
+        $ave_rating = $tot_rating / $num;   
+        echo "<h1 class='mytitle'> My Rating <br>".$ave_rating."/5  </h1>" ;
+        } else{
+          echo "<h1 class='mytitle'> My Rating </h1> <br> <h2 style='text-align:center' > No rating yet </h2> " ;  
+        }?>
 
      <h1 class="mytitle2"> My Reviews  </h1>  
      <div> 
 
 <?php 
-$bookings = getBookings();
+$bookings = getPrevBookingsforID($BabytId);
 /*$query = "SELECT parent.parent_id , parent_image , parent.name
         FROM offer
        INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
