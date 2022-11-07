@@ -43,7 +43,7 @@ $BabyName= $user_data['name'];
         <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
         <nav class="navbar">
         <ul> 
-        <li><a href="currentBaby.html"> Home </a></li>
+        <li><a href="currentBaby.php"> Home </a></li>
 
         <li> <a href="#"> Menu </a>
             <ul class="inner"> <!-- your menu here\\\\\\-->
@@ -51,7 +51,7 @@ $BabyName= $user_data['name'];
          <li class="first"><a href="JobRequest.php"> Job Requests </a></li>
                 
          <li><a href="OfferList.php"> Offers </a></li>
-         <li><a href="myReviews.html"> rate & reviews </a></li>
+         <li><a href="myReviews.php"> rate & reviews </a></li>
     </ul>
 
         <li> <a href="#"> Settings </a>

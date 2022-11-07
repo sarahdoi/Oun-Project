@@ -49,7 +49,7 @@ $parentName= $user_data['name'];
                 <div class="first">
             <li><a href="parentprofile.html"> view profile</a></li>
                 </div>
-            <li><a href="index.html"> Sign out </a></li>
+            <li><a href="index.php"> Sign out </a></li>
                 
             </ul>
             
@@ -116,28 +116,34 @@ $con->close();
 ?>
 
         <!-- start cards first one -->
+        <!---
         <div class="card"> 
             <img src="images/sophie.jpg" alt="Baby SItter's profile picture">
             <h1 class="name" > Sohpie </h1>
             <p class="title">
-       
+                -->
+       <!--
                 <span>Riyadh</span>
                 <span>Saudi Arabia</span><br>
                 <span class="type">Type of service:</span> 
                 <span class="type">baby sitting</span>
               </p>
             <br>
+            --->
+            <!--
             <a  class="lin" href="bsreview.php">Review & Rate</a>
             <div class="desc">
             <div class="info">
             <h2><span>Date</span><small>02-02-2020</small></h2>
             <h2><span>200</span><small>SR/hour</small></h2>
-            <h2><!--<a href="#"> --><span>Time</span><small>12:00pm-5:00pm</small></h2>
-               
+            -->
+            <!--<h2>--><!--<a href="#"> --><!--<span>Time</span><small>12:00pm-5:00pm</small></h2>-->
+            <!--   
             </div>
-            </div> <!-- dec card-->
+            </div> <dec card -->
             <!-- -->
-            </div> <!-- end card-->
+            <!--
+            </div>  end card-->
            
        
 

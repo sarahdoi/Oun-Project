@@ -197,16 +197,16 @@ margin-top: 10px;
     <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
     <nav class="navbar">
     <ul> 
-    <li><a href="mprofile.html"> Home </a></li>
+    <li><a href="mprofile.php"> Home </a></li>
 
-    <li> <a href="ViewOffers.html"> Babysitter Offers </a>
+    <li> <a href="ViewOffers.php"> Babysitter Offers </a>
 
     <li> <a href="#"> Settings </a>
     <ul class="inner">
         
-    <li class="first"><a href="parentprofile.html"> view profile</a></li>
+    <li class="first"><a href="parentprofile.php"> view profile</a></li>
        
-    <li><a href="index.html"> Sign out </a></li>
+    <li><a href="index.php"> Sign out </a></li>
         
     </ul>
     
@@ -298,7 +298,7 @@ if($no == 1){
         </div>
 
         <p class="footer-links">
-            <a href="mprofile.html" class="link-1">Home</a>
+            <a href="mprofile.php" class="link-1">Home</a>
            <!--  <a href="#">About</a> -->
             <a href="mailto:support@Ouun.com">Contact</a>
         </p>

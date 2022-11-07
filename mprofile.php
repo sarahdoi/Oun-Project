@@ -36,14 +36,14 @@ $parentName= $user_data['name'];
         <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
         <nav class="navbar">
         <ul> 
-        <li><a href="mprofile.html"> Home </a></li>
+        <li><a href="mprofile.php"> Home </a></li>
 
         <li> <a href="ViewOffer.php"> Bookings </a>
 
         <li> <a href="#"> Settings </a>
         <ul class="inner">
             
-        <li class="first"><a href="parentprofile.html"> view profile</a></li>
+        <li class="first"><a href="parentprofile.php"> view profile</a></li>
             
         <li><a href="signout.php"> Sign out </a></li>
             
@@ -127,7 +127,7 @@ $con->close();
         <!--links-->
         <div class="link">
   
-            <a href="PreReq.html">view prievious booking</a>  <!-- styl.css-->
+            <a href="PreReq.php">view prievious booking</a>  <!-- styl.css-->
         </div>
 
        
