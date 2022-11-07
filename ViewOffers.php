@@ -221,7 +221,7 @@ margin-top: 10px;
 
     <!-- body -->
 
-<div><h1 class="mytitler" > <br> <br> <br> <br> My Offers </h1> </div>
+<div><h1 class="mytitler" > <br> <br> <br> <br> Babysitter price offers:</h1> </div>
 <?php 
 
  $query = "SELECT offer.*, babysitter.* , request.* 
@@ -231,6 +231,7 @@ margin-top: 10px;
   WHERE request.parent_id = $myID; ";
 
   $myOffers = mysqli_query( $con , $query);
+  $no=0;
 
 if( mysqli_num_rows($myOffers) > 0)
 {

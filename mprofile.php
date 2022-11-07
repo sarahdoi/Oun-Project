@@ -38,7 +38,7 @@ $parentName= $user_data['name'];
         <ul> 
         <li><a href="mprofile.php"> Home </a></li>
 
-        <li> <a href="ViewOffer.php"> Bookings </a>
+        <li> <a href="ViewOffers.php"> Bookings </a>
 
         <li> <a href="#"> Settings </a>
         <ul class="inner">
