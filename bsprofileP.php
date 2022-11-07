@@ -1,3 +1,13 @@
+<?php
+session_start();
+include("connection.php");
+$id = $_GET['national_ID'] ;
+$query = "SELECT * FROM babysitter WHERE national_ID='$id'" ;
+$result = mysqli_query($conn , $query) ;
+$babysitdata = mysqli_affected_rows($result) ;
+?>
+
+
 <!DOCTYPE html >
 <html lang="en">
 <head>
@@ -23,15 +33,15 @@
     <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
     <nav class="navbar">
     <ul> 
-    <li><a href="mprofile.html"> Home </a></li>
+    <li><a href="mprofile.php"> Home </a></li>
 
-    <li> <a href="ViewOffers.html"> Offers </a>
+    <li> <a href="ViewOffers.php"> Offers </a>
 
     <li> <a href="#"> Settings </a>
     <ul class="inner">
-     <li class="first"><a href="parentprofile.html"> view profile</a></li>
+     <li class="first"><a href="parentprofile.php"> view profile</a></li>
      
-    <li><a href="index.html"> Sign out </a></li>
+    <li><a href="index.php"> Sign out </a></li>
         
     </ul>
     
@@ -43,35 +53,26 @@
 
 <!--profile card -->
   <div class="card"> 
-    <img src="images/anny.jpeg" alt="Baby SItter's profile picture">
+  <?php echo" <img src='images/".$babysitdata['sitter_image']."' alt='Baby Sitters profile picture'>" ?>
    
-    <h1 class="name" > Anny </h1>
-    <p class="title">Riyadh , Saudi Arabia</p>
- <!--stars -->
-    <div class="stars">
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-    
-    </div>
+    <h1 class="name" > <?php echo $babysitdata['name']?> </h1>
+    <p class="title"><?php echo $babysitdata['city']?></p>
     
     <div class="desc">
-      <p>
+      <p> 
         <ul >
-        <li>35 years old , Ugandan </li>
-        <li>2 yeas of paid experiance</li>
-        <li>a mother (has 2 kids)</li>
+        <li> Age: <?php echo $babysitdata['age']?> </li>
+        <li>Gender: <?php echo $user_data['gender']?></li>
+        <li>Phone number: <?php echo "0".$user_data['phoneNo']?></li>
+        <li>Bio: <?php echo $user_data['bio']?></li>
       </ul>
-      High patience and i love to take care of kids like my own
      
      
      <form  action="mailto:talia@gmail.com"><input  class="btn" type="submit" value="Contact"></form>
    <!-- <button class="btn"><a href="mailto:anny212@gmail.com">Contact</a></button>--> 
 <br> <hr>
    
-     <p class="reviews" style="font-size:15px ;"><a href="pAnnyReviews.html">Anny's Reviews</a></p>
+     <p class="reviews" style="font-size:15px ;"><a href="pAnnyReviews.html"><?php echo $user_data['name']?> 's Reviews</a></p>
     </div>
   </div>
 
@@ -83,7 +84,7 @@
         <img class="logo" src="images/logo.png" alt="Ouun">
 
         <p class="footer-links">
-            <a href="#" class="link-1">Home</a>
+            <a href="#index.php" class="link-1">Home</a>
            <!--<a href="#">About</a> --> 
             <a href="mailto:support@Ouun.com">Contact</a>
         </p>
