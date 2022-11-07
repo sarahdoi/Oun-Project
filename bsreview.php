@@ -32,7 +32,7 @@
 <body>
 
 <!--review and rate card-->
-<form action="rate.php">
+<form action="rate.php" method="post">
 <div class="container" >
     <div class="star-widget">
        <input type="radio" name="rate" id="rate-5" value="5">

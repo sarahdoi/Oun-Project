@@ -3,22 +3,22 @@
 session_start();
 include 'connection.php';
 include 'functionts.php';
-function getBookings(){
+
+$user_data = check_loginBabysitter($con);
+$BabytId= $user_data['national_ID'];
+$BabyName= $user_data['name'];
+
+
+/*function getBookings(){
   global $con;
   $query = "SELECT bookings.booking_id, bookings.review , bookings.rating , request.* , offer.offer_id , offer.babysitter_id , offer.price , offer.status
-  FROM bookings WHERE offer.babysitter_id = '111'
+  FROM bookings 
    INNER JOIN request ON request.request_id = bookings.request_id
    INNER JOIN offer ON request.request_id = offer.request_id";
   return mysqli_query( $con  , $query);
-}
+} */
 
-function getRequests(){
-  global $con;
-  $query = "SELECT *
-  FROM request WHERE request.request_id = '4'
-  INNER JOIN parent ON request.parent_id=parent.parent_id;";
-  return mysqli_query( $con  , $query);
-}
+
 
 
 ?>
@@ -145,16 +145,16 @@ $bookings = getBookings();
 if ( mysqli_num_rows($bookings) > 0 )  {
 
   foreach( $bookings as $element ) { ?>
-  <div>
+  
   <figure class="review">
-    <blockquote>I was really satisfied Thank you very much Nouf!! </blockquote>
+    <blockquote></blockquote>
     <div class="author">
       <img src="images/kid7girl.jpg" alt="sq-sample1"/>
       <br>
       <h4>Manal H.</h4>
     </div>
   </figure>
-  </div>
+
 
   <?php } 
 

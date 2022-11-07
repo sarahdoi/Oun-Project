@@ -14,15 +14,15 @@ if (!isset($_POST['rate']))
 $rate = 0;
 else {
 
-if($_POST['rate'] == "5") {
+if($_POST['rate'] == 5) {
     $rate =5;
-}if($_POST['rate'] == "4") {
+}if($_POST['rate'] == 4) {
     $rate =4;
-} else if($_POST['rate'] == "3") {
+} else if($_POST['rate'] == 3) {
     $rate = 3;
-} else if($_POST['rate'] == "2") {
+} else if($_POST['rate'] == 2) {
     $rate  = 2;
-} else if($_POST['rate'] == "1") {
+} else if($_POST['rate'] == 1) {
     $rate = 1;
 }
 }
@@ -34,7 +34,7 @@ $query = "UPDATE `bookings` SET `review`='$review',`rating`='$rate' WHERE bookin
 $result = mysqli_query($con,$query );
 
 if ( !$result) 
-die("failed to query");
+header("location: mprofile.php? failed to query");
 
 header("location: mprofile.php?");
 exit();
