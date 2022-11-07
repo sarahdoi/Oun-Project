@@ -57,7 +57,7 @@ $BabyName= $user_data['name'];
         <li> <a href="#"> Settings </a>
         <ul class="inner">
             
-        <li class="first"><a href="BabysitterProfile.html"> view profile</a></li>
+        <li class="first"><a href="BabysitterProfile.php"> view profile</a></li>
             
         <li><a href="signout.php"> Sign out </a></li>
             
@@ -163,7 +163,7 @@ $con->close();
 </div>
 
 <p class="footer-links">
-<a href="#" class="link-1">Home</a>
+<a href="currentBaby.php" class="link-1">Home</a>
 <!--<a href="index.html/aboutus">About</a>-->
 <a href="mailto:support@Ouun.com">Contact</a>
 </p>

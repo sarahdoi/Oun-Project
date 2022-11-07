@@ -45,19 +45,19 @@ $BabyName= $user_data['name'];
     <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
     <nav class="navbar">
     <ul> 
-    <li><a href="currentBaby.html"> Home </a></li>
+    <li><a href="currentBaby.php"> Home </a></li>
 
     <li> <a href="#"> Menu </a>
         <ul class="inner"> <!-- your menu here\\\\\\-->
-     <li  class="first"><a href="JobRequest.html"> Job Requests </a></li>
-     <li><a href="OfferList.html"> Offers </a></li>
-     <li><a href="myReviews.html"> rate & reviews </a></li>
+     <li  class="first"><a href="JobRequest.php"> Job Requests </a></li>
+     <li><a href="OfferList.php"> Offers </a></li>
+     <li><a href="myReviews.php"> rate & reviews </a></li>
 </ul>
 
     <li> <a href="#"> Settings </a>
     <ul class="inner">
-    <li  class="first"><a href="BabysitterProfile.html"> view profile</a></li>
-    <li><a href="index.html"> Sign out </a></li>
+    <li  class="first"><a href="BabysitterProfile.php"> view profile</a></li>
+    <li><a href="index.php"> Sign out </a></li>
         
     </ul>
     
@@ -75,7 +75,7 @@ $BabyName= $user_data['name'];
         <img class="logo" src="images/logo.png" alt="Oun">
   
         <p class="footer-links">
-            <a href="currentBaby.html" class="link-1">Home</a>
+            <a href="currentBaby.php" class="link-1">Home</a>
             <!--<a href="#">About</a>-->
             <a href="mailto:support@Ouun.com">Contact</a>
         </p>
