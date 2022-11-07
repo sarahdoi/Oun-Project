@@ -144,18 +144,18 @@ $bookings = getBookings();
 
 if ( mysqli_num_rows($bookings) > 0 )  {
 
-  foreach( $bookings as $element ) { ?>
-  <div>
-  <figure class="review">
-    <blockquote><?php $element['review'] ?></blockquote>
-    <div class="author">
-      <img src="images/prpic.png" alt="sq-sample1"/>
+  foreach( $bookings as $element ) { 
+  echo "<div>
+  <figure class='review'>
+    <blockquote>". $element['review']."</blockquote>
+    <div class='author'>
+      <img src='images/". $element['parent_image']."' alt='sq-sample1'/>
       <br>
-      <h4><?php //$element['name'] ?></h4>
+      <h4>". $element['name'] ."</h4>
     </div>
   </figure>
-  </div>
-
+  </div>"
+?>
   <?php } 
 
 }
