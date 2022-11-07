@@ -1,8 +1,8 @@
 
 <?php
 session_start();
-include 'connection.php';
-include 'functionts.php';
+include("connection.php");
+include("functions.php");
 
 $user_data = check_loginBabysitter($con);
 $BabytId= $user_data['national_ID'];
@@ -145,16 +145,16 @@ $bookings = getBookings();
 if ( mysqli_num_rows($bookings) > 0 )  {
 
   foreach( $bookings as $element ) { ?>
-  
+  <div>
   <figure class="review">
-    <blockquote></blockquote>
+    <blockquote><?php $element['review'] ?></blockquote>
     <div class="author">
-      <img src="images/kid7girl.jpg" alt="sq-sample1"/>
+      <img src="images/prpic.png" alt="sq-sample1"/>
       <br>
-      <h4>Manal H.</h4>
+      <h4><?php //$element['name'] ?></h4>
     </div>
   </figure>
-
+  </div>
 
   <?php } 
 

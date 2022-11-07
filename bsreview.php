@@ -53,7 +53,7 @@
             </div>
             <!-- CHECK IT       <a href="rate.php?booking_id=<?php // echo $_GET['booking_id']; ?>">   -->
          
-            <a href="rate.php?booking_id=<?php echo$_GET['booking_id']; ?>">
+            <!-- <a href="rate.php?booking_id=<?php// echo$_GET['booking_id']; ?>"> -->
             <div class="btn">
                 <button type="submit"> Post</button>
           </div>
