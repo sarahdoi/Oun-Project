@@ -89,8 +89,7 @@ echo " <!-- #########################################-->
      
    </p>
    <br>
-   <a  class='lin' href='bsreview.php?=booking_id='".$_GET['
-   booking_id'].">Review & Rate</a>
+   <a  class='lin' href='bsreview.php?=booking_id='".$element['booking_id']."'>Review & Rate</a>
    <div class='desc'>
    <div class='info'>
    <h2><span>Date</span><small>".$element['date']."</small></h2>

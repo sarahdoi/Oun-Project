@@ -75,7 +75,7 @@ if( mysqli_num_rows($Bookings) > 0)
     $no=1;
     foreach( $Bookings as $element )
     { 
-        if($element['status']=='a' ){
+        if($element['status']=='a' && $element['parent_id']==$parentId ){
             $no=2;
 echo " <!-- #########################################-->
 <div class='card'> 
