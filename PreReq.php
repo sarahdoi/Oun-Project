@@ -1,3 +1,22 @@
+<?php 
+    session_start();
+
+    include("connection.php");
+    include("functions.php");
+    
+    /*if(!isset($_SESSION['email']))
+	   header("Location: index.php?error=Please Sign In again!");
+    else
+    <?php 
+        echo "<img src='images/".$parentpic."' alt='Baby Sitter's profile picture'>"
+        ?> //getting imgs! works fine
+    {*/
+$user_data = check_loginParent($con);
+$parentId= $user_data['parent_id'];
+$parentName= $user_data['name'];
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,6 +27,7 @@
         <link rel="stylesheet" href="styleB.css">
         <link rel="stylesheet" href="fonts.css">
         <link rel="stylesheet" href="prepage.css">
+        <link rel="stylesheet" href="preCards.css">
         <link rel="stylesheet" href="mytitels.css">
         <title>Previous Jobs</title>
 
@@ -42,7 +62,59 @@
     <div class="mytitle"><h1>Previous Bookings</h1></div>
 
      
-       
+    <?php
+// Check connection
+$Bookings= geprevtBookings();
+
+if( mysqli_num_rows($Bookings) > 0)
+{
+   // $no=1;
+    foreach( $Bookings as $element )
+    { 
+       // if($element['status']=='a' ){
+          //  $no=2;
+echo " <!-- #########################################-->
+<div class='card'> 
+   <img src='images/".$element['sitter_image']."' alt='Baby Sitter's profile picture'>
+   <h1 class='name' > ".$element['name']."</h1>
+   <p class='title'>
+       <span>No. of Kids:</span>
+       <span>".$element['numOfKids']."</span><br>
+       <span>Kid's Name:</span>
+       <span>".$element['kid_name']."</span><br>
+       <span>Age:</span>
+       <span>".$element['kid_age']."</span><br>
+       <span>Type of service:</span> 
+       <span>".$element['service_type']."</span>
+     
+   </p>
+   <br>
+   <a  class='lin' href='bsreview.php?=booking_id='".$_GET['
+   booking_id'].">Review & Rate</a>
+   <div class='desc'>
+   <div class='info'>
+   <h2><span>Date</span><small>".$element['date']."</small></h2>
+   <h2><span>".$element['price']."</span><small>SR/hour</small></h2>
+   <h2><!--<a href='#'> --><span>Time</span><small>".$element['start_time']."-".$element['end_time']."</small></h2>
+   </div>
+   </div> <!-- dec card-->
+   <!-- -->
+   </div> <!-- end card-->
+";}
+
+} else{ 
+    echo "<br><br><br>
+    <p style='font-size:20px;'>You don't have previous bookings..</\p>
+     <br><br><br>"; 
+}
+/*if($no == 1){ 
+    echo "<br><br><br>
+    <p style='font-size:20px;'>You don't have previous bookings..</\p>
+     <br><br><br>"; 
+}*/
+$con->close();
+?>
+
         <!-- start cards first one -->
         <div class="card"> 
             <img src="images/sophie.jpg" alt="Baby SItter's profile picture">
@@ -55,7 +127,7 @@
                 <span class="type">baby sitting</span>
               </p>
             <br>
-            <a  class="lin" href="bsreview.html">Review & Rate</a>
+            <a  class="lin" href="bsreview.php">Review & Rate</a>
             <div class="desc">
             <div class="info">
             <h2><span>Date</span><small>02-02-2020</small></h2>
@@ -68,55 +140,8 @@
             </div> <!-- end card-->
            
        
-            <!--scound card -->
-           
-            <div class="card"> 
-                <img src="images/rebeca.png" alt="Baby SItter's profile picture">
-                <h1 class="name" > Rebecca </h1>
-                <p class="title">
-           
-                    <span>Riyadh</span>
-                    <span>Saudi Arabia</span><br>
-                    <span class="type">Type of service: </span> 
-                    <span class="type">cooking</span>
-                 
-                </p>
-                <br>
-                <a  class="lin" href="bsreview.html">Review & Rate </a>
-                <div class="desc">
-                <div class="info">
-                <h2><span>Date</span><small>09-02-2022</small></h2>
-                <h2><span>150</span><small>SR/hour</small></h2>
-                <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-04:30pm</small></h2>
-                </div>
-                </div> <!-- dec card-->
-                <!-- -->
-                </div> <!-- end card-->
 
-                <!--third card-->
-     
-                <div class="card"> 
-                    <img src="images/kate.png" alt="Baby SItter's profile picture">
-                    <h1 class="name" > Kate </h1>
-                    <p class="title">
-               
-                        <span>Saudi</span>
-                        <span>Arabia</span><br>
-                        <span class="type">Type of service: </span> 
-                        <span class="type">Tutoring</span>
-                     
-                    </p>
-                    <br>
-                    <a  class="lin" href="bsreview.html">Review & Rate</a>
-                    <div class="desc">
-                    <div class="info">
-                    <h2><span>Date</span><small>14-02-2022</small></h2>
-                    <h2><span>170</span><small>SR/hour</small></h2>
-                    <h2><!--<a href="#"> --><span>Time</span><small>02:00pm-03:30pm</small></h2>
-                    </div>
-                    </div> <!-- dec card-->
-                    <!-- -->
-                    </div> <!-- end card-->
+                
 <footer class="footer-distributed">
 
     <div class="footer-left">
