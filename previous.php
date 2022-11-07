@@ -86,7 +86,7 @@ if( mysqli_num_rows($offers) > 0)
             $no=2;
 echo " <!-- #########################################-->
 <div class='card'> 
-   <img src='images/".$element['sitter_image']."' alt='Baby Sitter's profile picture'>
+   <img src='images/".$element['parent_image']."' alt='parents's profile picture'>
    <h1 class='name' > ".$element['name']."</h1>
    <p class='title'>
        <span>No. of Kids:</span>

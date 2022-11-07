@@ -76,7 +76,7 @@ function getCurrentBookings(){
 }
 */
 
-function geprevtBookings(){ //use if there is prev in database
+function geprevtBookings(){ //use if there is prev in database 
     global $con;
     $query = "SELECT bookings.booking_id, bookings.review , bookings.rating , request.* , offer.offer_id , offer.babysitter_id , offer.price , offer.status , babysitter.sitter_image , babysitter.name 
     FROM bookings
@@ -104,16 +104,17 @@ function getoffers(){
 }
 function getPrevoffers(){ //
     global $con;
-    $query = "SELECT offer.*, babysitter.* , request.* 
+    $query = "SELECT offer.*, parent.* , request.* 
     FROM offer
      INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
-     INNER JOIN request ON offer.request_id = request.request_id && request.date < (CAST(CURRENT_TIMESTAMP AS DATE)) ;";
+     INNER JOIN request ON offer.request_id = request.request_id && request.date < (CAST(CURRENT_TIMESTAMP AS DATE))
+     INNER JOIN parent ON offer.request_id = request.request_id && request.date < (CAST(CURRENT_TIMESTAMP AS DATE)) ;";
     return mysqli_query( $con  , $query);
 }
 
 function getPrevBookingsforID($id){
     global $con;
-    $query = "SELECT bookings.booking_id, bookings.review , bookings.rating , request.* , offer.offer_id , offer.babysitter_id , offer.price , offer.status , parent.parent_id , babysitter.sitter_image , babysitter.name
+    $query = "SELECT bookings.booking_id, bookings.review , bookings.rating , request.* , offer.offer_id , offer.babysitter_id , offer.price , offer.status , parent.parent_id , parent.parent_image , babysitter.sitter_image , babysitter.name
     FROM bookings
      INNER JOIN request ON request.request_id = bookings.request_id && request.date < (CAST(CURRENT_TIMESTAMP AS DATE))
      INNER JOIN offer ON request.request_id = offer.request_id

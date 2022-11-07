@@ -178,7 +178,7 @@ if ( mysqli_num_rows($bookings) > 0 )  {
   <figure class='review'>
     <blockquote>". $element['review']."</blockquote>
     <div class='author'>
-      <img src='images/". $element['parent_image']."' alt='sq-sample1'/>
+      <img src='images/".$element['parent_image']."' alt='sq-sample1'/>
       <br>
       <h4>". $element['name'] ."</h4>
     </div>
