@@ -82,7 +82,7 @@ if( mysqli_num_rows($offers) > 0)
     $no=1;
     foreach( $offers as $element )
     { 
-        if($element['status']=='a' ){
+        if($element['status']=='a' && $element['babysitter_id']== $BabytId){
             $no=2;
 echo " <!-- #########################################-->
 <div class='card'> 
