@@ -186,7 +186,7 @@ margin-top: 10px;
 <meta name="viewport" content="width=device-width , initial-scale=1">
 <link rel="icon" type="images/png"  href="images/logo.png">
 <meta name="viewport" content="width=device-width , intial-scale=1">
-<title> ViewOffer </title>
+<title> Babysitter price offers</title>
 
 
 </head>
