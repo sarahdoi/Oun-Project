@@ -127,7 +127,7 @@ $BabyName= $user_data['name'];
     </div>  
 
 -->
-<?php $bookings = getBookings();
+<?php $bookings = getPrevBookingsforID($BabytId);
 /*$query = "SELECT parent.parent_id , parent_image , parent.name
         FROM offer
        INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
@@ -136,6 +136,7 @@ $BabyName= $user_data['name'];
        WHERE    "
 
       $parentInfo =  mysqli_query( $con  , $query); */
+      if ( mysqli_num_rows($bookings) > 0 )  {
      $count=0;
      $tot_rating=0;
      $ave_rating=0;
@@ -145,11 +146,14 @@ $BabyName= $user_data['name'];
         foreach( $bookings as $element ) { 
          $tot_rating += $element['rating'] ;
          $count++; 
-        }}
-
-        $ave_rating = $tot_rating / $num;   ?>
-<h1 class="mytitle"> My Rating <br> <?php echo $ave_rating; ?>/5  </h1> 
-
+        }
+      }
+        $ave_rating = $tot_rating / $num;   
+        echo "<h1 class='mytitle'> My Rating <br>".$ave_rating."/5  </h1>" ;
+        } else{
+          echo "<h1 class='mytitle'> My Rating </h1> <br> <h2 style='text-align:center' > No rating yet </h2> " ;  
+        }
+        ?>
 
      <h1 class="mytitle2"> My Reviews  </h1>  
      <div> 
@@ -186,7 +190,7 @@ if ( mysqli_num_rows($bookings) > 0 )  {
 }
 
 else {
-  echo "<h2> There are no reviews yet </h2>";
+  echo "<h2 style='text-align:center'> There are no reviews yet </h2>";
 }
 
 ?>
