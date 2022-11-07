@@ -40,14 +40,14 @@ $parentName= $user_data['name'];
             <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
             <nav class="navbar">
             <ul> 
-            <li><a href="mprofile.html"> Home </a></li>
+            <li><a href="mprofile.php"> Home </a></li>
     
-            <li> <a href="ViewOffers.html"> Offers </a>
+            <li> <a href="ViewOffers.php"> Offers </a>
     
             <li> <a href="#"> Settings </a>
             <ul class="inner">
                 <div class="first">
-            <li><a href="parentprofile.html"> view profile</a></li>
+            <li><a href="parentprofile.php"> view profile</a></li>
                 </div>
             <li><a href="index.php"> Sign out </a></li>
                 
@@ -156,7 +156,7 @@ $con->close();
         </div>
 
         <p class="footer-links">
-            <a href="mprofile.html" class="link-1">Home</a>
+            <a href="mprofile.php" class="link-1">Home</a>
            <!-- <a href="#">About</a> --> 
             <a href="mailto:support@Ouun.com">Contact</a>
         </p>
