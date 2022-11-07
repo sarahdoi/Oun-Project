@@ -62,9 +62,9 @@ $babysitdata = mysqli_affected_rows($result) ;
       <p> 
         <ul >
         <li> Age: <?php echo $babysitdata['age']?> </li>
-        <li>Gender: <?php echo $user_data['gender']?></li>
-        <li>Phone number: <?php echo "0".$user_data['phoneNo']?></li>
-        <li>Bio: <?php echo $user_data['bio']?></li>
+        <li>Gender: <?php echo$babysitdata['gender']?></li>
+        <li>Phone number: <?php echo "0".$babysitdata['phoneNo']?></li>
+        <li>Bio: <?php echo$babysitdata['bio']?></li>
       </ul>
      
      
@@ -72,7 +72,7 @@ $babysitdata = mysqli_affected_rows($result) ;
    <!-- <button class="btn"><a href="mailto:anny212@gmail.com">Contact</a></button>--> 
 <br> <hr>
    
-     <p class="reviews" style="font-size:15px ;"><a href="pAnnyReviews.html"><?php echo $user_data['name']?> 's Reviews</a></p>
+     <p class="reviews" style="font-size:15px ;"><a href="checkbsreview.php?national_ID=<?php echo $babysitdata['national_ID']?>"><?php echo $babysitdata['name']?> 's Reviews</a></p>
     </div>
   </div>
 
