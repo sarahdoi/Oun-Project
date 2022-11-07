@@ -110,5 +110,15 @@ function getPrevoffers(){ //
     return mysqli_query( $con  , $query);
 }
 
+function getPrevBookingsforID($id){
+    global $con;
+    $query = "SELECT bookings.booking_id, bookings.review , bookings.rating , request.* , offer.offer_id , offer.babysitter_id , offer.price , offer.status , parent.parent_id , babysitter.sitter_image , babysitter.name
+    FROM bookings
+     INNER JOIN request ON request.request_id = bookings.request_id && request.date < (CAST(CURRENT_TIMESTAMP AS DATE))
+     INNER JOIN offer ON request.request_id = offer.request_id
+       INNER JOIN parent ON request.parent_id = parent.parent_id
+       INNER JOIN babysitter ON offer.babysitter_id = babysitter.national_ID WHERE babysitter.national_ID=$id ";
+    return mysqli_query( $con  , $query);
+}
 
 ?>

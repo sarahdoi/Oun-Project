@@ -155,8 +155,8 @@ $BabyName= $user_data['name'];
      <div> 
 
 <?php 
-$bookings = getBookings();
-/*$query = "SELECT parent.parent_id , parent_image , parent.name
+//CHANGE IT TO GET PREVIOUS  BOOKINGS
+$bookings = getPrevBookingsforID($BabytId);/*$query = "SELECT parent.parent_id , parent_image , parent.name
         FROM offer
        INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
        INNER JOIN request ON offer.request_id = request.request_id
