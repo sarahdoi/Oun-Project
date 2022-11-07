@@ -89,7 +89,7 @@ $BabyName= $user_data['name'];
 <?php
 // Check connection
 $offers= getCurrentoffers();
-
+$no=0;
 if( mysqli_num_rows($offers) > 0)
 {
     $no=1;

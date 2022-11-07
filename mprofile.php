@@ -69,7 +69,7 @@ $parentName= $user_data['name'];
     <?php
 // Check connection
 $Bookings= getCurrentBookings();
-
+$no=0;
 if( mysqli_num_rows($Bookings) > 0)
 {
     $no=1;
