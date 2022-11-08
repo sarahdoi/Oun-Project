@@ -3,6 +3,7 @@
 session_start();
 include("connection.php") ;
 
+$errors=array();
 
 
     if(isset($_POST['delete'])){
@@ -12,8 +13,8 @@ include("connection.php") ;
     }
     if(isset($_POST['edit'])){ 
 header("Location:editbaby.php");
-//////////////////////////////
-    }
+    }//////////////////////////////
+
     if(isset($_POST['save'])){
         $id = $_GET["national_ID"];
         
@@ -22,7 +23,7 @@ $email = $_POST['user_email'];
 $nationalid = $_POST['ID'];
 
 $password1 = mysqli_real_escape_string($con , $_POST['user_password']);
-$password2 = mysqli_real_escape_string($con ,$_POST['repeatedPassword']);
+//$password2 = mysqli_real_escape_string($con ,$_POST['repeatedPassword']);
 
 $phone = $_POST['phone'];
 $city = $_POST['City'];
@@ -45,11 +46,11 @@ if(move_uploaded_file($imgTmpName, $upload_directory.$TargetPath)){
 }// is set
 
 
-if ($password1 !== $password2) {
+/*if ($password1 !== $password2) {
     header("Location: editbaby.php?error=Passwords do not match , please try again!");
     exit;
     array_push($errors , "Passwords do not match");
-}
+}*/
 
 //check db for existing parent with the same email 
 $emailcheck_query = "SELECT * FROM parent WHERE email = '$email'";
@@ -90,7 +91,8 @@ if( ! isset($_FILES['image']['name']) || empty($_FILES['image']['name']) ){
 if(count($errors)==0){
     $password = md5($password1); //encrypting password by using md5()
     //update query
-    $query = "UPDATE parent SET parent_image='$TargetPath' , name='$username' ,email='$email', password='$password',city='$city',district='$district',street='$street',bulidingNo='$buildingNo',phoneNo='$phone' WHERE national_ID=$id  " ;
+    //district='$district',street='$street',bulidingNo='$buildingNo'
+    $query = "UPDATE babysitter SET sitter_image='$TargetPath' , name='$username' ,email='$email', password='$password',city='$city',phoneNo='$phone' WHERE national_ID=$id  " ;
     mysqli_query($con , $query);
     header("Location:BabysitterProfile.php");
 }
