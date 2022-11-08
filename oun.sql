@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2022 at 02:59 AM
+-- Generation Time: Nov 08, 2022 at 11:13 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -46,8 +46,7 @@ CREATE TABLE `babysitter` (
 --
 
 INSERT INTO `babysitter` (`name`, `national_ID`, `phoneNo`, `password`, `gender`, `age`, `email`, `city`, `bio`, `sitter_image`, `average_rate`) VALUES
-('najla', 111, 2147483647, '674f3c2c1a8a6f90461e8a66fb5550ba', 'Female', 21, 'najla@gmail.com', 'riyadh', 'good cook ', 'prpic.png', NULL),
-('noura', 333, 4, '202cb962ac59075b964b07152d234b70', 'Female', 22, 'noura@gmail.com', 'riyadh', 'yes', 'prpic.png', NULL);
+('lama', 1118954211, 561111111, '202cb962ac59075b964b07152d234b70', 'Female', 24, 'lama@gmail.com', 'riyadh', 'bachelor in education, 2 years in experience', 'prpic.png', NULL);
 
 -- --------------------------------------------------------
 
@@ -63,6 +62,16 @@ CREATE TABLE `bookings` (
   `rating` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`booking_id`, `request_id`, `offer_id`, `review`, `rating`) VALUES
+(28, 25, 22, NULL, NULL),
+(29, 28, 24, NULL, NULL),
+(30, 36, 28, NULL, NULL),
+(31, 37, 29, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +85,17 @@ CREATE TABLE `offer` (
   `price` float NOT NULL,
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `offer`
+--
+
+INSERT INTO `offer` (`offer_id`, `babysitter_id`, `request_id`, `price`, `status`) VALUES
+(22, 1118954211, 25, 44, 'a'),
+(24, 1118954211, 28, 80, 'a'),
+(28, 1118954211, 36, 100, 'a'),
+(29, 1118954211, 37, 25, 'a'),
+(30, 1118954211, 38, 40, 'r');
 
 -- --------------------------------------------------------
 
@@ -101,7 +121,7 @@ CREATE TABLE `parent` (
 --
 
 INSERT INTO `parent` (`parent_id`, `parent_image`, `name`, `email`, `password`, `city`, `district`, `street`, `buildingNo`, `phoneNo`) VALUES
-(2, 'prpic.png', 'nesreen', 'nesreen@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'riyadh', 'alyasmeen', 'tbo', '19A', 568585559);
+(4, 'prpic.png', 'nesreen', 'nesreen@gmail.com', '202cb962ac59075b964b07152d234b70', 'riyadh', 'alyasmeen', 'T.B.O', '19A', 568585559);
 
 -- --------------------------------------------------------
 
@@ -114,7 +134,7 @@ CREATE TABLE `request` (
   `parent_id` int(11) NOT NULL,
   `numOfKids` int(11) NOT NULL,
   `kid_name` varchar(100) NOT NULL,
-  `kid_age` int(11) NOT NULL,
+  `kid_age` varchar(11) NOT NULL,
   `service_type` varchar(20) NOT NULL,
   `date` date NOT NULL,
   `start_time` time NOT NULL,
@@ -126,9 +146,13 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`request_id`, `parent_id`, `numOfKids`, `kid_name`, `kid_age`, `service_type`, `date`, `start_time`, `end_time`) VALUES
-(4, 2, 1, 'noura', 5, 'babysitting', '2022-11-16', '04:48:00', '06:00:00'),
-(7, 2, 1, 'faisal', 7, 'cooking', '2022-11-16', '06:50:00', '10:04:00'),
-(8, 2, 1, 'yas', 1, 'babysitting', '2022-11-24', '06:22:00', '09:22:00');
+(25, 4, 1, 'haifa', '10', 'cooking', '2022-11-09', '02:00:00', '06:00:00'),
+(28, 4, 1, 'hisham hamad', '10', 'babysitting', '2022-11-09', '22:10:00', '12:10:00'),
+(36, 4, 1, 'arwa', '3', 'babysitting', '2022-11-09', '22:58:00', '23:58:00'),
+(37, 4, 1, 'munira', '3', 'tutoring', '2022-11-10', '23:03:00', '12:03:00'),
+(38, 4, 1, 'huda', '2', 'cooking', '2022-11-24', '12:03:00', '13:03:00'),
+(39, 4, 2, 'noura, sara', '2,5', 'tutoring', '2022-11-10', '12:52:00', '15:52:00'),
+(40, 4, 2, 'sultan, abdullah', '2,5', 'babysitting', '2022-11-11', '13:59:00', '13:59:00');
 
 --
 -- Indexes for dumped tables
@@ -177,25 +201,25 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `offer`
 --
 ALTER TABLE `offer`
-  MODIFY `offer_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `offer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `parent`
 --
 ALTER TABLE `parent`
-  MODIFY `parent_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `parent_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `request_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `request_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- Constraints for dumped tables
