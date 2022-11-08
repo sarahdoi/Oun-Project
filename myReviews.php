@@ -127,7 +127,7 @@ $BabyName= $user_data['name'];
     </div>  
 
 -->
-<?php $bookings = getPrevBookingsforID($BabytId);
+<?php $bookings = getPrevBookingsforID2($BabytId);
 /*$query = "SELECT parent.parent_id , parent_image , parent.name
         FROM offer
        INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
@@ -160,7 +160,7 @@ $BabyName= $user_data['name'];
 
 <?php 
 //CHANGE IT TO GET PREVIOUS  BOOKINGS
-$bookings = getPrevBookingsforID($BabytId);/*$query = "SELECT parent.parent_id , parent_image , parent.name
+$bookings = getPrevBookingsforID2($BabytId);/*$query = "SELECT parent.parent_id , parent_image , parent.name
         FROM offer
        INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
        INNER JOIN request ON offer.request_id = request.request_id

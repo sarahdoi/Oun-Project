@@ -8,7 +8,11 @@ session_start();
 
 
 //$booking_id =1;
-$booking_id = $_GET['booking_id'];
+if (isset($_POST['booking_id'])) {
+$bookingid = $_POST['booking_id'];
+}else{
+ $bookingid=1;   
+}
 
 if (!isset($_POST['rate']))
 $rate = 0;
@@ -30,7 +34,8 @@ if($_POST['rate'] == 5) {
 if (isset($_POST['review']))
 $review = $_POST['review'];
 
-$query = "UPDATE `bookings` SET `review`='$review',`rating`='$rate' WHERE booking_id= '1'";
+$query = "UPDATE `bookings` SET `review`='$review',`rating`='$rate' WHERE booking_id='$bookingid'"; //works if its 1
+
 $result = mysqli_query($con,$query );
 
 if ( !$result) 

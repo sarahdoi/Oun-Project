@@ -123,6 +123,17 @@ function getPrevBookingsforID($id){
     return mysqli_query( $con  , $query);
 }
  
+function getPrevBookingsforID2($id){
+    global $con;
+    $query = "SELECT bookings.booking_id, bookings.review , bookings.rating , request.* , offer.offer_id , offer.babysitter_id , offer.price , offer.status , parent.parent_id , parent.parent_image , babysitter.sitter_image , parent.name
+    FROM bookings
+     INNER JOIN request ON request.request_id = bookings.request_id && request.date < (CAST(CURRENT_TIMESTAMP AS DATE))
+     INNER JOIN offer ON request.request_id = offer.request_id
+       INNER JOIN parent ON request.parent_id = parent.parent_id
+       INNER JOIN babysitter ON offer.babysitter_id = babysitter.national_ID WHERE babysitter.national_ID=$id ";
+    return mysqli_query( $con  , $query);
+}
+
 ///////////////////// delete these 2 at the end if not used,, they didnt work well with me!
 function  createConfirmationmbox() {  
     echo '<script type="text/javascript"> ';  
