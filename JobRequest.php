@@ -108,10 +108,18 @@ $errors = array();
 <?php 
 $requests = getRequests();
 
-if( mysqli_num_rows($requests) > 0)
+$query = "SELECT *
+FROM request
+JOIN parent 
+ON request.parent_id = parent.parent_id
+WHERE request_id NOT IN
+    (SELECT request_id 
+     FROM bookings)";
+$result = mysqli_query($con , $query);
+if( mysqli_num_rows($result) > 0)
 {
     
-    foreach( $requests as $element )
+    foreach( $result as $element )
     {
     
 ?>  
