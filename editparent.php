@@ -17,6 +17,8 @@ $errors = array() ;
 <link rel="stylesheet" href="Registerforms.css">
 <link rel="stylesheet" href="footer.css">
 <link rel="stylesheet" href="styleB.css">
+<link rel="stylesheet" href="BabyProfile.css">
+
 
 
 <title>My Profile</title>
@@ -76,11 +78,10 @@ $errors = array() ;
           
           <label for="password" >Password *</label>
           <input type="password" id="password" name="userPassword" value="<?php echo ($user_data['password']) ?> "  required >
-          <label for="password" >Confirm Password *</label>
-          <input type="password" id="password" name="RepeatedPassword"  required >
+        
 
             <label for="image" >Profile image </label>
-           <img src="<?php echo $user_data['parent_image'] ?> " >
+           <img src="images/<?php echo $user_data['parent_image'] ?>" >
           <input type="file" name="image" id="image" value="<?php echo $user_data['parent_image'] ?> "  >
 
         </fieldset>
@@ -99,7 +100,7 @@ $errors = array() ;
 
         </fieldset>
     <button type="submit" name="save">Save Changes</button>
-    <div class="danger">
+    <div class="danger" style="width:100%; height:70%;">
     <button type="submit" name="delete">Delete Account</button> </div>
  </form>
 

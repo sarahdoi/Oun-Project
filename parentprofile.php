@@ -17,6 +17,8 @@ $errors = array() ;
 <link rel="stylesheet" href="Registerforms.css">
 <link rel="stylesheet" href="footer.css">
 <link rel="stylesheet" href="styleB.css">
+<link rel="stylesheet" href="BabyProfile.css">
+
 
 
 <title>My Profile</title>
@@ -87,7 +89,7 @@ $errors = array() ;
 
         </fieldset>
      <button name="edit" type="submit" >Edit Profile</button> 
-    <div class="danger"><button type="submit" name="delete" onclick="return confirm('Are you sure you want to delete your account?');">Delete Account</button></div>
+    <div class="danger" style="width:100%; height:70%;" ><button type="submit" name="delete" onclick="return confirm('Are you sure you want to delete your account?');">Delete Account</button></div>
  </form>
  
     <footer class="footer-distributed">

@@ -39,7 +39,6 @@ $upload_directory="images/"; //to move ir to this file
 $TargetPath=time().$imgName;
 
 if(move_uploaded_file($imgTmpName, $upload_directory.$TargetPath)){    
- $QueryInsertFile="INSERT INTO parent (`parent_image`) VALUES ('$TargetPath')"; //but didnt sent.
  //$result = mysqli_query($con, $QueryInsertFile);
   }
 
@@ -53,7 +52,7 @@ if(move_uploaded_file($imgTmpName, $upload_directory.$TargetPath)){
 }*/
 
 //check db for existing parent with the same email 
-$emailcheck_query = "SELECT * FROM parent WHERE email = '$email'";
+$emailcheck_query = "SELECT * FROM babysitter WHERE email = '$email' AND national_ID !='$id' ";
 $result = mysqli_query($con, $emailcheck_query);
 
 if (mysqli_num_rows($result) > 0) {
@@ -76,7 +75,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 
 //check db for existing parent with the same phone 
-$phonecheck_query = "SELECT * FROM parent WHERE phoneNo = '$phone'";
+$phonecheck_query = "SELECT * FROM babysitter WHERE phoneNo = '$phone'";
 $result = mysqli_query($con, $phonecheck_query);
 
 if (mysqli_num_rows($result) > 0) {
