@@ -244,7 +244,30 @@ if( mysqli_num_rows($myOffers) > 0)
 
     $no=2;
         ?>
+        
+        <?php  //////////////// TIME
+ $ti= time()+(2+3)*3600;
+$hour= date("H", $ti);
+$dateN= date('Y-m-d');
+$cleanTime=substr($row['start_time'],0,-6);
+
+if($row['date']== $dateN && $hour> $cleanTime ){
+    $msg= "less than 3 hours & the offer will be deleted!";
+    if(!$con)
+    die();
+    if( ! mysqli_select_db($con , "oun"))
+    die();
+    $reqID=$row['request_id'];
+    $qu="UPDATE offer SET `status`='r' WHERE request_id='$reqID' ";
+if(! $table=mysqli_query($con,$qu))
+die("failed to cancel");
+
+}else{
+    $msg="";
+}
+///////////////// ?>
     <div class="card" style="display:inline-block;"> 
+    <?php echo "<p style='font-size:15px;color:red;'>".$msg."</p>"; ?> 
           <?php echo "<img src='images/".$row['sitter_image']."'alt='Baby Sitter's profile picture'>" ;?> 
         <?php echo "<h1 class='name' >". $row['name'] ."</h1> ";?>
         <?php echo "<p class='title'>". $row['city']."</p>"; ?>
@@ -267,7 +290,7 @@ if( mysqli_num_rows($myOffers) > 0)
            <a href="Reject.php?request_id=<?php echo $_GET['request_id'];?>&offer_id=<?php echo $_GET['offer_id'];?>">
            <input class="btn2" type="button" value="Reject" style = "text-align:center;"> </a>
      </div>
-
+    
      <br>
      <?php echo
        "<div  >
@@ -277,25 +300,9 @@ if( mysqli_num_rows($myOffers) > 0)
             Date: ".$row['date']."<br>
             Type of service: ".$row['service_type']." <br>
             Kid's name: ".$row['kid_name']."<br>
-            </p>
+            ".$msg."</p>
         </div>";
-                    ////////////////
- $ti= time()+(2+3)*3600;
- $hour= date("H", $ti);
- $dateN= date('Y-m-d');
- $cleanTime=substr($row['start_time'],0,-6);
- 
- if($row['date']== $dateN && $hour> $cleanTime ){
-     echo "less than 3 hours & the offer will be deleted!";
-     if( ! $con)
-     die();
-     $reqID=$row['request_id'];
-     $qu="UPDATE offer SET 'status'='c' WHERE request_id='$reqID' ";
- if(! $table=mysqli_query($con,$qu))
- die("failed to cancel");
- }
- ///////////////// 
- 
+
         ?>    
    
         </div> <!-- dec card-->
