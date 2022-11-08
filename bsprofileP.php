@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("connection.php");
-$id = $_GET['national_ID'] ;
+$id = $_GET['babysitter_id'] ;
 $query = "SELECT * FROM babysitter WHERE national_ID='$id'" ;
 $result = mysqli_query($conn , $query) ;
 $babysitdata = mysqli_affected_rows($result) ;

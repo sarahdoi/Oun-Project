@@ -276,7 +276,7 @@ die("failed to cancel");
        <?php echo "<h2><span>".$row['price']."</span><small>SR per hour</small></h2>"; ?>
         <?php echo "<h2><span>Time</span> <small>".$row['start_time']."-".$row['end_time']."</small></h2>"; ?>
      </div>
-     <a  class="lin" href="bsprofileP.php">View Profile</a>
+     <a  class="lin" href="bsprofileP.php?babysitter_id=<?php echo $_GET['babysitter_id'];?>">View Profile</a>
 
      
 
