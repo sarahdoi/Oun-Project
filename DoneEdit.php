@@ -25,8 +25,9 @@ $endTime = $_POST['duration2'];
 
 
 // Start updating
+$kid_age = settype($kid_age,"integer");
     $query = "UPDATE request 
-    SET numOfKids = '$numOfKids' , kid_name = '$kid_name', kid_age = $kid_age, service_type = '$service' , date = '$date',
+    SET numOfKids = '$numOfKids' , kid_name = '$kid_name', kid_age = $kid_age , service_type = '$service' , date = '$date',
     start_time = '$startTime' , end_time = '$endTime'
     WHERE request.request_id = $reqID";
 
