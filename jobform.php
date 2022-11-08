@@ -25,10 +25,11 @@ $endTime = $_POST['duration2'];
 // Start Registering
     $query = "INSERT INTO request (`parent_id`,`numOfKids`,`kid_name`,`kid_age`,`service_type`,`date`,`start_time`,`end_time`) 
     VALUES ('$parentID', '$numOfKids', '$kid_name', '$kid_age', '$service', '$date', '$startTime', '$endTime')";
+    
     $result = mysqli_query($con, $query);
 
     mysqli_close($con);
-    Header( 'Location: mprofile.php' );
+    Header( 'Location: parentrequests.php' );
  
 
 
