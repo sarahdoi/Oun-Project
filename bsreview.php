@@ -32,7 +32,7 @@
 <body>
 
 <!--review and rate card-->
-<form action="rate.php" method="post">
+<form action="rate.php?booking_id=<?php echo $_GET['booking_id']; ?>" method="post">
 <div class="container" >
     <div class="star-widget">
        <input type="radio" name="rate" id="rate-5" value="5">
@@ -52,11 +52,6 @@
                 <textarea name="review" style="font-size:medium;" cols="30" placeholder="Describe your experiance.."></textarea>
             </div>
             <!-- Check view profile baby sitter -->
-                <?php
-                $theID= $_GET['booking_id'];
-                 echo "<a href='rate.php?booking_id=".$theID."'></a>";
-
-                 ?>
          
             <!-- <a href="rate.php?booking_id=<?php// echo$_GET['booking_id']; ?>"> -->
             <div class="btn">
