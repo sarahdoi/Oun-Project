@@ -87,6 +87,7 @@ $errors = array() ;
         <?php
          echo "<img src='images/".$user_data['sitter_image']."' alt='img'>" ;
          ?>
+         
             <!--<input type="image" name="image" id="image" alt="image" >-->
         
         </fieldset>
