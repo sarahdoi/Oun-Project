@@ -224,6 +224,7 @@ margin-top: 10px;
 <div><h1 class="mytitler" > <br> <br> <br> <br> Babysitter price offers:</h1> </div>
 <?php 
 
+
  $query = "SELECT offer.*, babysitter.* , request.* 
  FROM offer
   INNER JOIN babysitter ON babysitter.national_id = offer.babysitter_id
@@ -239,6 +240,8 @@ if( mysqli_num_rows($myOffers) > 0)
     while ($row = mysqli_fetch_assoc($myOffers)) 
     if( $row['status'] == 'p')
         {
+
+
     $no=2;
         ?>
     <div class="card" style="display:inline-block;"> 
@@ -267,14 +270,32 @@ if( mysqli_num_rows($myOffers) > 0)
 
      <br>
      <?php echo
-       "<div class= 'dts'>
+       "<div  >
+            <p style='text-align:center'>
             <div>Offer Details:</div>
-            <p>
+            
             Date: ".$row['date']."<br>
             Type of service: ".$row['service_type']." <br>
             Kid's name: ".$row['kid_name']."<br>
             </p>
         </div>";
+                    ////////////////
+ $ti= time()+(2+3)*3600;
+ $hour= date("H", $ti);
+ $dateN= date('Y-m-d');
+ $cleanTime=substr($row['start_time'],0,-6);
+ 
+ if($row['date']== $dateN && $hour> $cleanTime ){
+     echo "less than 3 hours & the offer will be deleted!";
+     if( ! $con)
+     die();
+     $reqID=$row['request_id'];
+     $qu="UPDATE offer SET 'status'='c' WHERE request_id='$reqID' ";
+ if(! $table=mysqli_query($con,$qu))
+ die("failed to cancel");
+ }
+ ///////////////// 
+ 
         ?>    
    
         </div> <!-- dec card-->
