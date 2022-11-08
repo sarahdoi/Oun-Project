@@ -301,10 +301,10 @@ die("failed to cancel");
            <?php $_GET['request_id'] = $row['request_id'];
            $_GET['offer_id'] = $row['offer_id'];
            ?>
-           <a href="Accept.php?request_id=<?php echo $_GET['request_id'];?>&offer_id=<?php echo $_GET['offer_id'];?>">
+           <a href="Accept.php?request_id=<?php echo $_GET['request_id'];?>&offer_id=<?php echo $_GET['offer_id'];?>" onclick="return alert('Offer accepted, Babysitter is booked!');">
            <input class="btn1" type="button" value="Accept" style = "text-align:center;"> </a>
 
-           <a href="Reject.php?request_id=<?php echo $_GET['request_id'];?>&offer_id=<?php echo $_GET['offer_id'];?>">
+           <a href="Reject.php?request_id=<?php echo $_GET['request_id'];?>&offer_id=<?php echo $_GET['offer_id'];?>" onclick="return confirm('Are you sure you want to reject this offer?');">
            <input class="btn2" type="button" value="Reject" style = "text-align:center;"> </a>
      </div>
     

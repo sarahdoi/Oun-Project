@@ -196,7 +196,7 @@ Duration:
     
     <fieldset>
       
-    <button type="submit">Send Request</button>
+    <button type="submit" style="cursor:pointer;">Post Request</button>
          
 
 </body>
