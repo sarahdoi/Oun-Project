@@ -98,7 +98,7 @@ $errors = array() ;
           <textarea id="bio" name="bio" placeholder="<?php echo $user_data['bio'] ?> " disabled ></textarea> 
         </fieldset>
         <button name="edit" type="submit" >Edit Profile</button> 
-    <div class="danger"><button type="submit" name="delete">Delete Account</button></div>
+    <div class="danger"><button type="submit" name="delete"  onclick="return confirm('Are you sure you want to delete your account?');" >Delete Account</button></div>
       </form>
       <footer class="footer-distributed">
 

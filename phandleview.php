@@ -3,7 +3,7 @@ session_start();
 include("connection.php") ;
     if(isset($_POST['delete'])){
         $id = $_GET["parent_id"];
-       $query = mysqli_query($con,"DELETE FROM parent WHERE `parent_id` =$id;");
+        $query = mysqli_query($con,"DELETE FROM parent WHERE `parent_id` =$id;");
         header("Location:index.php");
     }
     if(isset($_POST['edit'])){ 
