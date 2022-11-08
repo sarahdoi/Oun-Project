@@ -113,11 +113,7 @@ if( mysqli_num_rows($requests) > 0)
     
     foreach( $requests as $element )
     {
-        $query = "SELECT * from request
-        JOIN offer on REQuest.request_id = offer.request_id;";
-        $result = mysqli_query($con , $query);
-        while ($row = mysqli_fetch_assoc($result)) {
-        if($row['status']!='a'){
+    
 ?>  
 <div class="container" style = "display: inline-block;;">
   <div class= "card" >
@@ -137,9 +133,9 @@ if( mysqli_num_rows($requests) > 0)
 </div>
 </div>
 <?php
- }   }
-}
-}
+           }   }
+
+
 else {
     echo "<h2> There are no requests </h2>";
 }

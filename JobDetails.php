@@ -150,6 +150,9 @@ $user_data = check_loginBabysitter($con);
 <form action="sendOffer.php" method='get'>
     <input type="text" class="text" name="price" placeholder="SR/hour">
     <input type="hidden" name="id" value="<?php echo $reqId; ?>">
+    <input type="hidden" name="start_time" value="<?php echo $this_request["start_time"]; ?>">
+    <input type="hidden" name="end_time" value="<?php echo $this_request["end_time"]; ?>">
+    <input type="hidden" name="date" value="<?php echo $this_request["date"];; ?>">
     <input name="sent" class= "btn" type="submit" value="Send Offer ">  
 </form>
 </div>
