@@ -39,7 +39,7 @@ $errors = array() ;
     <ul> 
     <li><a href="mprofile.php"> Home </a></li>
 
-    <li> <a href="ViewOffer.html"> Offers </a>
+    <li> <a href="ViewOffers.php"> Offers </a>
 
     <li> <a href="#"> Settings </a>
     <ul class="inner">
@@ -56,7 +56,9 @@ $errors = array() ;
     </nav>
 
 </header>
-<form action="phandleview.php" method="post"> <!-- handleview.php is not ready, did not push it yet -->
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/main.css">
+<form action="phandleview.php?parent_id=<?php echo $user_data['parent_id'] ?>" method="post"> <!-- handleview.php is not ready, did not push it yet -->
                 <h1>My Profile </h1>
                 <?php if (isset($_GET['error'])) { ?>
         <p class="error"><?php echo $_GET['error']; ?></p> <?php } ?> 
@@ -79,7 +81,7 @@ $errors = array() ;
 
             <label for="image" >Profile image </label>
            <img src="<?php echo $user_data['parent_image'] ?> " >
-          <input type="file" name="image" id="image" value="<?php echo $user_data['parent_image'] ?> " required >
+          <input type="file" name="image" id="image" value="<?php echo $user_data['parent_image'] ?> "  >
 
         </fieldset>
         

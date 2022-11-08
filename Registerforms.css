@@ -73,7 +73,8 @@ form {
   button:focus {
       color: #ffffff;
     }
-
+    .danger button {
+      padding: 19px 39px 18px 39px; }
     .danger  {
         font-family: 'Optima', sans-serif;
         color: #FFF;
@@ -88,7 +89,7 @@ form {
         margin-bottom: 10px;
       }
       
-      :hover.danger  {
+      .danger button:hover  {
         background-color: rgb(133, 56, 56);
         border-color: rgb(133, 56, 56);
         fill: rgb(72, 56, 133); } 

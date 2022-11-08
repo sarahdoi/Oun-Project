@@ -16,7 +16,7 @@ $errors = array() ;
         <link rel="stylesheet" href="BabyProfile.css">
         <link rel="stylesheet" href="footer.css">
         <link rel="icon" type="image/png" href="logo.png" >
-        <link rel="stylesheet" href="mytitles.css">
+        <!--<link rel="stylesheet" href="mytitles.css"> -->
 
         <!--import google fonts & stars-->
         
@@ -43,16 +43,16 @@ $errors = array() ;
             <li> <a href="#"> Menu </a>
                 <ul class="inner"> <!-- your menu here\\\\\\-->
                     
-             <li class="first"><a href="JobRequest.html"> Job Requests </a></li>
+             <li class="first"><a href="JobRequest.php"> Job Requests </a></li>
                     
-             <li><a href="OfferList.html"> Offers </a></li>
-             <li><a href="myReviews.html"> rate & reviews </a></li>
+             <li><a href="OfferList.php"> Offers </a></li>
+             <li><a href="myReviews.php"> rate & reviews </a></li>
         </ul>
     
             <li> <a href="#"> Settings </a>
             <ul class="inner">
                 
-            <li class="first"><a href="BabysitterProfile.html"> view profile</a></li>
+            <li class="first"><a href="BabysitterProfile.php"> view profile</a></li>
                 
             <li><a href="index.html"> Sign out </a></li>
                 
