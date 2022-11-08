@@ -217,7 +217,7 @@ margin-top: 10px;
         <ul class="inner"> <!-- your menu here\\\\\\-->
      <li class="first"><a href="parentrequests.php"> My Pending Requests </a></li>
      <li><a href="viewOffers.php"> Babysitter Offers </a></li></ul>
-     
+
     <li> <a href="#"> Settings </a>
     <ul class="inner">
         

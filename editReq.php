@@ -238,23 +238,23 @@ $pendingRequests = mysqli_query($con , $query);
       <input type="radio" id="cooking" value="cooking" name="service" <?php if($row['service_type']=='cooking') echo "checked"; ?>><label for="cooking" class="light">Cooking</label>
      <br>
      <br>
-      <label for="name" >Date :</label>
-      <input type="text" placeholder="<?php echo $row['date']; ?>"
+      <label for="name" >Date :  ( Current date set to  <?php echo $row['date']?>)</label>
+      <!--<input type="text" placeholder="<?php echo $row['date']; ?>"
         onfocus="(this.type='date')"
-        onblur="(this.type='text')" name="date">
-      <!--<input type="date" id="date" name="date" min= "2022-11-08" value="<?php //echo $row['date']; ?>"  required > -->
-Duration:
+        onblur="(this.type='text')" name="date">-->
+      <input type="date" id="date" name="date" min= "2022-11-08" value="<?php //echo $row['date']; ?>"  required > 
+      Duration: 
       <label for="name" >from</label>
-      <input type="text" placeholder="<?php echo $row['start_time']; ?>"
+      <!--<input type="text" placeholder="<?php //echo $row['start_time']; ?>"
         onfocus="(this.type='time')"
-        onblur="(this.type='text')" name="duration1">
-      <!--<input type="time" id="duration" name="duration1" value="<?php //echo $row['start_time']; ?>"  required >-->
+        onblur="(this.type='text')" name="duration1">-->
+      <input type="time" id="duration" name="duration1" value="<?php echo $row['start_time']; ?>"  required >
 
-      <label for="name" >to</label>
-      <input type="text" placeholder="<?php echo $row['end_time']; ?>"
+      <label for="name" >to</label> 
+      <!--<input type="text" placeholder="<?php //echo $row['end_time']; ?>"
         onfocus="(this.type='time')"
-        onblur="(this.type='text')" name="duration2">
-      <!--<input type="time" id="duration" name="duration2"  value="<?php// echo $row['end_time']; ?>" required >-->
+        onblur="(this.type='text')" name="duration2">-->
+      <input type="time" id="duration" name="duration2"  value="<?php echo $row['end_time']; ?>" required >
     
     <fieldset>
       <?php } }?>

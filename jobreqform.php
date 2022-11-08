@@ -186,7 +186,7 @@ form {
      <br>
      <br>
       <label for="name" >Date :</label>
-      <input type="date" id="date" name="date" min= "2022-11-08"  required >
+      <input type="date" id="date" name="date" min= "2022-11-09"  required >
 Duration:
       <label for="name" >from</label>
       <input type="time" id="duration" name="duration1"  required >

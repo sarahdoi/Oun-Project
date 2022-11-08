@@ -28,30 +28,30 @@ $myID = $user_data['parent_id'];
   background :rgb(41, 33, 78);
   color: white;
   /* 20px */
-  margin-top:5px;
+  margin-top:0px;
   border:none;
-  height:40px;
+  height:30px;
   width:60%;
   font-size:16px;
    /* 30px */
   border-radius:12px;
-  margin-left: 70px;
+  margin-left: 0px;
   }
 
 .btn2{
   outline:none;
   background : rgb(152, 33, 33);
   /* 20px */
-  margin-top:5px;
+  margin-top:7px;
   border:none;
-  height:40px;
-  width:60%;
+  height:25px;
+  width:25%;
   color:white;
   font-size:16px;
    /* 30px */
   border-radius:12px; 
   left: 40px;
-  margin-left: 70px;
+  margin-left: -200px;
 }
 .btn1:hover{
     background-color: rgb(72, 56, 133) ;
@@ -83,7 +83,7 @@ $myID = $user_data['parent_id'];
         <ul class="inner"> <!-- your menu here\\\\\\-->
      <li class="first"><a href="parentrequests.php"> My Pending Requests </a></li>
      <li><a href="viewOffers.php"> Babysitter Offers </a></li></ul>
-     
+
     <li> <a href="#"> Settings </a>
     <ul class="inner">
         
@@ -127,6 +127,11 @@ $myID = $user_data['parent_id'];
  ?>  
       <div class="container" style = "display: contents;">
        <div class= "card" >
+       <?php $_GET['request_id'] = $row['request_id']; ?>
+       <a href="deleteReq.php?request_id=<?php echo $_GET['request_id'];?>">
+           <input class="btn2" type="button" value="Delete" style = "text-align:center;">
+          </a>
+
        <p class ="name" > Request </p>
        <div class="desc">
 
@@ -142,16 +147,13 @@ $myID = $user_data['parent_id'];
         <br>
         <p class="service"><b>Duration:</b> <?php echo $row['start_time']." - ".$row['end_time'];?></p>
 
-        <div class="btn" style = "display: contents;">
+       <!-- <div class="btn" style = "display:contents;">-->
 
-           <?php $_GET['request_id'] = $row['request_id']; ?>
            <a href="editReq.php?request_id=<?php echo $_GET['request_id'];?>">
            <input class="btn1" type="button" value="Edit" style = "text-align:center;"> </a>
 
-           <a href="deleteReq.php?request_id=<?php echo $_GET['request_id'];?>">
-           <input class="btn2" type="button" value="Delete" style = "text-align:center;">
-          </a>
-     </div>
+           
+    <!-- </div>-->
 
  
         </div>
