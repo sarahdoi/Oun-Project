@@ -122,5 +122,24 @@ function getPrevBookingsforID($id){
        INNER JOIN babysitter ON offer.babysitter_id = babysitter.national_ID WHERE babysitter.national_ID=$id ";
     return mysqli_query( $con  , $query);
 }
+ 
+///////////////////// delete these 2 at the end if not used,, they didnt work well with me!
+function  createConfirmationmbox() {  
+    echo '<script type="text/javascript"> ';  
+    echo ' function openulr(newurl) {';  
+    echo '  if (confirm("Are you sure you want to Delete?")) {';  
+    echo '    document.location = newurl;';  
+    echo '  }';  
+    echo '}';  
+    echo '</script>';  
+}   
+
+
+function myFunction() {
+    echo "<script>";
+    echo "return confirm('Are you sure?');";
+    echo "</script>";
+}
+
 
 ?>

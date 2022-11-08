@@ -1,6 +1,11 @@
+
 <?php
 session_start();
 include("connection.php") ;
+include("functions.php") ;
+
+
+
     if(isset($_POST['delete'])){
         $id = $_GET["national_ID"];
        $query = mysqli_query($con,"DELETE FROM babysitter WHERE `national_ID` =$id;");
@@ -8,8 +13,7 @@ include("connection.php") ;
     }
     if(isset($_POST['edit'])){ 
 header("Location:editbaby.php");
-
-
+//////////////////////////////
     }
     if(isset($_POST['save'])){
         $id = $_GET["national_ID"];

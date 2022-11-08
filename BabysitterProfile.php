@@ -85,7 +85,7 @@ $errors = array() ;
         <input type="text" id="age" name="age" value="<?php echo $user_data['age'] ?>" disabled>
         <label for="image">Profile image </label>
         <?php
-         echo "<img src='images/".$user_data['image']."' alt='img'>" ;
+         echo "<img src='images/".$user_data['sitter_image']."' alt='img'>" ;
          ?>
             <!--<input type="image" name="image" id="image" alt="image" >-->
         
