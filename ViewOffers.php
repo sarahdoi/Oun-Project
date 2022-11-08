@@ -109,10 +109,12 @@ a{
 .card .desc .btn2 a:hover
 {
     color: rgb(133, 56, 56);
+    cursor: pointer;
 }
 .card .desc  .btn1 a:hover
 {
     color:#3ca349; 
+    cursor: pointer;
 }
 .desc .btn1
 {
@@ -174,6 +176,18 @@ margin-left: 50px;
 margin-top: 10px;
                 
 }
+
+.btn1:hover{
+    background :rgb(19, 113, 57);
+    cursor: pointer;
+}
+
+.btn2:hover{
+    background : rgb(124, 27, 27);
+    cursor: pointer;
+
+}
+
         </style>
 <head>
   
@@ -199,8 +213,11 @@ margin-top: 10px;
     <ul> 
     <li><a href="mprofile.php"> Home </a></li>
 
-    <li> <a href="ViewOffers.php"> Babysitter Offers </a>
-
+    <li> <a href="#"> Menu </a>
+        <ul class="inner"> <!-- your menu here\\\\\\-->
+     <li class="first"><a href="parentrequests.php"> My Pending Requests </a></li>
+     <li><a href="viewOffers.php"> Babysitter Offers </a></li></ul>
+     
     <li> <a href="#"> Settings </a>
     <ul class="inner">
         
@@ -276,7 +293,7 @@ die("failed to cancel");
        <?php echo "<h2><span>".$row['price']."</span><small>SR per hour</small></h2>"; ?>
         <?php echo "<h2><span>Time</span> <small>".$row['start_time']."-".$row['end_time']."</small></h2>"; ?>
      </div>
-     <a  class="lin" href="bsprofileP.php?babysitter_id=<?php echo $_GET['babysitter_id'];?>">View Profile</a>
+     <?php echo "<a  class='lin' href='bsprofileP.php?babysitter_id=".$row['babysitter_id']."'>View Profile</a>"; ?>
 
      
 
@@ -293,11 +310,10 @@ die("failed to cancel");
     
      <br>
      <?php echo
-       "<div  >
-            <p style='text-align:center'>
-            <div>Offer Details:</div>
-            
-            Date: ".$row['date']."<br>
+       "<div>
+             <p>
+            <div><b>Offer Details:</b></div>
+            Date: ".$row['date']."</center><br> 
             Type of service: ".$row['service_type']." <br>
             Kid's name: ".$row['kid_name']."<br>
             ".$msg."</p>

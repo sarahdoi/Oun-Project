@@ -3,8 +3,10 @@ session_start();
 include("connection.php");
 $id = $_GET['babysitter_id'] ;
 $query = "SELECT * FROM babysitter WHERE national_ID='$id'" ;
-$result = mysqli_query($conn , $query) ;
-$babysitdata = mysqli_affected_rows($result) ;
+$result = mysqli_query($con , $query) ;
+?><?php
+$babysitdata = mysqli_fetch_assoc($result) ;
+
 ?>
 
 
@@ -21,7 +23,7 @@ $babysitdata = mysqli_affected_rows($result) ;
 <link rel="stylesheet" href="headerp.css" >
 <link rel="stylesheet" href="viewbsprofile.css" >
 
-<title>Anny's profile </title>
+<title>Babysitter profile </title>
 
 
 </head>
@@ -35,8 +37,11 @@ $babysitdata = mysqli_affected_rows($result) ;
     <ul> 
     <li><a href="mprofile.php"> Home </a></li>
 
-    <li> <a href="ViewOffers.php"> Offers </a>
-
+    <li> <a href="#"> Menu </a>
+        <ul class="inner"> <!-- your menu here\\\\\\-->
+     <li class="first"><a href="parentrequests.php"> My Pending Requests </a></li>
+     <li><a href="viewOffers.php"> Babysitter Offers </a></li></ul>
+     
     <li> <a href="#"> Settings </a>
     <ul class="inner">
      <li class="first"><a href="parentprofile.php"> view profile</a></li>
@@ -68,7 +73,7 @@ $babysitdata = mysqli_affected_rows($result) ;
       </ul>
      
      
-     <form  action="mailto:talia@gmail.com"><input  class="btn" type="submit" value="Contact"></form>
+     <form  action=  "https://wa.me/<?php echo$babysitdata['phoneNo'];?>"> <input  class="btn" type="submit" value="Contact"></form>
    <!-- <button class="btn"><a href="mailto:anny212@gmail.com">Contact</a></button>--> 
 <br> <hr>
    
@@ -124,3 +129,4 @@ $babysitdata = mysqli_affected_rows($result) ;
 
 </body>
 </html> 
+*/

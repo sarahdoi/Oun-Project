@@ -10,7 +10,6 @@ body {
 }
 
 header {
-   
     position: fixed;
     top:0; left:0; right:0;
     background:linear-gradient(60deg, rgb(196, 183, 247) 0%, rgb(97, 219, 235) 100%); 

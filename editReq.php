@@ -178,8 +178,11 @@ form {
     <ul> 
     <li><a href="mprofile.php"> Home </a></li>
 
-    <li> <a href="ViewOffers.php"> Babysitter Offers </a>
-
+    <li> <a href="#"> Menu </a>
+        <ul class="inner"> <!-- your menu here\\\\\\-->
+     <li class="first"><a href="parentrequests.php"> My Pending Requests </a></li>
+     <li><a href="viewOffers.php"> Babysitter Offers </a></li></ul>
+     
     <li> <a href="#"> Settings </a>
     <ul class="inner">
         

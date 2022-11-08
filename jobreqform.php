@@ -3,6 +3,7 @@
 <title>Job Request </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styleB.css">
 <link rel="icon" type="logo.png" href="images/logo.png" >
 <style>
 form {
@@ -132,7 +133,32 @@ form {
 <link rel="stylesheet" href="footer.css" >
 </head>
 <body> 
+<header>
+        <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
+        <nav class="navbar">
+        <ul> 
+        <li><a href="mprofile.php"> Home </a></li>
 
+        <li> <a href="#"> Menu </a>
+        <ul class="inner"> <!-- your menu here\\\\\\-->
+     <li class="first"><a href="parentrequests.php"> My Pending Requests </a></li>
+     <li><a href="viewOffers.php"> Babysitter Offers </a></li></ul>
+        <li> <a href="#"> Settings </a>
+        <ul class="inner">
+            
+        <li class="first"><a href="parentprofile.php"> view profile</a></li>
+            
+        <li><a href="signout.php"> Sign out </a></li>
+            
+        </ul>
+        
+        </li>
+        
+        </ul>
+        </nav>
+
+    </header>
+   
 <form action="jobform.php" method="post">
     <form action="next.php" method="post" enctype="multipart/form-data">
     <h1>  Fill in the required information </h1>
@@ -171,6 +197,7 @@ Duration:
     <fieldset>
       
     <button type="submit">Send Request</button>
+         
 
 </body>
 </html>

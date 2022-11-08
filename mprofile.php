@@ -38,8 +38,10 @@ $parentName= $user_data['name'];
         <ul> 
         <li><a href="mprofile.php"> Home </a></li>
 
-        <li> <a href="ViewOffers.php"> Bookings </a>
-
+        <li> <a href="#"> Menu </a>
+        <ul class="inner"> <!-- your menu here\\\\\\-->
+     <li class="first"><a href="parentrequests.php"> My Pending Requests </a></li>
+     <li><a href="viewOffers.php"> Babysitter Offers </a></li></ul>
         <li> <a href="#"> Settings </a>
         <ul class="inner">
             
@@ -57,9 +59,9 @@ $parentName= $user_data['name'];
     </header>
    
 
-    <div class="welcome glow">
+    <div class="welcome">
        <?php 
-       echo "<h1  class= mytitlew>Welcome Back, ".$parentName." </h1>"
+       echo "<h1 class= 'mytitlew'> Welcome Back, ".$parentName."! </h1>"
        ?>
     </div>
 
@@ -127,7 +129,7 @@ $con->close();
         <!--links-->
         <div class="link">
   
-            <a href="PreReq.php">view prievious booking</a>  <!-- styl.css-->
+            <a href="PreReq.php">view previous bookings</a>  <!-- styl.css-->
         </div>
 
        
