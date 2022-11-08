@@ -129,7 +129,7 @@ $myID = $user_data['parent_id'];
        <div class= "card" >
        <?php $_GET['request_id'] = $row['request_id']; ?>
        <a href="deleteReq.php?request_id=<?php echo $_GET['request_id'];?>">
-           <input class="btn2" type="button" value="Delete" style = "text-align:center;">
+           <input class="btn2" type="button" value="Delete" style = "text-align:center;" onclick="return confirm('Are you sure you want to delete your request?');"  >
           </a>
 
        <p class ="name" > Request </p>
