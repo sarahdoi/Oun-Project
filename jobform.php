@@ -20,7 +20,11 @@ $date = $_POST['date'];
 $startTime = $_POST['duration1'];
 $endTime = $_POST['duration2'];
 
-
+if(!preg_match('/^[0-9,]+$/', $kid_age)) {
+    header("Location: jobreqform.php?error= Only numbers and commas are allowed in age field ");
+    exit;
+    array_push($errors , "Only numbers and commas are allowed in age field");
+    }
 
 // Start Registering
     $query = "INSERT INTO request (`parent_id`,`numOfKids`,`kid_name`,`kid_age`,`service_type`,`date`,`start_time`,`end_time`) 

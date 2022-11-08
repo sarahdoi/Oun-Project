@@ -77,6 +77,8 @@ $myID = $user_data['parent_id'];
     <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
     <nav class="navbar">
     <ul> 
+    <li>    <a onclick="window.history.back()" style="pointer:cursor;"> < Back </a> </li>
+
     <li><a href="mprofile.php"> Home </a></li>
 
     <li> <a href="#"> Menu </a>
@@ -94,9 +96,9 @@ $myID = $user_data['parent_id'];
     </ul>
     
     </li>
-    
     </ul>
     </nav>
+
 </header>
 
 
@@ -110,7 +112,6 @@ $myID = $user_data['parent_id'];
 
 
  <h1 class="mytitle"> My Pending Requests </h1> 
-
 <?php 
 
  $query = "SELECT *

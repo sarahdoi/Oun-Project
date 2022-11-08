@@ -122,7 +122,13 @@ form {
   
   }
 
-
+  .error {
+            background : #F2DEDE;
+            color : #A94442;
+            padding:10px;
+            width : 95%;
+            border-radius:5px;
+                  }
 
 
 </style>
@@ -137,6 +143,7 @@ form {
         <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
         <nav class="navbar">
         <ul> 
+        <li>    <a onclick="window.history.back()" style="pointer:cursor;"> < Back </a> </li>
         <li><a href="mprofile.php"> Home </a></li>
 
         <li> <a href="#"> Menu </a>
@@ -161,8 +168,10 @@ form {
    
 <form action="jobform.php" method="post">
     <form action="next.php" method="post" enctype="multipart/form-data">
+    <?php if (isset($_GET['error'])) { ?>
+
+        <p class="error"><?php echo $_GET['error']; ?></p> <?php } ?> 
     <h1>  Fill in the required information </h1>
-    
     <fieldset>
       
         <label for="job">Number of kids :</label>

@@ -40,6 +40,7 @@ $parentName= $user_data['name'];
             <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
             <nav class="navbar">
             <ul> 
+            <li>    <a onclick="window.history.back()" style="pointer:cursor;"> < Back </a> </li>
             <li><a href="mprofile.php"> Home </a></li>
     
             <li> <a href="#"> Menu </a>

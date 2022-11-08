@@ -54,16 +54,20 @@ if( ! isset($_FILES['image']['name']) || empty($_FILES['image']['name']) ){
 $idcheck_query = "SELECT * FROM babysitter WHERE national_ID = '$nationalid'";
 $result1 = mysqli_query($con, $idcheck_query);
 
+$emailcheck_query1 = "SELECT * FROM parent WHERE email = '$email'";
 $emailcheck_query = "SELECT * FROM babysitter WHERE email = '$email'";
 $result2 = mysqli_query($con, $emailcheck_query);
+$result3 = mysqli_query($con, $emailcheck_query1);
 
+
+
+if ((mysqli_num_rows($result2) > 0) || (mysqli_num_rows($result3) > 0)) {
+    array_push($errors , "Account with this email already exists");
+    header("location: RegisterBabysitter.php?error=Account with this email already exists, please try again!");
+}
 if (mysqli_num_rows($result1) > 0) {
     array_push($errors , "National ID already existed");
     header("location: RegisterBabysitter.php?error=National ID already existed, please try again!");
-}
-if (mysqli_num_rows($result2) > 0) {
-    array_push($errors , "Email already existed");
-    header("location: RegisterBabysitter.php?error=Email already existed, please try again!");
 }
 /*
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)){

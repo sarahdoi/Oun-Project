@@ -19,6 +19,7 @@
 <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="icon" type="image/png" href="images/logo.png" >
+ <link rel="stylesheet" href="styleB.css">
 
  <!--import google fonts & stars-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,6 +31,33 @@
 </head>
 
 <body>
+<header style="z-index:2000">
+       <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
+       <nav class="navbar">
+       <ul> 
+       <li>    <a onclick="window.history.back()" style="pointer:cursor;"> < Back </a> </li>
+   
+       <li><a href="mprofile.php"> Home </a></li>
+   
+       <li> <a href="#"> Menu </a>
+           <ul class="inner"> <!-- your menu here\\\\\\-->
+        <li class="first"><a href="parentrequests.php"> My Pending Requests </a></li>
+        <li><a href="viewOffers.php"> Babysitter Offers </a></li></ul>
+   
+       <li> <a href="#"> Settings </a>
+       <ul class="inner">
+           
+       <li class="first"><a href="parentprofile.php"> view profile</a></li>
+          
+       <li><a href="index.php"> Sign out </a></li>
+           
+       </ul>
+       
+       </li>
+       </ul>
+       </nav>
+   
+   </header>
 
 <!--review and rate card-->
 <form action="rate.php?booking_id=<?php echo $_GET['booking_id']; ?>" method="post">

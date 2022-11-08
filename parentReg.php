@@ -44,12 +44,17 @@ if ($password1 !== $password2) {
 }
 
 //check db for existing parent with the same email 
-$emailcheck_query = "SELECT * FROM parent WHERE email = '$email'";
-$result = mysqli_query($con, $emailcheck_query);
 
-if (mysqli_num_rows($result) > 0) {
-    array_push($errors , "Email already exists");
-    header("location: RegisterParent.php?error=Email already existed, please try again!");
+$emailcheck_query1 = "SELECT * FROM parent WHERE email = '$email'";
+$emailcheck_query = "SELECT * FROM babysitter WHERE email = '$email'";
+$result2 = mysqli_query($con, $emailcheck_query);
+$result3 = mysqli_query($con, $emailcheck_query1);
+
+
+
+if ((mysqli_num_rows($result2) > 0) || (mysqli_num_rows($result3) > 0)) {
+    array_push($errors , "Account with this email already exists");
+    header("location: RegisterBabysitter.php?error=Account with this email already exists, please try again!");
 }
 //phone number validation 
 if(!preg_match('/^[0-9]{10}+$/', $phone)) {

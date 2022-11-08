@@ -30,6 +30,7 @@ $user_data = check_loginBabysitter($con);
         <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
         <nav class="navbar">
         <ul> 
+        <li>    <a onclick="window.history.back()" style="pointer:cursor;"> < Back </a> </li>
         <li><a href="currentBaby.html"> Home </a></li>
 
         <li> <a href="#"> Menu </a>
