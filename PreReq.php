@@ -74,6 +74,7 @@ if( mysqli_num_rows($Bookings) > 0)
    // $no=1;
     foreach( $Bookings as $element )
     { 
+        $anID=$element['booking_id'];
        // if($element['status']=='a' ){
           //  $no=2;
 echo " <!-- #########################################-->
@@ -92,7 +93,7 @@ echo " <!-- #########################################-->
      
    </p>
    <br>
-   <a  class='lin' href='bsreview.php?booking_id=".$element['booking_id']."'>Review & Rate</a>
+   <a  class='lin' href='bsreview.php?booking_id=".$anID."'>Review & Rate</a>
    <div class='desc'>
    <div class='info'>
    <h2><span>Date</span><small>".$element['date']."</small></h2>

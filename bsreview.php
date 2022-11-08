@@ -51,18 +51,19 @@
             <div class="textarea">
                 <textarea name="review" style="font-size:medium;" cols="30" placeholder="Describe your experiance.."></textarea>
             </div>
-            <!-- CHECK IT       <a href="rate.php?booking_id=<?php // echo $_GET['booking_id']; ?>">   -->
-            
-            <!-- <a href="rate.php?booking_id=(php)// echo$_GET['booking_id']; (?)>'> -->
+            <!-- Check view profile baby sitter -->
+                <?php
+                $theID= $_GET['booking_id'];
+                 echo "<a href='rate.php?booking_id=".$theID."'></a>";
 
-            <!-- I delet php tag in line 56 bc I couldn't put a comment -->
-          
+                 ?>
+         
+            <!-- <a href="rate.php?booking_id=<?php// echo$_GET['booking_id']; ?>"> -->
             <div class="btn">
                 <button type="submit"> Post</button>
           </div>
       </a>
     </div>
-    
   
   </div>
 </form>

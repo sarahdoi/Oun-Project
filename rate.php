@@ -8,8 +8,8 @@ session_start();
 
 
 //$booking_id =1;
-if (isset($_POST['booking_id'])) {
-$bookingid = $_POST['booking_id'];
+if (isset($_GET['booking_id'])) {
+$bookingid = $_GET['booking_id'];
 }else{
  $bookingid=1;   
 }
