@@ -9,7 +9,7 @@ $user_data = check_loginParent($con);
 $parentId= $user_data['parent_id'];
 $parentName= $user_data['name'];
 
-$BabytId=$_GET['booking_id'];
+$BabytId=$_GET['national_ID'];
 
 /*function getBookings(){
   global $con;
@@ -22,7 +22,7 @@ $BabytId=$_GET['booking_id'];
 
 
 //change it to PrevgetPrevBookings()
-$booking = getBookings();
+//$booking = getPrevBookingsforID();
 //babysitter_id
 
 

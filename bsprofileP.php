@@ -77,7 +77,7 @@ $babysitdata = mysqli_fetch_assoc($result) ;
    <!-- <button class="btn"><a href="mailto:anny212@gmail.com">Contact</a></button>--> 
 <br> <hr>
    
-     <p class="reviews" style="font-size:15px ;"><a href="checkbsreview.php?national_ID=<?php echo $babysitdata['national_ID']?>"><?php echo $babysitdata['name']?> 's Reviews</a></p>
+     <p class="reviews" style="font-size:15px; text-decoration: underline;"><a href="checkbsreview.php?national_ID=<?php echo $babysitdata['national_ID']?>"><?php echo $babysitdata['name']?> 's Reviews</a></p>
     </div>
   </div>
 
