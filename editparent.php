@@ -35,31 +35,32 @@ $errors = array() ;
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body> 
-  <header>
-    <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
-    <nav class="navbar">
-    <ul> 
-    <li>    <a onclick="window.history.back()" style="pointer:cursor;"> < Back </a> </li>
+<header>
+        <a href="#" class="logo"><img src="images/logo.png" alt="logo icon"></a>
+        <nav class="navbar">
+        <ul> 
+        <li>    <a onclick="window.history.back()" style="pointer:cursor;"> < Back </a> </li>
+        <li><a href="mprofile.php"> Home </a></li>
 
-    <li><a href="mprofile.php"> Home </a></li>
-
-    <li> <a href="ViewOffers.php"> Offers </a>
-
-    <li> <a href="#"> Settings </a>
-    <ul class="inner">
+        <li> <a href="#"> Menu </a>
+        <ul class="inner"> <!-- your menu here\\\\\\-->
+     <li class="first"><a href="parentrequests.php"> My Pending Requests </a></li>
+     <li><a href="viewOffers.php"> Babysitter Offers </a></li></ul>
+        <li> <a href="#"> Settings </a>
+        <ul class="inner">
+            
+        <li class="first"><a href="parentprofile.php"> view profile</a></li>
+            
+        <li><a href="signout.php"> Sign out </a></li>
+            
+        </ul>
         
-    <li class="first"><a href="parentprofile.php"> view profile</a></li>
+        </li>
         
-    <li><a href="index.php"> Sign out </a></li>
-        
-    </ul>
-    
-    </li>
-    
-    </ul>
-    </nav>
+        </ul>
+        </nav>
 
-</header>
+    </header>
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/main.css">
 <form action="phandleview.php?parent_id=<?php echo $user_data['parent_id'] ?>" method="post"> <!-- handleview.php is not ready, did not push it yet -->
